@@ -8,8 +8,14 @@ const NPC_SCENE: PackedScene = preload("res://expedition/npc.tscn")
 const HOST_NAME: String = "Руководитель"
 const NPC_NAMES: PackedStringArray = ["Сато", "Кимура", "Огава"]
 
+## Название для журнала и HUD.
+@export var title: String = "Район"
 ## Сколько напарников-NPC выходит в экспедицию.
 @export var npc_count: int = 3
+## Через сколько секунд после потери всех игроков вылазка заканчивается.
+@export var loss_delay: float = 4.0
+
+var _ending: bool = false
 
 @onready var members_root: Node3D = $Members
 @onready var _spawner: MultiplayerSpawner = $MemberSpawner
@@ -29,6 +35,9 @@ func _ready() -> void:
 	_spawner.spawn_path = NodePath("../Members")
 	if not NetAuthority.is_authority():
 		return
+	GameState.ensure_expedition(title)
+	EventBus.member_died.connect(_on_member_lost)
+	EventBus.member_vanished.connect(_on_member_lost)
 	multiplayer.peer_connected.connect(_on_peer_connected)
 	multiplayer.peer_disconnected.connect(_on_peer_disconnected)
 	_spawn_player(1)
@@ -93,6 +102,23 @@ func _on_peer_disconnected(peer_id: int) -> void:
 		body.queue_free()
 
 
+## Все игроки погибли или пропали — вылазка окончена.
+func _on_member_lost(_member: Node) -> void:
+	if _ending:
+		return
+	var npcs: Array[ExpeditionMember] = []
+	for body in members_root.get_children():
+		var member: ExpeditionMember = ExpeditionMember.find_on(body)
+		if member == null or not member.is_active():
+			continue
+		if not body.name.begins_with("npc"):
+			return  # кто-то из игроков ещё в строю
+		npcs.append(member)
+	_ending = true
+	await get_tree().create_timer(loss_delay).timeout
+	GameState.end_expedition("отряд потерян", [], npcs)
+
+
 func _on_session_failed(reason: String) -> void:
 	print("[Level] сессия прервана: ", reason)
-	get_tree().change_scene_to_file.call_deferred("res://debug/net_menu.tscn")
+	get_tree().change_scene_to_file.call_deferred(GameState.BASE_SCENE)

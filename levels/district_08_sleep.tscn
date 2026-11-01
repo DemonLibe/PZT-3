@@ -2,11 +2,13 @@
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_r"]
 [ext_resource type="Script" path="res://expedition/squad.gd" id="2_r"]
-[ext_resource type="Script" path="res://anomalies/districts/sleep/sleep_zone.gd" id="3_r"]
-[ext_resource type="Resource" path="res://data/sleep.tres" id="4_r"]
-[ext_resource type="PackedScene" path="res://ui/fate_overlay.tscn" id="5_r"]
-[ext_resource type="PackedScene" path="res://ui/sleep_overlay.tscn" id="6_r"]
-[ext_resource type="PackedScene" path="res://debug/debug_hud.tscn" id="7_r"]
+[ext_resource type="PackedScene" path="res://world/exit_door.tscn" id="3_r"]
+[ext_resource type="Script" path="res://anomalies/districts/sleep/sleep_zone.gd" id="4_r"]
+[ext_resource type="Resource" path="res://data/sleep.tres" id="5_r"]
+[ext_resource type="PackedScene" path="res://ui/hud.tscn" id="6_r"]
+[ext_resource type="PackedScene" path="res://ui/fate_overlay.tscn" id="7_r"]
+[ext_resource type="PackedScene" path="res://ui/sleep_overlay.tscn" id="8_r"]
+[ext_resource type="PackedScene" path="res://debug/debug_hud.tscn" id="9_r"]
 
 [sub_resource type="Environment" id="Environment_1"]
 background_mode = 1
@@ -64,6 +66,7 @@ size = Vector3(26.0, 6.0, 46.0)
 
 [node name="District08Sleep" type="Node3D"]
 script = ExtResource("1_r")
+title = "Район 8"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1")
@@ -318,6 +321,9 @@ transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.0,
 [node name="Npc3" type="Marker3D" parent="SpawnPoints"]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 1.5, 0.0, 19.0)
 
+[node name="ExitDoor" parent="." instance=ExtResource("3_r")]
+transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, 0.0, 0.0, 21.8)
+
 [node name="Bench1" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 3.7, 0.25, -8.0)
 use_collision = true
@@ -331,15 +337,17 @@ size = Vector3(0.6, 0.5, 2.0)
 material = SubResource("StandardMaterial3D_10")
 
 [node name="SleepZone" type="Area3D" parent="."]
-script = ExtResource("3_r")
-data = ExtResource("4_r")
+script = ExtResource("4_r")
+data = ExtResource("5_r")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SleepZone"]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 3.0, 0.0)
 shape = SubResource("BoxShape3D_11")
 
-[node name="FateOverlay" parent="." instance=ExtResource("5_r")]
+[node name="HUD" parent="." instance=ExtResource("6_r")]
 
-[node name="SleepOverlay" parent="." instance=ExtResource("6_r")]
+[node name="FateOverlay" parent="." instance=ExtResource("7_r")]
 
-[node name="DebugHUD" parent="." instance=ExtResource("7_r")]
+[node name="SleepOverlay" parent="." instance=ExtResource("8_r")]
+
+[node name="DebugHUD" parent="." instance=ExtResource("9_r")]

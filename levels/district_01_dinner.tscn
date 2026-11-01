@@ -2,12 +2,14 @@
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_r"]
 [ext_resource type="Script" path="res://expedition/squad.gd" id="2_r"]
-[ext_resource type="Script" path="res://anomalies/districts/dinner/dinner_food.gd" id="3_r"]
-[ext_resource type="Script" path="res://anomalies/districts/dinner/dinner_zone.gd" id="4_r"]
-[ext_resource type="Resource" path="res://data/dinner.tres" id="5_r"]
-[ext_resource type="PackedScene" path="res://ui/fate_overlay.tscn" id="6_r"]
-[ext_resource type="PackedScene" path="res://ui/sleep_overlay.tscn" id="7_r"]
-[ext_resource type="PackedScene" path="res://debug/debug_hud.tscn" id="8_r"]
+[ext_resource type="PackedScene" path="res://world/exit_door.tscn" id="3_r"]
+[ext_resource type="Script" path="res://anomalies/districts/dinner/dinner_food.gd" id="4_r"]
+[ext_resource type="Script" path="res://anomalies/districts/dinner/dinner_zone.gd" id="5_r"]
+[ext_resource type="Resource" path="res://data/dinner.tres" id="6_r"]
+[ext_resource type="PackedScene" path="res://ui/hud.tscn" id="7_r"]
+[ext_resource type="PackedScene" path="res://ui/fate_overlay.tscn" id="8_r"]
+[ext_resource type="PackedScene" path="res://ui/sleep_overlay.tscn" id="9_r"]
+[ext_resource type="PackedScene" path="res://debug/debug_hud.tscn" id="10_r"]
 
 [sub_resource type="Environment" id="Environment_1"]
 background_mode = 1
@@ -104,6 +106,7 @@ size = Vector3(6.6, 3.6, 6.6)
 
 [node name="District01Dinner" type="Node3D"]
 script = ExtResource("1_r")
+title = "Район 1"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1")
@@ -123,6 +126,9 @@ spawn_path = NodePath("../Members")
 [node name="Squad" type="Node" parent="." node_paths=PackedStringArray("members_root")]
 script = ExtResource("2_r")
 members_root = NodePath("../Members")
+
+[node name="ExitDoor" parent="." instance=ExtResource("3_r")]
+transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, 0.0, 0.0, 21.8)
 
 [node name="Ground" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, -0.25, 0.0)
@@ -365,7 +371,7 @@ shadow_enabled = true
 
 [node name="Plate1" type="StaticBody3D" parent="Plates"]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -9.299999999999999, 0.78, -0.8200000000000001)
-script = ExtResource("3_r")
+script = ExtResource("4_r")
 
 [node name="PlateMesh" type="MeshInstance3D" parent="Plates/Plate1"]
 mesh = SubResource("CylinderMesh_17")
@@ -380,7 +386,7 @@ shape = SubResource("BoxShape3D_19")
 
 [node name="Plate2" type="StaticBody3D" parent="Plates"]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -9.299999999999999, 0.78, -0.18)
-script = ExtResource("3_r")
+script = ExtResource("4_r")
 
 [node name="PlateMesh" type="MeshInstance3D" parent="Plates/Plate2"]
 mesh = SubResource("CylinderMesh_17")
@@ -395,7 +401,7 @@ shape = SubResource("BoxShape3D_19")
 
 [node name="Plate3" type="StaticBody3D" parent="Plates"]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.7, 0.78, -0.8200000000000001)
-script = ExtResource("3_r")
+script = ExtResource("4_r")
 
 [node name="PlateMesh" type="MeshInstance3D" parent="Plates/Plate3"]
 mesh = SubResource("CylinderMesh_17")
@@ -410,7 +416,7 @@ shape = SubResource("BoxShape3D_19")
 
 [node name="Plate4" type="StaticBody3D" parent="Plates"]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.7, 0.78, -0.18)
-script = ExtResource("3_r")
+script = ExtResource("4_r")
 
 [node name="PlateMesh" type="MeshInstance3D" parent="Plates/Plate4"]
 mesh = SubResource("CylinderMesh_17")
@@ -425,7 +431,7 @@ shape = SubResource("BoxShape3D_19")
 
 [node name="Plate5" type="StaticBody3D" parent="Plates"]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.1, 0.78, -0.8200000000000001)
-script = ExtResource("3_r")
+script = ExtResource("4_r")
 
 [node name="PlateMesh" type="MeshInstance3D" parent="Plates/Plate5"]
 mesh = SubResource("CylinderMesh_17")
@@ -440,7 +446,7 @@ shape = SubResource("BoxShape3D_19")
 
 [node name="Plate6" type="StaticBody3D" parent="Plates"]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.1, 0.78, -0.18)
-script = ExtResource("3_r")
+script = ExtResource("4_r")
 
 [node name="PlateMesh" type="MeshInstance3D" parent="Plates/Plate6"]
 mesh = SubResource("CylinderMesh_17")
@@ -454,16 +460,18 @@ transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.05
 shape = SubResource("BoxShape3D_19")
 
 [node name="DinnerZone" type="Area3D" parent="." node_paths=PackedStringArray("plates_root")]
-script = ExtResource("4_r")
-data = ExtResource("5_r")
+script = ExtResource("5_r")
+data = ExtResource("6_r")
 plates_root = NodePath("../Plates")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DinnerZone"]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.7, 1.8, 0.0)
 shape = SubResource("BoxShape3D_20")
 
-[node name="FateOverlay" parent="." instance=ExtResource("6_r")]
+[node name="HUD" parent="." instance=ExtResource("7_r")]
 
-[node name="SleepOverlay" parent="." instance=ExtResource("7_r")]
+[node name="FateOverlay" parent="." instance=ExtResource("8_r")]
 
-[node name="DebugHUD" parent="." instance=ExtResource("8_r")]
+[node name="SleepOverlay" parent="." instance=ExtResource("9_r")]
+
+[node name="DebugHUD" parent="." instance=ExtResource("10_r")]

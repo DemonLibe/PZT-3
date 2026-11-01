@@ -26,6 +26,7 @@ func apply(member: ExpeditionMember, anomaly_id: StringName) -> void:
 		Type.VANISH:
 			member.vanish(anomaly_id)
 		Type.STATUS_EFFECT:
+			member.fate_cause = anomaly_id
 			member.add_status(status_id)
 		Type.EVENT:
 			member.event_received.emit(event_id)

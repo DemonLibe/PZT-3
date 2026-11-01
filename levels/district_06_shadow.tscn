@@ -2,11 +2,13 @@
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_r"]
 [ext_resource type="Script" path="res://expedition/squad.gd" id="2_r"]
-[ext_resource type="Script" path="res://anomalies/districts/shadow/shadow_zone.gd" id="3_r"]
-[ext_resource type="Resource" path="res://data/shadow.tres" id="4_r"]
-[ext_resource type="PackedScene" path="res://ui/fate_overlay.tscn" id="5_r"]
-[ext_resource type="PackedScene" path="res://ui/sleep_overlay.tscn" id="6_r"]
-[ext_resource type="PackedScene" path="res://debug/debug_hud.tscn" id="7_r"]
+[ext_resource type="PackedScene" path="res://world/exit_door.tscn" id="3_r"]
+[ext_resource type="Script" path="res://anomalies/districts/shadow/shadow_zone.gd" id="4_r"]
+[ext_resource type="Resource" path="res://data/shadow.tres" id="5_r"]
+[ext_resource type="PackedScene" path="res://ui/hud.tscn" id="6_r"]
+[ext_resource type="PackedScene" path="res://ui/fate_overlay.tscn" id="7_r"]
+[ext_resource type="PackedScene" path="res://ui/sleep_overlay.tscn" id="8_r"]
+[ext_resource type="PackedScene" path="res://debug/debug_hud.tscn" id="9_r"]
 
 [sub_resource type="Environment" id="Environment_1"]
 background_mode = 1
@@ -52,6 +54,7 @@ size = Vector3(16.0, 4.0, 16.0)
 
 [node name="District06Shadow" type="Node3D"]
 script = ExtResource("1_r")
+title = "Район 6"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1")
@@ -155,6 +158,9 @@ material = SubResource("StandardMaterial3D_5")
 [node name="Player" type="Marker3D" parent="SpawnPoints"]
 transform = Transform3D(-0.70711, -0.0, -0.70711, 0.0, 1.0, -0.0, 0.70711, -0.0, -0.70711, -9.0, 0.0, 9.0)
 
+[node name="ExitDoor" parent="." instance=ExtResource("3_r")]
+transform = Transform3D(-0.70711, 0.0, 0.70711, 0.0, 1.0, -0.0, -0.70711, -0.0, -0.70711, -12.2, 0.0, 12.2)
+
 [node name="Npc1" type="Marker3D" parent="SpawnPoints"]
 transform = Transform3D(-0.70711, -0.0, -0.70711, 0.0, 1.0, -0.0, 0.70711, -0.0, -0.70711, -11.0, 0.0, 11.0)
 
@@ -165,16 +171,18 @@ transform = Transform3D(-0.70711, -0.0, -0.70711, 0.0, 1.0, -0.0, 0.70711, -0.0,
 transform = Transform3D(-0.70711, -0.0, -0.70711, 0.0, 1.0, -0.0, 0.70711, -0.0, -0.70711, -8.6, 0.0, 11.0)
 
 [node name="ShadowZone" type="Area3D" parent="." node_paths=PackedStringArray("light")]
-script = ExtResource("3_r")
-data = ExtResource("4_r")
+script = ExtResource("4_r")
+data = ExtResource("5_r")
 light = NodePath("../ShadowLight")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ShadowZone"]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 2.0, 0.0)
 shape = SubResource("BoxShape3D_8")
 
-[node name="FateOverlay" parent="." instance=ExtResource("5_r")]
+[node name="HUD" parent="." instance=ExtResource("6_r")]
 
-[node name="SleepOverlay" parent="." instance=ExtResource("6_r")]
+[node name="FateOverlay" parent="." instance=ExtResource("7_r")]
 
-[node name="DebugHUD" parent="." instance=ExtResource("7_r")]
+[node name="SleepOverlay" parent="." instance=ExtResource("8_r")]
+
+[node name="DebugHUD" parent="." instance=ExtResource("9_r")]

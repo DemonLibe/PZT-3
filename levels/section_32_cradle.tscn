@@ -3,10 +3,12 @@
 [ext_resource type="Script" path="res://levels/level.gd" id="1_r"]
 [ext_resource type="Script" path="res://expedition/squad.gd" id="2_r"]
 [ext_resource type="PackedScene" path="res://world/food_item.tscn" id="3_r"]
-[ext_resource type="PackedScene" path="res://creatures/cradle/cradle.tscn" id="4_r"]
-[ext_resource type="PackedScene" path="res://ui/fate_overlay.tscn" id="5_r"]
-[ext_resource type="PackedScene" path="res://ui/sleep_overlay.tscn" id="6_r"]
-[ext_resource type="PackedScene" path="res://debug/debug_hud.tscn" id="7_r"]
+[ext_resource type="PackedScene" path="res://world/exit_door.tscn" id="4_r"]
+[ext_resource type="PackedScene" path="res://creatures/cradle/cradle.tscn" id="5_r"]
+[ext_resource type="PackedScene" path="res://ui/hud.tscn" id="6_r"]
+[ext_resource type="PackedScene" path="res://ui/fate_overlay.tscn" id="7_r"]
+[ext_resource type="PackedScene" path="res://ui/sleep_overlay.tscn" id="8_r"]
+[ext_resource type="PackedScene" path="res://debug/debug_hud.tscn" id="9_r"]
 
 [sub_resource type="Environment" id="Environment_1"]
 background_mode = 1
@@ -41,6 +43,7 @@ roughness = 1.0
 
 [node name="Section32Cradle" type="Node3D"]
 script = ExtResource("1_r")
+title = "Гигадом, секция 32"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1")
@@ -238,6 +241,9 @@ omni_range = 11.0
 [node name="Player" type="Marker3D" parent="SpawnPoints"]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.0, 17.0)
 
+[node name="ExitDoor" parent="." instance=ExtResource("4_r")]
+transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, 0.0, 0.0, 19.7)
+
 [node name="Npc1" type="Marker3D" parent="SpawnPoints"]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -2.0, 0.0, 18.5)
 
@@ -247,11 +253,13 @@ transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.0,
 [node name="Npc3" type="Marker3D" parent="SpawnPoints"]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 2.0, 0.0, 18.5)
 
-[node name="Cradle" parent="." instance=ExtResource("4_r")]
+[node name="Cradle" parent="." instance=ExtResource("5_r")]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.0, -15.0)
 
-[node name="FateOverlay" parent="." instance=ExtResource("5_r")]
+[node name="HUD" parent="." instance=ExtResource("6_r")]
 
-[node name="SleepOverlay" parent="." instance=ExtResource("6_r")]
+[node name="FateOverlay" parent="." instance=ExtResource("7_r")]
 
-[node name="DebugHUD" parent="." instance=ExtResource("7_r")]
+[node name="SleepOverlay" parent="." instance=ExtResource("8_r")]
+
+[node name="DebugHUD" parent="." instance=ExtResource("9_r")]

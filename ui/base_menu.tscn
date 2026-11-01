@@ -1,0 +1,94 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ui/base_menu.gd" id="1_r"]
+
+[node name="BaseMenu" type="Control"]
+script = ExtResource("1_r")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+color = Color(0.035, 0.035, 0.04, 1.0)
+mouse_filter = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Box" type="VBoxContainer" parent="Center"]
+custom_minimum_size = Vector2(380.0, 0.0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="Center/Box"]
+layout_mode = 2
+text = "ПЗТ-3"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.78, 0.75, 0.68, 1.0)
+theme_override_font_sizes/font_size = 40
+
+[node name="Subtitle" type="Label" parent="Center/Box"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "База экспедиции"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.5, 0.48, 0.43, 1.0)
+theme_override_font_sizes/font_size = 16
+
+[node name="Gap" type="Control" parent="Center/Box"]
+custom_minimum_size = Vector2(0.0, 16.0)
+layout_mode = 2
+
+[node name="Destination" type="OptionButton" parent="Center/Box"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="Center/Box"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Выйти в экспедицию"
+theme_override_font_sizes/font_size = 17
+
+[node name="EncyclopediaButton" type="Button" parent="Center/Box"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Энциклопедия"
+theme_override_font_sizes/font_size = 17
+
+[node name="JournalButton" type="Button" parent="Center/Box"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Журнал последней экспедиции"
+theme_override_font_sizes/font_size = 17
+
+[node name="SettingsButton" type="Button" parent="Center/Box"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Настройки"
+theme_override_font_sizes/font_size = 17
+
+[node name="NetButton" type="Button" parent="Center/Box"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Отладка сети"
+theme_override_font_sizes/font_size = 17
+
+[node name="QuitButton" type="Button" parent="Center/Box"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Выход"
+theme_override_font_sizes/font_size = 17

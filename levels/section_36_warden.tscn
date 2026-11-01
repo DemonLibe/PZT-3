@@ -6,9 +6,11 @@
 [ext_resource type="Resource" path="res://data/warden.tres" id="4_r"]
 [ext_resource type="Script" path="res://anomalies/gigadom/warden/warden_room.gd" id="5_r"]
 [ext_resource type="PackedScene" path="res://creatures/warden/warden.tscn" id="6_r"]
-[ext_resource type="PackedScene" path="res://ui/fate_overlay.tscn" id="7_r"]
-[ext_resource type="PackedScene" path="res://ui/sleep_overlay.tscn" id="8_r"]
-[ext_resource type="PackedScene" path="res://debug/debug_hud.tscn" id="9_r"]
+[ext_resource type="PackedScene" path="res://world/exit_door.tscn" id="7_r"]
+[ext_resource type="PackedScene" path="res://ui/hud.tscn" id="8_r"]
+[ext_resource type="PackedScene" path="res://ui/fate_overlay.tscn" id="9_r"]
+[ext_resource type="PackedScene" path="res://ui/sleep_overlay.tscn" id="10_r"]
+[ext_resource type="PackedScene" path="res://debug/debug_hud.tscn" id="11_r"]
 
 [sub_resource type="Environment" id="Environment_1"]
 background_mode = 1
@@ -58,6 +60,7 @@ point_count = 3
 
 [node name="Section36Warden" type="Node3D"]
 script = ExtResource("1_r")
+title = "Гигадом, секция 36"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1")
@@ -277,6 +280,9 @@ rooms_root = NodePath("../Rooms")
 [node name="Player" type="Marker3D" parent="SpawnPoints"]
 transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, 12.0, 0.0, -5.0)
 
+[node name="ExitDoor" parent="." instance=ExtResource("7_r")]
+transform = Transform3D(0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, 0.0, 0.0, 16.3, 0.0, 0.0)
+
 [node name="Npc1" type="Marker3D" parent="SpawnPoints"]
 transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, 10.5, 0.0, -6.5)
 
@@ -286,8 +292,10 @@ transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, 12.0, 
 [node name="Npc3" type="Marker3D" parent="SpawnPoints"]
 transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, 13.5, 0.0, -6.5)
 
-[node name="FateOverlay" parent="." instance=ExtResource("7_r")]
+[node name="HUD" parent="." instance=ExtResource("8_r")]
 
-[node name="SleepOverlay" parent="." instance=ExtResource("8_r")]
+[node name="FateOverlay" parent="." instance=ExtResource("9_r")]
 
-[node name="DebugHUD" parent="." instance=ExtResource("9_r")]
+[node name="SleepOverlay" parent="." instance=ExtResource("10_r")]
+
+[node name="DebugHUD" parent="." instance=ExtResource("11_r")]

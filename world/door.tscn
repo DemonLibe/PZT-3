@@ -1,0 +1,40 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://world/door.gd" id="1_door"]
+
+[sub_resource type="BoxShape3D" id="Shape_leaf"]
+size = Vector3(1.1, 2.2, 0.08)
+
+[sub_resource type="BoxMesh" id="Mesh_leaf"]
+size = Vector3(1.1, 2.2, 0.08)
+
+[sub_resource type="StandardMaterial3D" id="Material_leaf"]
+albedo_color = Color(0.33, 0.35, 0.36, 1)
+roughness = 0.9
+
+[sub_resource type="BoxShape3D" id="Shape_trigger"]
+size = Vector3(1.4, 2.2, 1.6)
+
+[node name="Door" type="StaticBody3D" node_paths=PackedStringArray("leaf", "shape", "trigger")]
+script = ExtResource("1_door")
+leaf = NodePath("Leaf")
+shape = NodePath("CollisionShape3D")
+trigger = NodePath("Trigger")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+shape = SubResource("Shape_leaf")
+
+[node name="Leaf" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55, 0, 0)
+
+[node name="LeafMesh" type="MeshInstance3D" parent="Leaf"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, 1.1, 0)
+mesh = SubResource("Mesh_leaf")
+surface_material_override/0 = SubResource("Material_leaf")
+
+[node name="Trigger" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+shape = SubResource("Shape_trigger")

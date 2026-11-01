@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://anomalies/base/punishment.gd" id="2_punishment"]
+
+[sub_resource type="Resource" id="Resource_punishment"]
+script = ExtResource("2_punishment")
+type = 0
+
+[resource]
+script = ExtResource("1_data")
+id = &"cradle"
+display_name = "Колыбель"
+location = "Секция 32"
+danger_level = 5
+params = {
+"attack_range": 1.5,
+"forget_after": 8.0,
+"hearing_radius": 25.0,
+"min_noise": 0.15,
+"rush_distance": 8.0,
+"rush_speed": 6.0,
+"walk_speed": 1.5
+}
+punishment = SubResource("Resource_punishment")
+encyclopedia_text = "Высокое существо. Глаз не обнаружено. Пальцы длинные, почти до пола.
+---
+Правило: идёт на чужой звук, к самому громкому источнику в радиусе около 25 м. Тихие шаги не слышит. Не трогает спящих и едящих. Неподвижный беззвучный участник для него не существует. Приблизившись, убивает."

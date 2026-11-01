@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://anomalies/base/punishment.gd" id="2_punishment"]
+
+[sub_resource type="Resource" id="Resource_punishment"]
+script = ExtResource("2_punishment")
+type = 1
+
+[resource]
+script = ExtResource("1_data")
+id = &"warden"
+display_name = "Смотритель"
+location = "Секция 36"
+danger_level = 4
+params = {
+"check_pause": 2.0,
+"npc_forget_door_chance": 0.1,
+"patrol_speed": 2.0
+}
+punishment = SubResource("Resource_punishment")
+encyclopedia_text = "Безликая фигура обходит коридор и проверяет двери комнат.
+---
+Правило: если за незакрытой дверью находится человек, фигура забирает его. Что происходит с забранными, не задокументировано."

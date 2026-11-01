@@ -15,6 +15,9 @@ extends Node
 var _target: Node3D
 var _target_kind: StringName = &""
 var _give_up_timer: float = 0.0
+## Сколько секунд цель загорожена (смотрим на неё, но видим другое).
+var _blocked_time: float = 0.0
+var _sidestep: Vector3 = Vector3.INF
 
 
 func act(delta: float) -> bool:
@@ -28,6 +31,11 @@ func act(delta: float) -> bool:
 		_target = null
 		return false
 	var aim: Vector3 = _aim_point()
+	if _sidestep != Vector3.INF:
+		navigator.move_to(_sidestep)
+		if member.body.global_position.distance_to(_sidestep) < 0.7 or not navigator.is_moving():
+			_sidestep = Vector3.INF
+		return true
 	var flat: Vector3 = aim - member.body.global_position
 	flat.y = 0.0
 	if flat.length() > reach_distance:
@@ -35,7 +43,16 @@ func act(delta: float) -> bool:
 		return true
 	navigator.stop()
 	if navigator.face(aim, delta, 2.0) < 0.08:
-		actions.interact()
+		if member.gaze_target != null and (member.gaze_target == _target or _target.is_ancestor_of(member.gaze_target)):
+			_blocked_time = 0.0
+			actions.interact()
+		else:
+			_blocked_time += delta
+			if _blocked_time > 1.0:
+				# Цель загорожена — обойти сбоку.
+				_blocked_time = 0.0
+				var side: Vector3 = flat.normalized().cross(Vector3.UP) * GameState.rng.randf_range(-1.5, 1.5)
+				_sidestep = member.body.global_position + side
 	return true
 
 
@@ -60,6 +77,8 @@ func _pick_target(delta: float) -> void:
 
 
 func _set_target(target: Node3D, kind: StringName) -> void:
+	_blocked_time = 0.0
+	_sidestep = Vector3.INF
 	_target = target
 	_target_kind = kind
 	_give_up_timer = 15.0

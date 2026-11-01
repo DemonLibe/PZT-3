@@ -25,6 +25,8 @@ var is_vanished: bool = false: set = _set_is_vanished
 var is_sleeping: bool = false: set = _set_is_sleeping
 var is_eating: bool = false
 var is_alone: bool = false
+## Сам открывает и закрывает двери на пути (так ведут себя напарники).
+var auto_doors: bool = false
 var gaze_target: Node = null
 var gaze_time: float = 0.0
 ## Имя цели взгляда — для HUD (синхронизируется, в отличие от самого узла).

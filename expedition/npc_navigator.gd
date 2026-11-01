@@ -13,9 +13,12 @@ var _moving: bool = false
 
 
 func move_to(point: Vector3, run: bool = false) -> void:
+	member.wants_sprint = run
+	# Не пересчитываем путь, если цель почти не сдвинулась.
+	if _moving and agent.target_position.distance_to(point) < 0.3:
+		return
 	agent.target_position = point
 	_moving = true
-	member.wants_sprint = run
 
 
 func stop() -> void:

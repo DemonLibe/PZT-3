@@ -31,6 +31,10 @@ var _repath_timer: float = 0.0
 var _home_set: bool = false
 
 
+func _ready() -> void:
+	member.auto_doors = true
+
+
 func _physics_process(delta: float) -> void:
 	if not NetAuthority.is_authority():
 		return

@@ -43,6 +43,9 @@ var pulse_bpm: float = 72.0
 ## Сдвиг личных часов, мин (Район 13 «Часы»).
 var watch_offset_min: float = 0.0
 var flashlight_on: bool = false: set = _set_flashlight_on
+## Оружие в руках (Q) и открытый огонь — зажигалка (G).
+var weapon_out: bool = false
+var fire_on: bool = false
 ## id статуса -> true. Скрытые статусы тоже здесь (например, ate_dinner).
 var statuses: Dictionary = {}
 ## Что забрало участника: id аномалии.

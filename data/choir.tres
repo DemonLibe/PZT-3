@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://anomalies/base/punishment.gd" id="2_punishment"]
+
+[sub_resource type="Resource" id="Resource_punishment"]
+script = ExtResource("2_punishment")
+type = 1
+
+[resource]
+script = ExtResource("1_data")
+id = &"choir"
+display_name = "Хористы"
+location = "Секция 35"
+danger_level = 3
+params = {
+"hear_radius": 14.0,
+"npc_hum_chance": 0.01
+}
+punishment = SubResource("Resource_punishment")
+encyclopedia_text = "Тип: группа гуманоидных сущностей. Опасность: средняя, заражение поведением.
+В отдалённых помещениях слышно пение — многоголосное, стройное, на несуществующем языке. Источник виден редко: силуэты стоят кругом, лицом друг к другу.
+---
+Правило: не подпевать, даже невольно, даже себе под нос. Наказание: подпевший ощущает непреодолимое желание подойти к кругу. Присоединившиеся занимают место в круге и сами становятся частью пения. Двое подтверждённых случаев — оба человека опознаны по голосу спустя месяцы наблюдения за тем же кругом."

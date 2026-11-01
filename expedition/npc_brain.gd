@@ -43,6 +43,8 @@ func _physics_process(delta: float) -> void:
 		return
 	if _squad == null:
 		_connect_squad()
+	if member.has_status(&"compelled"):
+		return  # напарника ведёт аномалия
 	if not member.can_act() or member.is_eating:
 		navigator.stop()
 		return

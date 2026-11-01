@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"threshold"
+display_name = "Порог"
+location = "Секция 30"
+danger_level = 1
+params = {
+
+}
+encyclopedia_text = "Тип: переходная, не заселена. Опасность: отсутствует.
+Последний район старой структуры. Полностью безопасен по всем 40+ обходам.
+---
+Единственная секция, где ни разу не зафиксировано ни одной аномалии любого типа. Служит точкой перехода в Гигадом — стены здесь без видимого шва переходят из жилой застройки в бетонный коридор неизвестной архитектуры."

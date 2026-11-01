@@ -25,6 +25,8 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	if member.has_status(&"compelled"):
+		return  # ногами управляет не игрок
 	member.move_intent = Input.get_vector(&"move_left", &"move_right", &"move_forward", &"move_back")
 	member.wants_sprint = Input.is_action_pressed(&"sprint")
 	member.wants_crouch = Input.is_action_pressed(&"crouch")
@@ -52,6 +54,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		actions.toggle_rest()
 	elif event.is_action_pressed(&"radio_reply"):
 		actions.radio_reply()
+	elif event.is_action_pressed(&"weapon"):
+		actions.toggle_weapon()
+	elif event.is_action_pressed(&"speak"):
+		actions.speak()
+	elif event.is_action_pressed(&"fire"):
+		actions.toggle_fire()
 	elif event.is_action_pressed(&"squad_follow"):
 		actions.squad_command(Squad.COMMAND_FOLLOW)
 	elif event.is_action_pressed(&"squad_hold"):

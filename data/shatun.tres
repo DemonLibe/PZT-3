@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://anomalies/base/punishment.gd" id="2_punishment"]
+
+[sub_resource type="Resource" id="Resource_punishment"]
+script = ExtResource("2_punishment")
+type = 0
+
+[resource]
+script = ExtResource("1_data")
+id = &"shatun"
+display_name = "Шатун"
+location = "Секция 31"
+danger_level = 5
+params = {
+"path_cone_deg": 40.0,
+"path_distance": 3.5,
+"repick_time": 6.0,
+"walk_speed": 1.8
+}
+punishment = SubResource("Resource_punishment")
+encyclopedia_text = "Тип: существо, патрулирующее. Опасность: критическая.
+По секции безостановочно перемещается существо неустановленного вида — телосложение примерно человеческое, движения неровные, «шатающиеся». Маршрут не определён, не подчиняется видимой логике.
+---
+Правило: не попадаться на пути движения существа. Прямого визуального контакта избежать не всегда возможно — важно не оказаться в створе его движения. Наказание: существо разрывает человека физически, смерть мгновенная.
+Укрытие в комнатах не гарантирует безопасность — Шатун несколько раз менял маршрут, заходя в помещения, где прежде не появлялся."

@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://anomalies/base/punishment.gd" id="2_punishment"]
+
+[sub_resource type="Resource" id="Resource_punishment"]
+script = ExtResource("2_punishment")
+type = 0
+
+[resource]
+script = ExtResource("1_data")
+id = &"barracks"
+display_name = "Казармы"
+location = "Секция 33"
+danger_level = 4
+params = {
+"apology_success": 0.667,
+"interval_max": 40.0,
+"interval_min": 20.0,
+"npc_discipline": 0.75,
+"prapor_speed": 1.6,
+"react_time": 3.0
+}
+punishment = SubResource("Resource_punishment")
+encyclopedia_text = "Тип: сущность, реагирующая на протокол. Опасность: высокая, управляемая при знании правила.
+В радиоузле секции в случайные моменты звучат военные команды.
+---
+Правило: мгновенное и точное исполнение прозвучавшей команды. Наказание: явление, известное как «прапорщик» — разложившийся труп с выпадающими из брюшной полости внутренностями. Полностью подчиняет волю жертвы и гоняет её по строевым командам вплоть до смерти от истощения.
+Единственный подтверждённый способ прерывания: громко и до того, как «прапорщик» завершит приближение, произнести «Виноват, господин прапорщик». Работает не в 100% случаев — оценочно в 6 из 9 задокументированных."

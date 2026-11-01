@@ -27,6 +27,18 @@ func radio_reply() -> void:
 	_request(&"_do_radio_reply")
 
 
+func toggle_weapon() -> void:
+	_request(&"_do_toggle_weapon")
+
+
+func toggle_fire() -> void:
+	_request(&"_do_toggle_fire")
+
+
+func speak() -> void:
+	_request(&"_do_speak")
+
+
 func squad_command(command: StringName) -> void:
 	if NetAuthority.is_authority():
 		_do_squad_command(command)
@@ -99,6 +111,34 @@ func _do_squad_command(command: StringName) -> void:
 func _do_radio_reply() -> void:
 	if _is_sender_owner() and member.is_active():
 		EventBus.radio_replied.emit(member)
+
+
+@rpc("any_peer", "call_remote", "reliable")
+func _do_toggle_weapon() -> void:
+	if _is_sender_owner() and member.can_act():
+		member.weapon_out = not member.weapon_out
+
+
+@rpc("any_peer", "call_remote", "reliable")
+func _do_toggle_fire() -> void:
+	if _is_sender_owner() and member.can_act():
+		member.fire_on = not member.fire_on
+
+
+## Сказать вслух: фразу подсказывает обстановка (узлы в группе speech_context), голос громкий.
+@rpc("any_peer", "call_remote", "reliable")
+func _do_speak() -> void:
+	if not _is_sender_owner() or not member.can_act():
+		return
+	var phrase: String = "Эй! Сюда!"
+	for node in get_tree().get_nodes_in_group(&"speech_context"):
+		var custom: String = node.call(&"speech_phrase", member)
+		if custom != "":
+			phrase = custom
+			break
+	EventBus.member_spoke.emit(member, phrase)
+	EventBus.noise_emitted.emit(member, member.body.global_position, 1.0)
+	EventBus.radio_message.emit(member.display_name, phrase)
 
 
 ## Ищем у цели или её родителей метод interact(member).

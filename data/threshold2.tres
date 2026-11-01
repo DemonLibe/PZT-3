@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"threshold2"
+display_name = "Порог второй"
+location = "Секция 50"
+danger_level = 1
+params = {
+
+}
+encyclopedia_text = "Тип: не установлена. Опасность: неприменимо.
+Последняя из картографированных секций Гигадома. Внешне ничем не отличается от предыдущих: коридоры, комнаты, безопасная еда и вода. Аномалий или существ не зафиксировано ни разу.
+---
+Ни одна группа, прошедшая секцию 50, не вышла на связь и не вернулась с описанием того, что находится дальше. Все известные журналы обрываются одинаково — записью о входе в 51-ю секцию."

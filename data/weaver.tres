@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://anomalies/base/punishment.gd" id="2_punishment"]
+
+[sub_resource type="Resource" id="Resource_punishment"]
+script = ExtResource("2_punishment")
+type = 1
+
+[resource]
+script = ExtResource("1_data")
+id = &"weaver"
+display_name = "Ткач"
+location = "Секция 34"
+danger_level = 4
+params = {
+"fresh_ratio": 0.4,
+"rehang_interval": 40.0,
+"trigger_radius": 0.6
+}
+punishment = SubResource("Resource_punishment")
+encyclopedia_text = "Тип: существо, конструирующее ловушки. Опасность: высокая.
+Под потолком коридоров развешаны нити неустановленного происхождения, визуально — человеческие сухожилия. Нити свежие, эластичные, реагируют на тепло проходящего под ними тела.
+---
+Правило: не проходить под свежеразвешанными (блестящими, не потемневшими) нитями. Наказание: контакт активирует нить — сверху падает свёрток, стремительно оплетающий человека. Что происходит внутри свёртка, ни разу не задокументировано — извлечённые тела не обнаружены."

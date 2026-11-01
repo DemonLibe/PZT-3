@@ -81,6 +81,8 @@ func _spawn_member(data: Dictionary) -> Node:
 		state_sync.set_multiplayer_authority(1)
 	var member: ExpeditionMember = ExpeditionMember.find_on(body)
 	member.display_name = data["name"]
+	if data["name"] == "Мельников":
+		member.weapon_out = true  # сержант ходит с оружием наготове
 	return body
 
 

@@ -18,6 +18,9 @@ signal radio_message(speaker: String, text: String)
 ## Участник ответил по рации (клавиша R).
 @warning_ignore("unused_signal")
 signal radio_replied(member: Node)
+## Участник сказал что-то вслух (клавиша V).
+@warning_ignore("unused_signal")
+signal member_spoke(member: Node, phrase: String)
 
 
 func _ready() -> void:

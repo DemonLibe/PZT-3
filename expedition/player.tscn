@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://expedition/member_motor.gd" id="2_motor"]
 [ext_resource type="Script" path="res://expedition/member_noise.gd" id="3_noise"]
 [ext_resource type="Script" path="res://audio/member_audio.gd" id="9_audio"]
+[ext_resource type="Script" path="res://expedition/member_props.gd" id="12_props"]
 [ext_resource type="Script" path="res://audio/heartbeat.gd" id="10_heart"]
 [ext_resource type="Script" path="res://expedition/member_actions.gd" id="4_actions"]
 [ext_resource type="Script" path="res://expedition/gaze_sensor.gd" id="5_gaze"]
@@ -91,6 +92,12 @@ properties/14/replication_mode = 1
 properties/15/path = NodePath("ExpeditionMember:watch_offset_min")
 properties/15/spawn = true
 properties/15/replication_mode = 1
+properties/16/path = NodePath("ExpeditionMember:weapon_out")
+properties/16/spawn = true
+properties/16/replication_mode = 2
+properties/17/path = NodePath("ExpeditionMember:fire_on")
+properties/17/spawn = true
+properties/17/replication_mode = 2
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
@@ -139,6 +146,10 @@ member = NodePath("../ExpeditionMember")
 
 [node name="MemberNoise" type="Node" parent="." node_paths=PackedStringArray("member")]
 script = ExtResource("3_noise")
+member = NodePath("../ExpeditionMember")
+
+[node name="MemberProps" type="Node" parent="." node_paths=PackedStringArray("member")]
+script = ExtResource("12_props")
 member = NodePath("../ExpeditionMember")
 
 [node name="MemberAudio" type="Node" parent="." node_paths=PackedStringArray("member")]

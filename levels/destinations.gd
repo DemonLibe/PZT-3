@@ -25,6 +25,12 @@ const LIST: Array = [
 	{"title": "Район 27", "path": "res://levels/district_27_companion.tscn"},
 	{"title": "Район 28", "path": "res://levels/district_28_walls.tscn"},
 	{"title": "Район 30", "path": "res://levels/district_30_nothing.tscn"},
+	{"title": "Гигадом, секция 30", "path": "res://levels/section_30_threshold.tscn"},
+	{"title": "Гигадом, секция 31", "path": "res://levels/section_31_shatun.tscn"},
 	{"title": "Гигадом, секция 32", "path": "res://levels/section_32_cradle.tscn"},
+	{"title": "Гигадом, секция 33", "path": "res://levels/section_33_barracks.tscn"},
+	{"title": "Гигадом, секция 34", "path": "res://levels/section_34_weaver.tscn"},
+	{"title": "Гигадом, секция 35", "path": "res://levels/section_35_choir.tscn"},
 	{"title": "Гигадом, секция 36", "path": "res://levels/section_36_warden.tscn"},
+	{"title": "Гигадом, секция 50", "path": "res://levels/section_50_threshold.tscn"},
 ]

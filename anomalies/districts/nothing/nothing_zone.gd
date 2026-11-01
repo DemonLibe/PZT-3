@@ -4,6 +4,9 @@ extends AnomalyZone
 ## В глубине двора застройка переходит в бетонный коридор — дальше Гигадом.
 
 @export var threshold: Area3D
+## Чем заканчивается журнал и какое направление отметить пройденным.
+@export var outcome_text: String = "запись о входе в Район 30. Дальнейших записей нет"
+@export var completed_title: String = "Район 30"
 
 var _done: bool = false
 
@@ -27,7 +30,7 @@ func _on_threshold(body: Node3D) -> void:
 		return
 	_done = true
 	Encyclopedia.open_article(data.id, Encyclopedia.LEVEL_FULL)
-	Encyclopedia.mark_completed("Район 30")
+	Encyclopedia.mark_completed(completed_title)
 	var squad: Squad = get_tree().get_first_node_in_group(&"squad") as Squad
 	var everyone: Array[ExpeditionMember] = squad.active_members() if squad else [member]
-	GameState.end_expedition("запись о входе в Район 30. Дальнейших записей нет", everyone, [])
+	GameState.end_expedition(outcome_text, everyone, [])

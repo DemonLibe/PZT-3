@@ -51,3 +51,12 @@ warden_parts = [
 ]
 creature("Warden", "res://creatures/warden/warden.gd", "res://data/warden.tres", 2.2, 0.35, 1,
          warden_parts, (0.28, 0.28, 0.3), step_interval=0.6).save(ROOT + "/creatures/warden/warden.tscn")
+
+shatun_parts = [
+    ("Body", "CapsuleMesh", {"radius": 0.3, "height": 1.9}, (0.1, 1.0, 0)),
+    ("Head", "SphereMesh", {"radius": 0.16, "height": 0.32}, (0.25, 1.95, -0.05)),
+    ("ArmL", "BoxMesh", {"size": V3(0.08, 1.0, 0.08)}, (-0.35, 1.1, 0)),
+    ("ArmR", "BoxMesh", {"size": V3(0.08, 1.2, 0.08)}, (0.5, 0.9, 0.1)),
+]
+creature("Shatun", "res://creatures/shatun/shatun.gd", "res://data/shatun.tres", 2.0, 0.35, 5,
+         shatun_parts, (0.45, 0.38, 0.33), step_interval=0.55).save(ROOT + "/creatures/shatun/shatun.tscn")

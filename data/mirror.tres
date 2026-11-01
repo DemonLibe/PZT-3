@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://anomalies/base/punishment.gd" id="2_punishment"]
+
+[sub_resource type="Resource" id="Resource_punishment"]
+script = ExtResource("2_punishment")
+type = 1
+
+[resource]
+script = ExtResource("1_data")
+id = &"mirror"
+display_name = "Зеркало"
+location = "Район 5"
+danger_level = 4
+params = {
+"direct_cone_deg": 10.0,
+"flash_multiplier": 3.0,
+"mimic_delay": 0.5,
+"reset_after": 1.0,
+"safe_time": 4.0,
+"vanish_time": 15.0
+}
+punishment = SubResource("Resource_punishment")
+encyclopedia_text = "Во всех окнах района зафиксировано одно и то же изображение: улица района, снятая с одной неподвижной точки. Источник изображения не установлен. Точка съёмки на местности не обнаружена.
+---
+Правило: прямой взгляд в окно до 4 с безопасен. С 4 до 15 с изображение повторяет движения наблюдателя с задержкой около 0,5 с. После 15 с наблюдатель пропадает. Стекло окна, в которое он смотрел, треснуто изнутри.
+Отсчёт сбрасывается, если отвести взгляд дольше чем на 1 с. Взгляд краем глаза отсчёт не увеличивает. Вспышка фотокамеры ускоряет отсчёт втрое."

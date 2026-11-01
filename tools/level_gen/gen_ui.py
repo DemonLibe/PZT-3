@@ -80,6 +80,7 @@ def slider(name, text, lo, hi, step):
     label(sc, name + "Label", ".", text, 15, DIM, align=0)
     sc.node(name, "HSlider", ".", unique_name_in_owner=True, layout_mode=2, min_value=lo, max_value=hi, step=step)
 slider("Sensitivity", "Чувствительность мыши", 0.2, 3.0, 0.05)
+slider("Brightness", "Яркость", 0.6, 3.0, 0.05)
 slider("Master", "Общая громкость", 0.0, 1.0, 0.01)
 slider("Ambient", "Фон", 0.0, 1.0, 0.01)
 slider("Sfx", "Звуки", 0.0, 1.0, 0.01)

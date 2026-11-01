@@ -10,11 +10,14 @@ var master_volume: float = 0.8
 var ambient_volume: float = 0.8
 var sfx_volume: float = 1.0
 var ps1_enabled: bool = true
+## Яркость картинки (1 — как задумано в уровне).
+var brightness: float = 1.6
 var fullscreen: bool = false
 
 
 func _ready() -> void:
 	load_settings()
+	get_tree().node_added.connect(_on_node_added)
 	apply()
 
 
@@ -23,6 +26,8 @@ func apply() -> void:
 	_set_bus_volume(&"Ambient", ambient_volume)
 	_set_bus_volume(&"SFX", sfx_volume)
 	RetroRender.set_enabled(ps1_enabled)
+	for node in get_tree().root.find_children("*", "WorldEnvironment", true, false):
+		_apply_brightness(node)
 	if DisplayServer.get_name() != "headless":
 		var mode: DisplayServer.WindowMode = DisplayServer.WINDOW_MODE_FULLSCREEN if fullscreen else DisplayServer.WINDOW_MODE_WINDOWED
 		if DisplayServer.window_get_mode() != mode:
@@ -32,7 +37,7 @@ func apply() -> void:
 
 func save_settings() -> void:
 	var config: ConfigFile = ConfigFile.new()
-	for key in ["mouse_sensitivity", "master_volume", "ambient_volume", "sfx_volume", "ps1_enabled", "fullscreen"]:
+	for key in ["mouse_sensitivity", "master_volume", "ambient_volume", "sfx_volume", "ps1_enabled", "fullscreen", "brightness"]:
 		config.set_value("settings", key, get(key))
 	config.save(PATH)
 
@@ -44,6 +49,18 @@ func load_settings() -> void:
 	for key in config.get_section_keys("settings"):
 		if key in self:
 			set(key, config.get_value("settings", key))
+
+
+func _on_node_added(node: Node) -> void:
+	if node is WorldEnvironment:
+		_apply_brightness.call_deferred(node)
+
+
+func _apply_brightness(world: WorldEnvironment) -> void:
+	if not is_instance_valid(world) or world.environment == null:
+		return
+	world.environment.adjustment_enabled = true
+	world.environment.adjustment_brightness = brightness
 
 
 func _set_bus_volume(bus_name: StringName, linear: float) -> void:

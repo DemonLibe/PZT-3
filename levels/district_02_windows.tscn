@@ -1,15 +1,18 @@
 [gd_scene format=3]
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_r"]
-[ext_resource type="Script" path="res://expedition/squad.gd" id="2_r"]
-[ext_resource type="PackedScene" path="res://world/exit_door.tscn" id="3_r"]
-[ext_resource type="Script" path="res://anomalies/districts/windows/lit_window.gd" id="4_r"]
-[ext_resource type="Script" path="res://anomalies/districts/windows/windows_zone.gd" id="5_r"]
-[ext_resource type="Resource" path="res://data/windows.tres" id="6_r"]
-[ext_resource type="PackedScene" path="res://ui/hud.tscn" id="7_r"]
-[ext_resource type="PackedScene" path="res://ui/fate_overlay.tscn" id="8_r"]
-[ext_resource type="PackedScene" path="res://ui/sleep_overlay.tscn" id="9_r"]
-[ext_resource type="PackedScene" path="res://debug/debug_hud.tscn" id="10_r"]
+[ext_resource type="Script" path="res://audio/ambience.gd" id="2_r"]
+[ext_resource type="AudioStream" path="res://audio/sfx/ambient_district.wav" id="3_r"]
+[ext_resource type="Script" path="res://expedition/squad.gd" id="4_r"]
+[ext_resource type="PackedScene" path="res://world/exit_door.tscn" id="5_r"]
+[ext_resource type="Script" path="res://anomalies/districts/windows/lit_window.gd" id="6_r"]
+[ext_resource type="Script" path="res://anomalies/districts/windows/windows_zone.gd" id="7_r"]
+[ext_resource type="Resource" path="res://data/windows.tres" id="8_r"]
+[ext_resource type="PackedScene" path="res://ui/hud.tscn" id="9_r"]
+[ext_resource type="PackedScene" path="res://ui/pause_menu.tscn" id="10_r"]
+[ext_resource type="PackedScene" path="res://ui/fate_overlay.tscn" id="11_r"]
+[ext_resource type="PackedScene" path="res://ui/sleep_overlay.tscn" id="12_r"]
+[ext_resource type="PackedScene" path="res://debug/debug_hud.tscn" id="13_r"]
 
 [sub_resource type="Environment" id="Environment_1"]
 background_mode = 1
@@ -81,6 +84,11 @@ navigation_mesh = SubResource("NavigationMesh_2")
 
 [node name="Geometry" type="Node3D" parent="NavigationRegion3D"]
 
+[node name="Ambience" type="AudioStreamPlayer" parent="."]
+script = ExtResource("2_r")
+stream = ExtResource("3_r")
+volume_db = -8.0
+
 [node name="SpawnPoints" type="Node3D" parent="."]
 
 [node name="Members" type="Node3D" parent="."]
@@ -89,10 +97,10 @@ navigation_mesh = SubResource("NavigationMesh_2")
 spawn_path = NodePath("../Members")
 
 [node name="Squad" type="Node" parent="." node_paths=PackedStringArray("members_root")]
-script = ExtResource("2_r")
+script = ExtResource("4_r")
 members_root = NodePath("../Members")
 
-[node name="ExitDoor" parent="." instance=ExtResource("3_r")]
+[node name="ExitDoor" parent="." instance=ExtResource("5_r")]
 transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, 0.0, 0.0, 21.8)
 
 [node name="Ground" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
@@ -333,7 +341,7 @@ transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 1.5, 0.0,
 
 [node name="LitWindow1" type="Node3D" parent="Windows" node_paths=PackedStringArray("light", "glow")]
 transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -5.14, 3.6, -13.2)
-script = ExtResource("4_r")
+script = ExtResource("6_r")
 light = NodePath("Light")
 glow = NodePath("Glow")
 
@@ -348,7 +356,7 @@ omni_range = 5.0
 
 [node name="LitWindow2" type="Node3D" parent="Windows" node_paths=PackedStringArray("light", "glow")]
 transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -5.14, 3.6, -10.4)
-script = ExtResource("4_r")
+script = ExtResource("6_r")
 light = NodePath("Light")
 glow = NodePath("Glow")
 
@@ -363,7 +371,7 @@ omni_range = 5.0
 
 [node name="LitWindow3" type="Node3D" parent="Windows" node_paths=PackedStringArray("light", "glow")]
 transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -5.14, 3.6, -1.2)
-script = ExtResource("4_r")
+script = ExtResource("6_r")
 light = NodePath("Light")
 glow = NodePath("Glow")
 
@@ -378,7 +386,7 @@ omni_range = 5.0
 
 [node name="LitWindow4" type="Node3D" parent="Windows" node_paths=PackedStringArray("light", "glow")]
 transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -5.14, 3.6, 1.6)
-script = ExtResource("4_r")
+script = ExtResource("6_r")
 light = NodePath("Light")
 glow = NodePath("Glow")
 
@@ -393,7 +401,7 @@ omni_range = 5.0
 
 [node name="LitWindow5" type="Node3D" parent="Windows" node_paths=PackedStringArray("light", "glow")]
 transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -5.14, 3.6, 10.8)
-script = ExtResource("4_r")
+script = ExtResource("6_r")
 light = NodePath("Light")
 glow = NodePath("Glow")
 
@@ -408,7 +416,7 @@ omni_range = 5.0
 
 [node name="LitWindow6" type="Node3D" parent="Windows" node_paths=PackedStringArray("light", "glow")]
 transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -5.14, 3.6, 13.6)
-script = ExtResource("4_r")
+script = ExtResource("6_r")
 light = NodePath("Light")
 glow = NodePath("Glow")
 
@@ -423,7 +431,7 @@ omni_range = 5.0
 
 [node name="LitWindow7" type="Node3D" parent="Windows" node_paths=PackedStringArray("light", "glow")]
 transform = Transform3D(0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, 0.0, 0.0, 5.14, 3.6, -13.2)
-script = ExtResource("4_r")
+script = ExtResource("6_r")
 light = NodePath("Light")
 glow = NodePath("Glow")
 
@@ -438,7 +446,7 @@ omni_range = 5.0
 
 [node name="LitWindow8" type="Node3D" parent="Windows" node_paths=PackedStringArray("light", "glow")]
 transform = Transform3D(0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, 0.0, 0.0, 5.14, 3.6, -10.4)
-script = ExtResource("4_r")
+script = ExtResource("6_r")
 light = NodePath("Light")
 glow = NodePath("Glow")
 
@@ -453,7 +461,7 @@ omni_range = 5.0
 
 [node name="LitWindow9" type="Node3D" parent="Windows" node_paths=PackedStringArray("light", "glow")]
 transform = Transform3D(0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, 0.0, 0.0, 5.14, 3.6, -1.2)
-script = ExtResource("4_r")
+script = ExtResource("6_r")
 light = NodePath("Light")
 glow = NodePath("Glow")
 
@@ -468,7 +476,7 @@ omni_range = 5.0
 
 [node name="LitWindow10" type="Node3D" parent="Windows" node_paths=PackedStringArray("light", "glow")]
 transform = Transform3D(0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, 0.0, 0.0, 5.14, 3.6, 1.6)
-script = ExtResource("4_r")
+script = ExtResource("6_r")
 light = NodePath("Light")
 glow = NodePath("Glow")
 
@@ -483,7 +491,7 @@ omni_range = 5.0
 
 [node name="LitWindow11" type="Node3D" parent="Windows" node_paths=PackedStringArray("light", "glow")]
 transform = Transform3D(0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, 0.0, 0.0, 5.14, 3.6, 10.8)
-script = ExtResource("4_r")
+script = ExtResource("6_r")
 light = NodePath("Light")
 glow = NodePath("Glow")
 
@@ -498,7 +506,7 @@ omni_range = 5.0
 
 [node name="LitWindow12" type="Node3D" parent="Windows" node_paths=PackedStringArray("light", "glow")]
 transform = Transform3D(0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, 0.0, 0.0, 5.14, 3.6, 13.6)
-script = ExtResource("4_r")
+script = ExtResource("6_r")
 light = NodePath("Light")
 glow = NodePath("Glow")
 
@@ -512,18 +520,20 @@ light_energy = 0.9
 omni_range = 5.0
 
 [node name="WindowsZone" type="Area3D" parent="." node_paths=PackedStringArray("windows_root")]
-script = ExtResource("5_r")
-data = ExtResource("6_r")
+script = ExtResource("7_r")
+data = ExtResource("8_r")
 windows_root = NodePath("../Windows")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WindowsZone"]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 4.0, 0.0)
 shape = SubResource("BoxShape3D_12")
 
-[node name="HUD" parent="." instance=ExtResource("7_r")]
+[node name="HUD" parent="." instance=ExtResource("9_r")]
 
-[node name="FateOverlay" parent="." instance=ExtResource("8_r")]
+[node name="PauseMenu" parent="." instance=ExtResource("10_r")]
 
-[node name="SleepOverlay" parent="." instance=ExtResource("9_r")]
+[node name="FateOverlay" parent="." instance=ExtResource("11_r")]
 
-[node name="DebugHUD" parent="." instance=ExtResource("10_r")]
+[node name="SleepOverlay" parent="." instance=ExtResource("12_r")]
+
+[node name="DebugHUD" parent="." instance=ExtResource("13_r")]

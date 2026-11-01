@@ -1,0 +1,42 @@
+extends TestHarness
+
+func _ready() -> void:
+	var level: Node = load("res://levels/district_05_mirror.tscn").instantiate()
+	level.npc_count = 0
+	add_child(level)
+	await frames(5)
+	var m := local_member()
+	var zone: MirrorZone = level.get_node("MirrorZone")
+	var view: MirrorView = level.get_node("MirrorView")
+	var win: MirrorWindow = level.get_node("Windows/MirrorWindow1")
+	m.body.global_position = Vector3(-1.5, 0, -13.0)
+	await frames(3)
+	face(m, win.global_position)
+	await wait(3.0)
+	check(m.is_active() and view.mimic_member == null, "3 с: безопасно, картинка неподвижна")
+	await wait(1.6)
+	check(view.mimic_member == m, "4.6 с: картинка повторяет движения")
+	var cam_before: Vector3 = view.camera.global_position
+	m.body.global_position += Vector3(0, 0, 1.0)
+	await wait(0.2)
+	check(view.camera.global_position.distance_to(cam_before) < 0.01, "через 0.2 с камера ещё не сдвинулась (задержка)")
+	await wait(0.6)
+	check(view.camera.global_position.distance_to(cam_before) > 0.9, "через 0.8 с камера повторила шаг")
+	face(m, win.global_position)
+	# Отвести взгляд на 1.5 с — сброс
+	face(m, Vector3(5, 1.7, -30))
+	await wait(1.5)
+	check(view.mimic_member == null, "отвёл взгляд 1.5 с: сброс, мимикрия выключена")
+	check(zone.get_debug_text(m).begins_with("Зеркало: взгляд 0.0"), "таймер сброшен: " + zone.get_debug_text(m))
+	# Короткий отвод (0.5 с) не сбрасывает
+	face(m, win.global_position)
+	await wait(2.0)
+	face(m, Vector3(5, 1.7, -30))
+	await wait(0.5)
+	face(m, win.global_position)
+	await wait(0.2)
+	check(zone.get_debug_text(m).begins_with("Зеркало: взгляд 2."), "отвод 0.5 с не сбросил: " + zone.get_debug_text(m))
+	await wait(13.2)
+	check(m.is_vanished, "после 15 с прямого взгляда — пропал")
+	check(win.is_cracked, "окно треснуло изнутри")
+	finish()

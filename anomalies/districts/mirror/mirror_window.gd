@@ -2,6 +2,7 @@ class_name MirrorWindow
 extends MeshInstance3D
 ## Окно «Зеркала». Стекло показывает картинку из MirrorView.
 
+const CRACK_SOUND: AudioStream = preload("res://audio/sfx/light_off.wav")
 const GLASS_SHADER: Shader = preload("res://anomalies/districts/mirror/mirror_glass.gdshader")
 
 var is_cracked: bool = false
@@ -24,4 +25,5 @@ func set_view_texture(texture: Texture2D) -> void:
 @rpc("authority", "call_local", "reliable")
 func crack() -> void:
 	is_cracked = true
+	Sfx.play_at(self, CRACK_SOUND, global_position, -4.0, 0.45)
 	_material.set_shader_parameter(&"cracked", 1.0)

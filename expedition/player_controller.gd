@@ -20,6 +20,7 @@ func _ready() -> void:
 		camera.current = _is_local
 	if _is_local:
 		member.add_to_group(&"local_member")
+		add_to_group(&"local_controller")
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 
@@ -56,4 +57,4 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _sensitivity_scale() -> float:
-	return 1.0
+	return Settings.mouse_sensitivity

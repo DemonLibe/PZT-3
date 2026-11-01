@@ -31,12 +31,12 @@ func _check_rule(_member: ExpeditionMember, _delta: float) -> void:
 	pass
 
 
-## Участник вошёл в зону. Можно переопределить.
+## Участник вошёл в зону (вызывается только на авторитетной стороне).
 func _on_member_entered(_member: ExpeditionMember) -> void:
 	pass
 
 
-## Участник вышел из зоны. Можно переопределить.
+## Участник вышел из зоны (вызывается только на авторитетной стороне).
 func _on_member_exited(_member: ExpeditionMember) -> void:
 	pass
 
@@ -67,7 +67,8 @@ func _on_body_entered(body: Node3D) -> void:
 	var member: ExpeditionMember = ExpeditionMember.find_on(body)
 	if member and not members.has(member):
 		members.append(member)
-		_on_member_entered(member)
+		if NetAuthority.is_authority():
+			_on_member_entered(member)
 
 
 func _on_body_exited(body: Node3D) -> void:
@@ -75,5 +76,5 @@ func _on_body_exited(body: Node3D) -> void:
 	if member and members.has(member):
 		members.erase(member)
 		# Тело удаляют со сцены (выход с уровня, отключение) — реагировать не нужно.
-		if body.is_inside_tree() and member.is_inside_tree() and is_inside_tree():
+		if NetAuthority.is_authority() and body.is_inside_tree() and member.is_inside_tree() and is_inside_tree():
 			_on_member_exited(member)

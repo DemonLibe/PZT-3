@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" path="res://creatures/cradle/cradle.gd" id="1_r"]
 [ext_resource type="Resource" path="res://data/cradle.tres" id="2_r"]
+[ext_resource type="Script" path="res://audio/creature_audio.gd" id="3_r"]
+[ext_resource type="AudioStream" path="res://audio/sfx/lullaby.wav" id="4_r"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_1"]
 properties/0/path = NodePath(".:position")
@@ -126,3 +128,9 @@ height = 2.9
 [node name="Sync" type="MultiplayerSynchronizer" parent="."]
 root_path = NodePath("..")
 replication_config = SubResource("SceneReplicationConfig_1")
+
+[node name="CreatureAudio" type="Node" parent="." node_paths=PackedStringArray("creature")]
+script = ExtResource("3_r")
+creature = NodePath("..")
+step_interval = 0.9
+hum = ExtResource("4_r")

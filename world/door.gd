@@ -6,6 +6,8 @@ extends StaticBody3D
 
 signal opened_changed(is_open: bool)
 
+const SOUND: AudioStream = preload("res://audio/sfx/door.wav")
+
 ## Створка, которая поворачивается (её центр вращения — петли).
 @export var leaf: Node3D
 ## Форма столкновения створки — поворачивается вместе с ней.
@@ -44,6 +46,7 @@ func interact(_member: ExpeditionMember) -> void:
 @rpc("authority", "call_local", "reliable")
 func set_open(value: bool) -> void:
 	is_open = value
+	Sfx.play_at(self, SOUND, global_position + Vector3(0, 1.1, 0), -6.0, 1.1 if value else 0.85)
 	var tween: Tween = create_tween()
 	tween.tween_method(_set_hinge_angle, _hinge_angle, deg_to_rad(open_angle_deg) if value else 0.0, 0.35)
 	opened_changed.emit(value)

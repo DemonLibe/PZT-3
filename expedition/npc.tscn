@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://expedition/expedition_member.gd" id="1_member"]
 [ext_resource type="Script" path="res://expedition/member_motor.gd" id="2_motor"]
 [ext_resource type="Script" path="res://expedition/member_noise.gd" id="3_noise"]
+[ext_resource type="Script" path="res://audio/member_audio.gd" id="9_audio"]
 [ext_resource type="Script" path="res://expedition/member_actions.gd" id="4_actions"]
 [ext_resource type="Script" path="res://expedition/gaze_sensor.gd" id="5_gaze"]
 [ext_resource type="Script" path="res://expedition/npc_brain.gd" id="6_brain"]
@@ -125,6 +126,10 @@ member = NodePath("../ExpeditionMember")
 
 [node name="MemberNoise" type="Node" parent="." node_paths=PackedStringArray("member")]
 script = ExtResource("3_noise")
+member = NodePath("../ExpeditionMember")
+
+[node name="MemberAudio" type="Node" parent="." node_paths=PackedStringArray("member")]
+script = ExtResource("9_audio")
 member = NodePath("../ExpeditionMember")
 
 [node name="MemberActions" type="Node" parent="." node_paths=PackedStringArray("member")]

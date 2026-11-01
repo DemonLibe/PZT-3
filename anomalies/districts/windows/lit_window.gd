@@ -2,6 +2,8 @@ class_name LitWindow
 extends Node3D
 ## Окно с тёплым светом. Гаснет и загорается по команде хоста.
 
+const OFF_SOUND: AudioStream = preload("res://audio/sfx/light_off.wav")
+
 @export var light: Light3D
 @export var glow: GeometryInstance3D
 
@@ -23,3 +25,5 @@ func set_lit(value: bool) -> void:
 		light.light_energy = _light_energy if value else 0.0
 	if glow:
 		glow.visible = value
+	if not value:
+		Sfx.play_at(self, OFF_SOUND, global_position, -14.0, Sfx.random_pitch())

@@ -17,7 +17,12 @@ func _ready() -> void:
 	%StartButton.pressed.connect(func() -> void: GameState.begin_expedition(Destinations.LIST[%Destination.selected]))
 	%EncyclopediaButton.pressed.connect(get_tree().change_scene_to_file.bind(ENCYCLOPEDIA_SCENE))
 	%JournalButton.pressed.connect(get_tree().change_scene_to_file.bind(GameState.JOURNAL_SCENE))
-	%SettingsButton.pressed.connect(get_tree().change_scene_to_file.bind(SETTINGS_SCENE))
+	%SettingsButton.pressed.connect(_open_settings)
 	%NetButton.pressed.connect(get_tree().change_scene_to_file.bind(NET_SCENE))
 	%QuitButton.pressed.connect(get_tree().quit)
 	%StartButton.grab_focus()
+
+
+func _open_settings() -> void:
+	preload("res://ui/settings_menu.gd").return_scene = scene_file_path
+	get_tree().change_scene_to_file(SETTINGS_SCENE)

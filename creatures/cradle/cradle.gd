@@ -39,8 +39,9 @@ func perceives(member: ExpeditionMember) -> bool:
 
 
 func get_debug_text(_member: ExpeditionMember) -> String:
-	var who: String = _target.display_name if _target else "—"
-	return "Колыбель: %s, цель %s, %.1f с с последнего звука" % [State.keys()[state], who, _clock - _last_heard]
+	if _target == null:
+		return "Колыбель: %s, никого не слышит" % State.keys()[state]
+	return "Колыбель: %s, цель %s, %.1f с с последнего звука" % [State.keys()[state], _target.display_name, _clock - _last_heard]
 
 
 func _try_attack() -> void:

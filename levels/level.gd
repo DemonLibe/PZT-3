@@ -4,7 +4,12 @@ extends Node3D
 ## участников экспедиции через MultiplayerSpawner (одинаково в соло и по сети).
 
 const PLAYER_SCENE: PackedScene = preload("res://expedition/player.tscn")
+const NPC_SCENE: PackedScene = preload("res://expedition/npc.tscn")
 const HOST_NAME: String = "Руководитель"
+const NPC_NAMES: PackedStringArray = ["Сато", "Кимура", "Огава"]
+
+## Сколько напарников-NPC выходит в экспедицию.
+@export var npc_count: int = 3
 
 @onready var members_root: Node3D = $Members
 @onready var _spawner: MultiplayerSpawner = $MemberSpawner
@@ -15,7 +20,8 @@ const HOST_NAME: String = "Руководитель"
 func _ready() -> void:
 	_spawner.spawn_function = _spawn_member
 	if _navigation:
-		_navigation.bake_navigation_mesh(false)
+		# CSG собирает геометрию отложенно — строим навигацию после этого.
+		_navigation.bake_navigation_mesh.call_deferred(false)
 	NetAuthority.session_failed.connect(_on_session_failed)
 	NetAuthority.begin_session()
 	# Смена сетевого пира сбрасывает спавнер — заново указываем, куда выпускать.
@@ -28,12 +34,16 @@ func _ready() -> void:
 	_spawn_player(1)
 	for peer_id in multiplayer.get_peers():
 		_spawn_player(peer_id)
+	for i in npc_count:
+		var spawn: Transform3D = _spawn_transform("Npc%d" % (i + 1))
+		_spawner.spawn({"kind": "npc", "peer": 1, "id": "npc_%d" % (i + 1),
+			"name": NPC_NAMES[i % NPC_NAMES.size()], "transform": spawn})
 
 
 func _spawn_player(peer_id: int) -> void:
 	if members_root.has_node(str(peer_id)):
 		return
-	var index: int = members_root.get_child_count()
+	var index: int = members_root.get_children().filter(func(n: Node) -> bool: return not n.name.begins_with("npc")).size()
 	var spawn: Transform3D = _spawn_transform("Player").translated(Vector3(1.2 * index, 0.0, 0.0))
 	var display: String = HOST_NAME if peer_id == 1 else "Участник %d" % (index + 1)
 	_spawner.spawn({"kind": "player", "peer": peer_id, "name": display, "transform": spawn})
@@ -41,8 +51,9 @@ func _spawn_player(peer_id: int) -> void:
 
 ## Вызывается на всех машинах: собирает тело участника по данным от хоста.
 func _spawn_member(data: Dictionary) -> Node:
-	var body: Node3D = PLAYER_SCENE.instantiate()
-	body.name = str(data["peer"])
+	var is_npc: bool = data["kind"] == "npc"
+	var body: Node3D = (NPC_SCENE if is_npc else PLAYER_SCENE).instantiate()
+	body.name = String(data["id"]) if is_npc else str(data["peer"])
 	body.transform = data["transform"]
 	body.set_multiplayer_authority(int(data["peer"]))
 	var state_sync: Node = body.get_node_or_null("StateSync")

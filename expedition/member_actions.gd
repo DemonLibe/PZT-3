@@ -23,6 +23,13 @@ func toggle_rest() -> void:
 	_request(&"_do_toggle_rest")
 
 
+func squad_command(command: StringName) -> void:
+	if NetAuthority.is_authority():
+		_do_squad_command(command)
+	else:
+		_do_squad_command.rpc_id(1, command)
+
+
 func _request(method: StringName) -> void:
 	if NetAuthority.is_authority():
 		call(method)
@@ -73,6 +80,15 @@ func _do_toggle_rest() -> void:
 	if member.is_sleeping and member.has_status(&"forced_sleep"):
 		return
 	member.set_sleeping(not member.is_sleeping)
+
+
+@rpc("any_peer", "call_remote", "reliable")
+func _do_squad_command(command: StringName) -> void:
+	if not _is_sender_owner() or not member.can_act():
+		return
+	var squad: Squad = get_tree().get_first_node_in_group(&"squad") as Squad
+	if squad:
+		squad.issue_command(command, member)
 
 
 ## Ищем у цели или её родителей метод interact(member).

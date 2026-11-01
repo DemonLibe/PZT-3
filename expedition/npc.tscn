@@ -1,0 +1,155 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://expedition/expedition_member.gd" id="1_member"]
+[ext_resource type="Script" path="res://expedition/member_motor.gd" id="2_motor"]
+[ext_resource type="Script" path="res://expedition/member_noise.gd" id="3_noise"]
+[ext_resource type="Script" path="res://expedition/member_actions.gd" id="4_actions"]
+[ext_resource type="Script" path="res://expedition/gaze_sensor.gd" id="5_gaze"]
+[ext_resource type="Script" path="res://expedition/npc_brain.gd" id="6_brain"]
+[ext_resource type="Script" path="res://expedition/npc_navigator.gd" id="7_navigator"]
+
+[sub_resource type="CapsuleShape3D" id="Shape_body"]
+radius = 0.35
+height = 1.8
+
+[sub_resource type="CapsuleMesh" id="Mesh_body"]
+radius = 0.35
+height = 1.8
+
+[sub_resource type="StandardMaterial3D" id="Material_body"]
+albedo_color = Color(0.42, 0.38, 0.3, 1)
+roughness = 1.0
+
+[sub_resource type="SceneReplicationConfig" id="Replication_body"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("Head:rotation")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("Head:position")
+properties/3/spawn = true
+properties/3/replication_mode = 2
+properties/4/path = NodePath("ExpeditionMember:motion")
+properties/4/spawn = true
+properties/4/replication_mode = 2
+
+[sub_resource type="SceneReplicationConfig" id="Replication_state"]
+properties/0/path = NodePath("ExpeditionMember:fate_cause")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath("ExpeditionMember:is_alive")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath("ExpeditionMember:is_vanished")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+properties/3/path = NodePath("ExpeditionMember:is_sleeping")
+properties/3/spawn = true
+properties/3/replication_mode = 2
+properties/4/path = NodePath("ExpeditionMember:is_eating")
+properties/4/spawn = true
+properties/4/replication_mode = 2
+properties/5/path = NodePath("ExpeditionMember:is_alone")
+properties/5/spawn = true
+properties/5/replication_mode = 2
+properties/6/path = NodePath("ExpeditionMember:gaze_time")
+properties/6/spawn = true
+properties/6/replication_mode = 1
+properties/7/path = NodePath("ExpeditionMember:gaze_label")
+properties/7/spawn = true
+properties/7/replication_mode = 2
+properties/8/path = NodePath("ExpeditionMember:noise_level")
+properties/8/spawn = true
+properties/8/replication_mode = 2
+properties/9/path = NodePath("ExpeditionMember:drowsiness")
+properties/9/spawn = true
+properties/9/replication_mode = 1
+properties/10/path = NodePath("ExpeditionMember:panic")
+properties/10/spawn = true
+properties/10/replication_mode = 1
+properties/11/path = NodePath("ExpeditionMember:flashlight_on")
+properties/11/spawn = true
+properties/11/replication_mode = 2
+properties/12/path = NodePath("ExpeditionMember:statuses")
+properties/12/spawn = true
+properties/12/replication_mode = 2
+properties/13/path = NodePath("ExpeditionMember:wake_taps")
+properties/13/spawn = true
+properties/13/replication_mode = 2
+
+[node name="NPC" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("Shape_body")
+
+[node name="BodyMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+mesh = SubResource("Mesh_body")
+surface_material_override/0 = SubResource("Material_body")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+
+[node name="Flashlight" type="SpotLight3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.15, 0)
+visible = false
+light_color = Color(1, 0.95, 0.85, 1)
+light_energy = 3.0
+shadow_enabled = true
+spot_range = 18.0
+spot_angle = 22.0
+
+[node name="GazeSensor" type="RayCast3D" parent="Head" node_paths=PackedStringArray("member")]
+target_position = Vector3(0, 0, -30)
+collision_mask = 15
+script = ExtResource("5_gaze")
+member = NodePath("../../ExpeditionMember")
+
+[node name="ExpeditionMember" type="Node" parent="." node_paths=PackedStringArray("head", "flashlight")]
+script = ExtResource("1_member")
+display_name = "Напарник"
+head = NodePath("../Head")
+flashlight = NodePath("../Head/Flashlight")
+
+[node name="MemberMotor" type="Node" parent="." node_paths=PackedStringArray("member")]
+script = ExtResource("2_motor")
+member = NodePath("../ExpeditionMember")
+
+[node name="MemberNoise" type="Node" parent="." node_paths=PackedStringArray("member")]
+script = ExtResource("3_noise")
+member = NodePath("../ExpeditionMember")
+
+[node name="MemberActions" type="Node" parent="." node_paths=PackedStringArray("member")]
+script = ExtResource("4_actions")
+member = NodePath("../ExpeditionMember")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.6
+target_desired_distance = 0.6
+radius = 0.4
+height = 1.8
+
+[node name="NPCNavigator" type="Node" parent="." node_paths=PackedStringArray("member", "agent")]
+script = ExtResource("7_navigator")
+member = NodePath("../ExpeditionMember")
+agent = NodePath("../NavigationAgent3D")
+
+[node name="NPCBrain" type="Node" parent="." node_paths=PackedStringArray("member", "navigator")]
+script = ExtResource("6_brain")
+member = NodePath("../ExpeditionMember")
+navigator = NodePath("../NPCNavigator")
+
+[node name="BodySync" type="MultiplayerSynchronizer" parent="."]
+root_path = NodePath("..")
+replication_config = SubResource("Replication_body")
+
+[node name="StateSync" type="MultiplayerSynchronizer" parent="."]
+root_path = NodePath("..")
+replication_config = SubResource("Replication_state")

@@ -10,6 +10,7 @@ var _material: ShaderMaterial
 
 
 func _ready() -> void:
+	add_to_group(&"attention_point")
 	_material = ShaderMaterial.new()
 	_material.shader = GLASS_SHADER
 	material_override = _material

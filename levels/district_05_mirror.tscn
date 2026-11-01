@@ -1,12 +1,13 @@
 [gd_scene format=3]
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_r"]
-[ext_resource type="Script" path="res://anomalies/districts/mirror/mirror_window.gd" id="2_r"]
-[ext_resource type="Script" path="res://anomalies/districts/mirror/mirror_view.gd" id="3_r"]
-[ext_resource type="Script" path="res://anomalies/districts/mirror/mirror_zone.gd" id="4_r"]
-[ext_resource type="Resource" path="res://data/mirror.tres" id="5_r"]
-[ext_resource type="PackedScene" path="res://ui/fate_overlay.tscn" id="6_r"]
-[ext_resource type="PackedScene" path="res://debug/debug_hud.tscn" id="7_r"]
+[ext_resource type="Script" path="res://expedition/squad.gd" id="2_r"]
+[ext_resource type="Script" path="res://anomalies/districts/mirror/mirror_window.gd" id="3_r"]
+[ext_resource type="Script" path="res://anomalies/districts/mirror/mirror_view.gd" id="4_r"]
+[ext_resource type="Script" path="res://anomalies/districts/mirror/mirror_zone.gd" id="5_r"]
+[ext_resource type="Resource" path="res://data/mirror.tres" id="6_r"]
+[ext_resource type="PackedScene" path="res://ui/fate_overlay.tscn" id="7_r"]
+[ext_resource type="PackedScene" path="res://debug/debug_hud.tscn" id="8_r"]
 
 [sub_resource type="Environment" id="Environment_1"]
 background_mode = 1
@@ -85,6 +86,10 @@ navigation_mesh = SubResource("NavigationMesh_2")
 
 [node name="MemberSpawner" type="MultiplayerSpawner" parent="." node_paths=PackedStringArray("spawn_path")]
 spawn_path = NodePath("../Members")
+
+[node name="Squad" type="Node" parent="." node_paths=PackedStringArray("members_root")]
+script = ExtResource("2_r")
+members_root = NodePath("../Members")
 
 [node name="Ground" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, -0.25, 0.0)
@@ -325,7 +330,7 @@ transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 1.5, 0.0,
 [node name="MirrorWindow1" type="MeshInstance3D" parent="Windows"]
 transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -5.14, 1.7, -13.0)
 mesh = SubResource("QuadMesh_10")
-script = ExtResource("2_r")
+script = ExtResource("3_r")
 
 [node name="Glass" type="StaticBody3D" parent="Windows/MirrorWindow1"]
 
@@ -341,7 +346,7 @@ material = SubResource("StandardMaterial3D_12")
 [node name="MirrorWindow2" type="MeshInstance3D" parent="Windows"]
 transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -5.14, 1.7, -1.0)
 mesh = SubResource("QuadMesh_10")
-script = ExtResource("2_r")
+script = ExtResource("3_r")
 
 [node name="Glass" type="StaticBody3D" parent="Windows/MirrorWindow2"]
 
@@ -357,7 +362,7 @@ material = SubResource("StandardMaterial3D_12")
 [node name="MirrorWindow3" type="MeshInstance3D" parent="Windows"]
 transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -5.14, 1.7, 11.0)
 mesh = SubResource("QuadMesh_10")
-script = ExtResource("2_r")
+script = ExtResource("3_r")
 
 [node name="Glass" type="StaticBody3D" parent="Windows/MirrorWindow3"]
 
@@ -373,7 +378,7 @@ material = SubResource("StandardMaterial3D_12")
 [node name="MirrorWindow4" type="MeshInstance3D" parent="Windows"]
 transform = Transform3D(0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, 0.0, 0.0, 5.14, 1.7, -13.0)
 mesh = SubResource("QuadMesh_10")
-script = ExtResource("2_r")
+script = ExtResource("3_r")
 
 [node name="Glass" type="StaticBody3D" parent="Windows/MirrorWindow4"]
 
@@ -389,7 +394,7 @@ material = SubResource("StandardMaterial3D_12")
 [node name="MirrorWindow5" type="MeshInstance3D" parent="Windows"]
 transform = Transform3D(0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, 0.0, 0.0, 5.14, 1.7, -1.0)
 mesh = SubResource("QuadMesh_10")
-script = ExtResource("2_r")
+script = ExtResource("3_r")
 
 [node name="Glass" type="StaticBody3D" parent="Windows/MirrorWindow5"]
 
@@ -405,7 +410,7 @@ material = SubResource("StandardMaterial3D_12")
 [node name="MirrorWindow6" type="MeshInstance3D" parent="Windows"]
 transform = Transform3D(0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, 0.0, 0.0, 5.14, 1.7, 11.0)
 mesh = SubResource("QuadMesh_10")
-script = ExtResource("2_r")
+script = ExtResource("3_r")
 
 [node name="Glass" type="StaticBody3D" parent="Windows/MirrorWindow6"]
 
@@ -419,7 +424,7 @@ size = Vector3(0.04, 1.4, 1.8)
 material = SubResource("StandardMaterial3D_12")
 
 [node name="MirrorView" type="Node3D" parent="." node_paths=PackedStringArray("viewport", "camera")]
-script = ExtResource("3_r")
+script = ExtResource("4_r")
 viewport = NodePath("SubViewport")
 camera = NodePath("SubViewport/Camera3D")
 
@@ -433,8 +438,8 @@ current = true
 fov = 70.0
 
 [node name="MirrorZone" type="Area3D" parent="." node_paths=PackedStringArray("view", "windows_root")]
-script = ExtResource("4_r")
-data = ExtResource("5_r")
+script = ExtResource("5_r")
+data = ExtResource("6_r")
 view = NodePath("../MirrorView")
 windows_root = NodePath("../Windows")
 
@@ -442,6 +447,6 @@ windows_root = NodePath("../Windows")
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 3.0, 0.0)
 shape = SubResource("BoxShape3D_13")
 
-[node name="FateOverlay" parent="." instance=ExtResource("6_r")]
+[node name="FateOverlay" parent="." instance=ExtResource("7_r")]
 
-[node name="DebugHUD" parent="." instance=ExtResource("7_r")]
+[node name="DebugHUD" parent="." instance=ExtResource("8_r")]

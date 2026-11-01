@@ -1,5 +1,8 @@
 [gd_scene format=3]
 
+[ext_resource type="PackedScene" path="res://expedition/player.tscn" id="1_player"]
+[ext_resource type="PackedScene" path="res://debug/debug_hud.tscn" id="2_hud"]
+
 [sub_resource type="Environment" id="Environment_room"]
 background_mode = 1
 background_color = Color(0.03, 0.03, 0.04, 1)
@@ -60,6 +63,13 @@ use_collision = true
 size = Vector3(0.5, 4, 21)
 material = SubResource("Material_wall")
 
-[node name="DebugCamera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 8)
-current = true
+[node name="Pillar" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -4)
+use_collision = true
+size = Vector3(1, 2, 1)
+material = SubResource("Material_wall")
+
+[node name="Player" parent="." instance=ExtResource("1_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="DebugHUD" parent="." instance=ExtResource("2_hud")]

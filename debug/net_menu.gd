@@ -1,6 +1,8 @@
 extends Control
 ## Отладочное меню сети: соло, хост или подключение к 127.0.0.1.
 
+const DESTINATIONS: GDScript = preload("res://levels/destinations.gd")
+
 @onready var _level_select: OptionButton = %LevelSelect
 @onready var _address: LineEdit = %Address
 @onready var _status: Label = %Status
@@ -8,7 +10,7 @@ extends Control
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	for destination in Destinations.LIST:
+	for destination in DESTINATIONS.LIST:
 		_level_select.add_item(destination["title"])
 	_level_select.select(2)
 	_status.text = NetAuthority.last_error
@@ -21,4 +23,4 @@ func _ready() -> void:
 func _start(mode: NetAuthority.Mode) -> void:
 	NetAuthority.last_error = ""
 	NetAuthority.prepare(mode, _address.text.strip_edges())
-	GameState.begin_expedition(Destinations.LIST[_level_select.selected])
+	GameState.begin_expedition(DESTINATIONS.LIST[_level_select.selected])

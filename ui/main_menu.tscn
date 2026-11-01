@@ -36,14 +36,14 @@ theme_override_constants/separation = 12
 
 [node name="Title" type="Label" parent="Center/Box"]
 layout_mode = 2
-text = "ПЗТ-3"
+text = "ПЗМ-3"
 horizontal_alignment = 1
 theme_override_colors/font_color = Color(0.78, 0.75, 0.68, 1.0)
 theme_override_font_sizes/font_size = 52
 
 [node name="Subtitle" type="Label" parent="Center/Box"]
 layout_mode = 2
-text = "Экспедиция в аномальную зону Токио-3"
+text = "Паранормальная зона Москва-3"
 horizontal_alignment = 1
 theme_override_colors/font_color = Color(0.5, 0.48, 0.43, 1.0)
 theme_override_font_sizes/font_size = 16

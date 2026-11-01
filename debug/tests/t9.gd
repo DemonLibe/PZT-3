@@ -26,12 +26,12 @@ func _ready() -> void:
 	check(level() != null and level().name == "JournalView", "показан журнал экспедиции")
 	var j: ExpeditionJournal = GameState.last_journal
 	check(j.outcome == "отряд потерян", "итог: отряд потерян")
-	check(j.fates.get("Руководитель") == "пропал", "судьба игрока: пропал")
-	check(j.fates.get("Сато") == "не вернулся", "NPC не вернулись")
-	check("\n".join(j.entries).contains("Руководитель: связь потеряна. Зеркало."), "запись о пропаже в журнале")
+	check(j.fates.get("Орлов") == "пропал", "судьба игрока: пропал")
+	check(j.fates.get("Мельников") == "не вернулся", "NPC не вернулись")
+	check("\n".join(j.entries).contains("Орлов: связь потеряна. Зеркало."), "запись о пропаже в журнале")
 	check(Encyclopedia.article_level(&"mirror") == 2, "статья «Зеркало» открыта полностью")
 	var recs: Array = Encyclopedia.incidents.get("mirror", [])
-	check(recs.has("Экспедиция №1: Руководитель — пропал."), "в статье запись о пропавшем")
+	check(recs.has("Экспедиция №1: Орлов — пропал."), "в статье запись о пропавшем")
 	check(not "\n".join(PackedStringArray(recs)).contains("отказался"), "пропавшие не записаны как оставшиеся")
 	check(FileAccess.file_exists(Encyclopedia.SAVE_PATH), "Энциклопедия сохранена на диск")
 	print("   ", Encyclopedia.get_article_text(&"mirror").replace("\n", " | "))
@@ -47,7 +47,7 @@ func _ready() -> void:
 	await wait(0.5)
 	j = GameState.last_journal
 	check(j.number == 2 and j.outcome.begins_with("возвращение на базу"), "экспедиция №2 вернулась через выход: " + j.outcome)
-	check(j.fates.get("Руководитель") == "вернулся" and j.fates.get("Сато") == "вернулся", "все вернулись")
+	check(j.fates.get("Орлов") == "вернулся" and j.fates.get("Мельников") == "вернулся", "все вернулись")
 	check(Encyclopedia.article_level(&"dinner") == 0, "в дом с ужином не заходили — статья закрыта")
 	# 3. Потеря цели: выход не открывается
 	await go(0)

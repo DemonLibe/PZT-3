@@ -7,10 +7,10 @@ func _ready() -> void:
 	await wait(1.0)
 	var plates: Array = level.get_node("Plates").get_children()
 	var shown: int = plates.filter(func(p): return p.visible).size()
-	check(shown == 5, "стол накрыт на 4+1 мест (%d)" % shown)
-	for i in npcs.size(): npcs[i].body.global_position = Vector3(-1.5 + 1.5 * i, 0, 15)
+	check(shown == 8, "стол накрыт на 7+1 мест (%d)" % shown)
+	for i in npcs.size(): npcs[i].body.global_position = Vector3(-4.5 + 1.5 * i, 0, 15)
 	await press(&"squad_hold")
-	m.body.global_position = Vector3(-8.7, 0, 0.8)
+	m.body.global_position = Vector3(-10.1, 0.1, 4.5)
 	m.drowsiness = 0.7
 	await frames(3)
 	var plate: Node3D = plates[1]
@@ -28,7 +28,7 @@ func _ready() -> void:
 	check(m.has_status(&"lost_purpose"), "через 3–9 игровых часов — потеря цели")
 	# NPC и соблазн: уставший напарник рядом со столом
 	var n: ExpeditionMember = npcs[0]
-	n.body.global_position = Vector3(-7.5, 0, 1.0)
+	n.body.global_position = Vector3(-9.6, 0.1, 7.6)
 	n.drowsiness = 0.95
 	n.panic = 0.5
 	var brain = n.body.get_node("NPCBrain")
@@ -43,7 +43,7 @@ func _ready() -> void:
 	check(n.has_status(&"lost_purpose"), "NPC потерял цель")
 	var home: Vector3 = n.body.global_position
 	await press(&"squad_follow")
-	m.body.global_position = Vector3(0, 0, 15)
+	m.body.global_position = Vector3(0, 0, 16)
 	await wait(5.0)
 	check(n.body.global_position.distance_to(home) < 2.0, "NPC без цели не идёт за игроком, остаётся в доме")
 	check(npcs[1].body.global_position.distance_to(m.body.global_position) < 5.0, "остальные NPC идут за игроком")

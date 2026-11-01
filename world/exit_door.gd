@@ -27,7 +27,7 @@ func interact(member: ExpeditionMember) -> void:
 			survivors.append(other)
 	var points: Array[Node] = get_tree().get_nodes_in_group(&"survey_point")
 	var done: int = points.filter(func(p: Node) -> bool: return p.is_done).size()
-	var result: String = "возвращение на базу, замеры %d из %d" % [done, points.size()]
+	var result: String = "возвращение на базу, фиксаций %d из %d" % [done, points.size()]
 	if done == points.size() and points.size() > 0:
 		result += " — задание выполнено"
 		var level: Level = owner as Level

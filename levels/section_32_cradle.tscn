@@ -332,6 +332,15 @@ transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 4.5, 0.0,
 [node name="Npc3" type="Marker3D" parent="SpawnPoints"]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 6.0, 0.0, 16.0)
 
+[node name="Npc4" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 3.0, 0.0, 14.5)
+
+[node name="Npc5" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 4.5, 0.0, 14.5)
+
+[node name="Npc6" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 6.0, 0.0, 14.5)
+
 [node name="SurveyPoints" type="Node3D" parent="."]
 
 [node name="SurveyPoint1" parent="SurveyPoints" instance=ExtResource("12_r")]

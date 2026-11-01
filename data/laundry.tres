@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://anomalies/base/punishment.gd" id="2_punishment"]
+
+[sub_resource type="Resource" id="Resource_punishment"]
+script = ExtResource("2_punishment")
+type = 2
+status_id = &"fabric_skin"
+
+[resource]
+script = ExtResource("1_data")
+id = &"laundry"
+display_name = "Стирка"
+location = "Район 4"
+danger_level = 5
+params = {
+"onset_max_hours": 8.0,
+"onset_min_hours": 5.0
+}
+punishment = SubResource("Resource_punishment")
+guide_hint = "Бельё не трогать. Ни рубашку, ни носки — даже если по размеру. Особенно если по размеру."
+encyclopedia_text = "Классификация: контактная / мимикрическая. Опасность: критическая, отложенная.
+На верёвках во дворах — бельё, всегда точно по размеру смотрящего. Ткань безопасна при коротком контакте.
+---
+При надевании (2 случая) в течение 5–8 дней в местах контакта появляется участок кожи с текстурой и швами ткани — плотный, безболезненный, разрастающийся. Попытка срезания ощущается как срезание собственной кожи, потому что это уже она.
+Запрещено касаться бельевых верёвок голыми руками."

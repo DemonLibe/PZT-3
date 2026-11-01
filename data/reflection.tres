@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://anomalies/base/punishment.gd" id="2_punishment"]
+
+[sub_resource type="Resource" id="Resource_punishment"]
+script = ExtResource("2_punishment")
+type = 0
+
+[resource]
+script = ExtResource("1_data")
+id = &"reflection"
+display_name = "Отражение группы"
+location = "Район 12"
+danger_level = 5
+params = {
+"approach_limit": 15.0,
+"delay_max": 40.0,
+"delay_min": 3.0,
+"omen_delay": 60.0
+}
+punishment = SubResource("Resource_punishment")
+guide_hint = "Видите вторую группу — не подходить, фонарём не светить. Делаем своё и уходим."
+encyclopedia_text = "Классификация: дублирующая. Опасность: критическая.
+На расстоянии 200–400 м периодически видна вторая группа, идентичная составу и маршруту наблюдающей, с задержкой движения 3–40 секунд, нестабильной и не коррелирующей с расстоянием. В отличие от Района 7, попыток коммуникации «отражение» не предпринимает никогда.
+---
+В 3 случаях задержка была отрицательной — «отражение» опережало действия оригинальной группы на несколько минут. В обоих случаях в течение часа с оригинальной группой происходило событие, идентичное замеченному у «отражения».
+Не приближаться. Не подавать сигналов."

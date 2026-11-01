@@ -1,7 +1,7 @@
 shader_type spatial;
 render_mode unshaded, cull_disabled;
 // Стекло «Зеркала»: показывает картинку фиксированной камеры района.
-// cracked = 1 — стекло треснуло изнутри.
+// cracked = 1 — стекло треснуло изнутри: трещины видны только с обратной стороны (из дома), снаружи стекло целое.
 
 uniform sampler2D view_tex : source_color, filter_nearest;
 uniform float cracked = 0.0;
@@ -15,7 +15,7 @@ float hash(float n) {
 void fragment() {
 	vec2 uv = UV;
 	vec3 col = texture(view_tex, uv).rgb * brightness;
-	if (cracked > 0.5) {
+	if (cracked > 0.5 && !FRONT_FACING) {
 		vec2 d = uv - crack_center;
 		float r = length(d);
 		float t = (atan(d.y, d.x) + PI) / (2.0 * PI) * 13.0;

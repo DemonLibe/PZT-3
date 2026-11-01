@@ -17,7 +17,7 @@ func _ready() -> void:
 	await press(&"interact")
 	await wait(2.0)
 	check(p.progress > 0.3 and not p.is_done, "идёт запись (%.0f%%)" % (p.progress * 100))
-	check(level.get_node("HUD/Objective").text.begins_with("Запись замера"), "HUD показывает запись")
+	check(level.get_node("HUD/Objective").text.begins_with("Запись фиксации"), "HUD показывает запись")
 	m.body.global_position += Vector3(5, 0, 0)  # отошёл
 	await wait(0.3)
 	check(p.progress == 0.0 and not p.is_done, "отошёл — запись прервана")
@@ -28,11 +28,11 @@ func _ready() -> void:
 	await press(&"interact")
 	await wait(4.3)
 	check(p.is_done, "через 4 с замер записан")
-	check(level.get_node("HUD/Objective").text.begins_with("Замеры: 1 из 3"), "HUD: " + level.get_node("HUD/Objective").text)
+	check(level.get_node("HUD/Objective").text.begins_with("Фиксации: 1 из 3"), "HUD: " + level.get_node("HUD/Objective").text)
 	for q in points:
 		q._complete()
 	await frames(2)
-	check(level.get_node("HUD/Objective").text.begins_with("Замеры собраны"), "все замеры собраны")
+	check(level.get_node("HUD/Objective").text.begins_with("Фиксации собраны"), "все замеры собраны")
 	var dummy: Node = Node.new()
 	get_tree().root.add_child(dummy)
 	get_tree().current_scene = dummy

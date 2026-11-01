@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://anomalies/base/punishment.gd" id="2_punishment"]
+
+[sub_resource type="Resource" id="Resource_punishment"]
+script = ExtResource("2_punishment")
+type = 0
+
+[resource]
+script = ExtResource("1_data")
+id = &"radio"
+display_name = "Радио"
+location = "Район 3"
+danger_level = 4
+params = {
+"broadcast_interval": 12.0,
+"listen_radius": 6.0,
+"panic_listen": 0.008,
+"panic_silence": 0.03,
+"prophecy_chance": 0.15,
+"prophecy_delay": 90.0
+}
+punishment = SubResource("Resource_punishment")
+guide_hint = "Радио формально не слушать. Но и от приёмников не шарахаться — хуже будет. Назовут кого — уходим быстро."
+encyclopedia_text = "Классификация: информационная / темпоральная. Опасность: высокая.
+Трансляции из домов (погода, новости, реклама) датированы на сутки вперёд относительно текущей даты группы. 14 из 14 бытовых прогнозов подтвердились на 100%.
+---
+22.03 трансляция сообщила точное время и способ гибели рядового [замазано]. Совпадение подтверждено.
+Прослушивание формально запрещено, но отказ от прослушивания коррелирует с ростом паники сильнее, чем сама информация."

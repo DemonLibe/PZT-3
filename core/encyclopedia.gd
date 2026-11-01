@@ -18,6 +18,8 @@ var opened_articles: Dictionary = {}
 ## id аномалии -> список записей о пропавших и погибших
 var incidents: Dictionary = {}
 var expedition_count: int = 0
+## id аномалии -> сколько раз отряд заходил в район (для накопительных аномалий)
+var visits: Dictionary = {}
 ## Название направления -> задание выполнено (все замеры собраны и отряд вернулся).
 var completed: Dictionary = {}
 
@@ -42,6 +44,15 @@ func open_article(anomaly_id: StringName, level: int) -> void:
 
 func article_level(anomaly_id: StringName) -> int:
 	return int(opened_articles.get(String(anomaly_id), LEVEL_NONE))
+
+
+func add_visit(anomaly_id: StringName) -> void:
+	visits[String(anomaly_id)] = visits_of(anomaly_id) + 1
+	save_to_disk()
+
+
+func visits_of(anomaly_id: StringName) -> int:
+	return int(visits.get(String(anomaly_id), 0))
 
 
 func mark_completed(destination_title: String) -> void:
@@ -110,7 +121,7 @@ func save_to_disk() -> void:
 		return
 	file.store_string(JSON.stringify({
 		"articles": opened_articles, "incidents": incidents, "expedition_count": expedition_count,
-		"completed": completed}, "\t"))
+		"completed": completed, "visits": visits}, "\t"))
 
 
 func load_from_disk() -> void:
@@ -122,6 +133,7 @@ func load_from_disk() -> void:
 		incidents = parsed.get("incidents", {})
 		expedition_count = int(parsed.get("expedition_count", 0))
 		completed = parsed.get("completed", {})
+		visits = parsed.get("visits", {})
 
 
 ## Отладка: стереть всё.
@@ -130,4 +142,5 @@ func reset() -> void:
 	incidents = {}
 	expedition_count = 0
 	completed = {}
+	visits = {}
 	save_to_disk()

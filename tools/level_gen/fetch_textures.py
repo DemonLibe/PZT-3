@@ -14,6 +14,7 @@ PICK = {
     "wood_table": "Wood 9", "wood_fence": "Wood 24", "block_wall": "Brick 7", "metal_rust": "Metal_11",
     "metal_clean": "Metal_09", "concrete": "Stone_07", "concrete_damp": "Stone_05", "concrete_floor": "Stone_08",
     "tablecloth": "Cloth_12", "uniform": "Cloth_17", "tatami": "Weave_05",
+    "cloth_blue": "Cloth_01", "cloth_red": "Cloth_02", "cloth_white": "Cloth_04", "cloth_plaid": "Cloth_07",
 }
 
 

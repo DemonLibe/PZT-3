@@ -31,7 +31,7 @@ func face(m: ExpeditionMember, point: Vector3) -> void:
 func local_member() -> ExpeditionMember:
 	return get_tree().get_first_node_in_group(&"local_member") as ExpeditionMember
 
-func load_level(path: String, npcs: int = 3) -> Node:
+func load_level(path: String, npcs: int = 6) -> Node:
 	var level: Node = load(path).instantiate()
 	level.npc_count = npcs
 	add_child(level)

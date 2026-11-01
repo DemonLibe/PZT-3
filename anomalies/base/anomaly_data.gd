@@ -10,6 +10,8 @@ extends Resource
 @export var params: Dictionary = {}
 ## null — правило без наказания (например, только паника).
 @export var punishment: Punishment
+## Что сержант Мельников говорит отряду при первой встрече (правила районов он знает; пусто — молчит).
+@export_multiline var guide_hint: String = ""
 ## Текст статьи. Часть до строки "---" открывается при наблюдении, всё — после нарушения.
 @export_multiline var encyclopedia_text: String = ""
 

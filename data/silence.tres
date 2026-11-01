@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://anomalies/base/punishment.gd" id="2_punishment"]
+
+[sub_resource type="Resource" id="Resource_punishment"]
+script = ExtResource("2_punishment")
+type = 0
+
+[resource]
+script = ExtResource("1_data")
+id = &"silence"
+display_name = "Тишина"
+location = "Район 11"
+danger_level = 3
+params = {
+"bpm_drop_per_sec": 0.45,
+"bpm_recover_per_sec": 1.5,
+"call_bpm": 45.0,
+"death_bpm": 40.0,
+"start_bpm": 72.0
+}
+punishment = SubResource("Resource_punishment")
+guide_hint = "Тут быстро. Сердце начнёт запинаться — сразу на выход. Голос позовёт — не оборачиваться, бегом."
+encyclopedia_text = "Классификация: акустическая. Опасность: средняя, эскалирующая.
+Полное отсутствие звука в границах района — ни шагов, ни голоса, ни дыхания, при этом слух не нарушен (проверено сигналами извне). Единственный слышимый звук — собственное сердцебиение наблюдателя.
+---
+Сердцебиение замедляется пропорционально времени нахождения в районе. При пульсе ниже 40 уд/мин зафиксированы случаи остановки сердца без внешних причин. Эвакуация обязательна при появлении отчётливой паузы между ударами.
+Один из выживших утверждает, что перед остановкой сердца слышал ровно один звук — свой собственный голос снаружи, зовущий его по имени. Его никто не звал."

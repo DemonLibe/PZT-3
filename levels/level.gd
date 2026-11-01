@@ -4,14 +4,16 @@ extends Node3D
 ## участников экспедиции через MultiplayerSpawner (одинаково в соло и по сети).
 
 const PLAYER_SCENE: PackedScene = preload("res://expedition/player.tscn")
+const RADIO_PANEL: PackedScene = preload("res://ui/radio_panel.tscn")
 const NPC_SCENE: PackedScene = preload("res://expedition/npc.tscn")
-const HOST_NAME: String = "Руководитель"
-const NPC_NAMES: PackedStringArray = ["Сато", "Кимура", "Огава"]
+## Игрок — Максим Орлов. Напарники: сержант Мельников и пятеро заключённых из группы.
+const HOST_NAME: String = "Орлов"
+const NPC_NAMES: PackedStringArray = ["Мельников", "Черных", "Волкова", "Быков", "Соловьёва", "Наумов"]
 
 ## Название для журнала и HUD.
 @export var title: String = "Район"
 ## Сколько напарников-NPC выходит в экспедицию.
-@export var npc_count: int = 3
+@export var npc_count: int = 6
 ## Через сколько секунд после потери всех игроков вылазка заканчивается.
 @export var loss_delay: float = 4.0
 
@@ -25,6 +27,10 @@ var _ending: bool = false
 
 func _ready() -> void:
 	_spawner.spawn_function = _spawn_member
+	add_child(RADIO_PANEL.instantiate())
+	var radio: RadioOperator = RadioOperator.new()
+	radio.name = "RadioOperator"
+	add_child(radio)
 	if _navigation:
 		# CSG собирает геометрию отложенно — строим навигацию после этого.
 		_bake_navigation.call_deferred()

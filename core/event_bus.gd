@@ -12,6 +12,9 @@ signal member_vanished(member: Node)
 signal anomaly_observed(member: Node, anomaly_id: StringName)
 @warning_ignore("unused_signal")
 signal noise_emitted(member: Node, position: Vector3, level: float)
+## Реплика по рации или вслух (Дорохов, Мельников) — для интерфейса.
+@warning_ignore("unused_signal")
+signal radio_message(speaker: String, text: String)
 
 
 func _ready() -> void:

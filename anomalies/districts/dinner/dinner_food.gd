@@ -19,7 +19,9 @@ func interact(member: ExpeditionMember) -> void:
 
 ## Насколько эта еда соблазнительна для участника (0–1).
 func get_temptation(member: ExpeditionMember) -> float:
-	return member.drowsiness if visible and not is_eaten else 0.0
+	if not visible or is_eaten or member.has_status(&"ate_dinner"):
+		return 0.0
+	return member.drowsiness
 
 
 @rpc("authority", "call_local", "reliable")

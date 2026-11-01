@@ -34,6 +34,6 @@ func _ready() -> void:
 	for n in npcs_of(lvl2): n.body.global_position = Vector3(0, 0, n.body.global_position.z - 20)
 	for i in 40:
 		await wait(0.5)
-		if observed.any(func(x): return x != "Руководитель"): break
-	check(observed.any(func(x): return x != "Руководитель"), "окна реагируют на взгляд NPC (%s)" % str(observed))
+		if observed.any(func(x): return x != "Орлов"): break
+	check(observed.any(func(x): return x != "Орлов"), "окна реагируют на взгляд NPC (%s)" % str(observed))
 	finish()

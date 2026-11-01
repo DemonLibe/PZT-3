@@ -36,7 +36,7 @@ theme_override_constants/separation = 10
 [node name="Title" type="Label" parent="Center/Box"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "ПЗТ-3 · отладка сети"
+text = "ПЗМ-3 · отладка сети"
 horizontal_alignment = 1
 
 [node name="LevelSelect" type="OptionButton" parent="Center/Box"]

@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://anomalies/base/punishment.gd" id="2_punishment"]
+
+[sub_resource type="Resource" id="Resource_punishment"]
+script = ExtResource("2_punishment")
+type = 2
+status_id = &"nameless"
+
+[resource]
+script = ExtResource("1_data")
+id = &"lullaby"
+display_name = "Колыбельная"
+location = "Район 16"
+danger_level = 4
+params = {
+"listen_radius": 12.0,
+"reset_after": 15.0,
+"song_length": 360.0,
+"warn_time": 300.0
+}
+punishment = SubResource("Resource_punishment")
+guide_hint = "От того дома, где поют, держаться подальше. Задержались — уходим, не дослушивая."
+encyclopedia_text = "Классификация: акустическая / когнитивная. Опасность: высокая, необратимая.
+Из одного из домов постоянно звучит колыбельная на русском, мелодия знакома всем опрошенным, хотя ни один не может назвать источник.
+---
+Если дослушать мелодию до конца (порядка 6 минут), наблюдатель забывает собственное имя — не временно: попытки напомнить имя вызывают острое отторжение и агрессию.
+Рекомендовано прерывать прослушивание любым способом до истечения 5-й минуты."

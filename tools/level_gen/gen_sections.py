@@ -34,8 +34,8 @@ def section_32():
         lamp(sc, f"Fluorescent{i+1}", (x, 5.6, z), color=COLD, energy=0.9, rng=11.0)
     spawn(sc, "Player", (0, 0, 17), 0)
     exit_door(sc, (0, 0, 19.7), 180)
-    for i in range(3):
-        spawn(sc, f"Npc{i+1}", (3 + 1.5 * i, 0, 16), 0)
+    for i in range(6):
+        spawn(sc, f"Npc{i+1}", (3 + 1.5 * (i % 3), 0, 16 - 1.5 * (i // 3)), 0)
     survey(sc, 1, (-12.0, 0, -8.0))
     survey(sc, 2, (12.0, 0, -8.0))
     survey(sc, 3, (0.0, 0, -18.0))
@@ -80,8 +80,8 @@ def section_36():
             transform=T(-15.5, 0, 0.6), path=NP("../WardenPath"), rooms_root=NP("../Rooms"))
     spawn(sc, "Player", (12, 0, -5), 180)
     exit_door(sc, (16.3, 0, 0), -90)
-    for i in range(3):
-        spawn(sc, f"Npc{i+1}", (10.5 + 1.5 * i, 0, -6.5), 180)
+    for i in range(6):
+        spawn(sc, f"Npc{i+1}", (10.0 + 1.5 * (i % 3), 0, -6.0 - 1.4 * (i // 3)), 180)
     ui(sc)
     sc.save(ROOT + "/levels/section_36_warden.tscn")
 

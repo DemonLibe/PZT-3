@@ -11,6 +11,9 @@ extends Node
 @export var stand_head_height: float = 1.6
 @export var crouch_head_height: float = 1.0
 @export var crouch_lerp_speed: float = 8.0
+## Статусы, при которых бег невозможен (ткань вместо кожи и т. п.).
+const NO_SPRINT_STATUSES: Array[StringName] = [&"fabric_skin"]
+
 ## Ниже этой скорости участник считается стоящим.
 @export var idle_speed: float = 0.3
 
@@ -30,7 +33,8 @@ func _physics_process(delta: float) -> void:
 	var active: bool = member.can_act() and not member.is_eating
 	var input: Vector2 = member.move_intent.limit_length(1.0) if active else Vector2.ZERO
 	var crouching: bool = active and member.wants_crouch
-	var running: bool = active and member.wants_sprint and not crouching and input.length() > 0.1
+	var running: bool = active and member.wants_sprint and not crouching and input.length() > 0.1 \
+		and not NO_SPRINT_STATUSES.any(func(id: StringName) -> bool: return member.has_status(id))
 	var speed: float = walk_speed
 	if crouching:
 		speed = crouch_speed

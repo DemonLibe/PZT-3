@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://anomalies/base/punishment.gd" id="2_punishment"]
+
+[sub_resource type="Resource" id="Resource_punishment"]
+script = ExtResource("2_punishment")
+type = 1
+
+[resource]
+script = ExtResource("1_data")
+id = &"clocks"
+display_name = "Часы"
+location = "Район 13"
+danger_level = 3
+params = {
+"max_offset_min": 90.0,
+"sync_time": 240.0
+}
+punishment = SubResource("Resource_punishment")
+guide_hint = "Сверяйте часы. Начнут сходиться — уходим, не дожидаясь."
+encyclopedia_text = "Классификация: темпоральная / индивидуальная. Опасность: средняя.
+Все часы и таймеры в районе показывают разное время — но не случайное: у каждого члена группы свои часы отстают или спешат на строго индивидуальную, повторяющуюся при повторном входе величину.
+---
+Синхронизация всех часов группы в одну секунду зафиксирована единожды, непосредственно перед потерей связи с этой группой."

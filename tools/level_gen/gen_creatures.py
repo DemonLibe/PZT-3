@@ -18,6 +18,11 @@ def creature(name, script, data, height, radius, mask, parts, color, hum=None, s
     for pname, mesh_type, props, pos in parts:
         mesh = sc.sub_res(mesh_type, material=mat, **props)
         sc.node(pname, "MeshInstance3D", "Visual", transform=T(*pos), mesh=mesh)
+    if name == "Cradle":
+        eye = sc.sub_res("SphereMesh", material=sc.sub_res("StandardMaterial3D", shading_mode=0, albedo_color=C(0.9, 0.05, 0.03)),
+                         radius=0.035, height=0.07)
+        for side in (-1, 1):
+            sc.node(f"Eye{side}", "MeshInstance3D", "Visual", transform=T(side * 0.06, 2.78, -0.15), mesh=eye)
     sc.node("NavigationAgent3D", "NavigationAgent3D", ".", path_desired_distance=0.7, target_desired_distance=0.7,
             radius=0.5, height=height)
     sc.node("Sync", "MultiplayerSynchronizer", ".", root_path=NP(".."), replication_config=sync)

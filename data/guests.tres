@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://anomalies/base/punishment.gd" id="2_punishment"]
+
+[sub_resource type="Resource" id="Resource_punishment"]
+script = ExtResource("2_punishment")
+type = 1
+
+[resource]
+script = ExtResource("1_data")
+id = &"guests"
+display_name = "Гости"
+location = "Район 7"
+danger_level = 4
+params = {
+"spawn_interval": 25.0
+}
+punishment = SubResource("Resource_punishment")
+guide_hint = "Смотрите на тени. Нет тени — не наш, хоть с лица одно лицо. Никуда с ним не ходить."
+encyclopedia_text = "Классификация: социальная / имитационная. Опасность: высокая.
+В домах периодически появляется человек, полностью соответствующий одному из членов группы — лицом, одеждой, снаряжением. Единственное отличие: у двойника нет тени.
+---
+Двойник дружелюбен, зовёт «домой», предлагает еду и ночлег. Прямой конфронтации оригинала и двойника не зафиксировано ни разу: в 3 случаях, когда группа пыталась удержать обоих для сверки, настоящий участник впоследствии не мог вспомнить, кем из двоих был он."

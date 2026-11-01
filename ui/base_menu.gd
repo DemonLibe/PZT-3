@@ -11,7 +11,7 @@ const NET_SCENE: String = "res://debug/net_menu.tscn"
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	NetAuthority.prepare(NetAuthority.Mode.SOLO)
-	%Subtitle.text = "База экспедиции · экспедиций: %d · заданий выполнено: %d из %d" % [
+	%Subtitle.text = "Пункт сбора у периметра · экспедиций: %d · заданий выполнено: %d из %d" % [
 		Encyclopedia.expedition_count, Encyclopedia.completed.size(), DESTINATIONS.LIST.size()]
 	for destination in DESTINATIONS.LIST:
 		var done: bool = Encyclopedia.is_completed(destination["title"])

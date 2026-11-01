@@ -4,6 +4,7 @@ var slept: Dictionary = {}
 
 func _ready() -> void:
 	var level := await load_level("res://levels/district_08_sleep.tscn")
+	level.loss_delay = 9999.0  # тест сам решает, когда закончить
 	var m := local_member()
 	var npcs := npcs_of(level)
 	for x in npcs + [m]:
@@ -12,7 +13,7 @@ func _ready() -> void:
 	check(m.drowsiness > 0.005, "сонливость растёт в зоне (%.3f)" % m.drowsiness)
 	# NPC отводим и оставляем стоять подальше
 	await press(&"squad_hold")
-	for i in npcs.size(): npcs[i].body.global_position = Vector3(-3 + 3 * i, 0, -18 + 0 * i)
+	for i in npcs.size(): npcs[i].body.global_position = Vector3(-6 + 2.4 * i, 0, -14)
 	m.body.global_position = Vector3(0, 0, 15)
 	await wait(0.3)
 	m.drowsiness = 0.995
@@ -32,8 +33,9 @@ func _ready() -> void:
 	check(slept.has(n), "NPC уснул")
 	check(not n.is_sleeping and n.is_active(), "другой участник разбудил NPC")
 	# Разводим всех дальше радиуса пробуждения — будить некому
-	for i in npcs.size(): npcs[i].body.global_position = Vector3(-3 + 3 * i, 0, -18 + 12 * i)
-	m.body.global_position = Vector3(3.5, 0, 0)
+	var far := [Vector3(-6, 0, -15), Vector3(6, 0, -15), Vector3(-6, 0, -4), Vector3(6, 0, -4), Vector3(-6, 0, 7), Vector3(6, 0, 7)]
+	for i in npcs.size(): npcs[i].body.global_position = far[i]
+	m.body.global_position = Vector3(0, 0, 17)
 	await wait(0.3)
 	for x in npcs: x.drowsiness = 0.999
 	m.drowsiness = 0.999

@@ -4,7 +4,7 @@ extends CanvasLayer
 
 const MESSAGES: Dictionary = {
 	&"exit_refused": "Дверь не открывается.",
-	&"survey_done": "Замер записан.",
+	&"survey_done": "Фиксация записана.",
 	&"survey_interrupted": "Запись прервана.",
 }
 
@@ -38,14 +38,18 @@ func _update_objective() -> void:
 	var distance: float = _member.body.global_position.distance_to(exit.global_position)
 	var points: Array[Node] = get_tree().get_nodes_in_group(&"survey_point")
 	var done: int = points.filter(func(p: Node) -> bool: return p.is_done).size()
-	var task: String = "Замеры: %d из %d" % [done, points.size()]
+	var task: String = "Фиксации: %d из %d" % [done, points.size()]
 	if done == points.size():
-		task = "Замеры собраны — к выходу"
+		task = "Фиксации собраны — к КПП"
 	var recording: String = ""
 	for point in points:
 		if point.recorder_path == _member.get_path():
-			recording = "Запись замера… %d%%   ·   " % int(point.progress * 100.0)
-	_objective.text = "%s%s   ·   Выход: %d м   ·   [1] за мной  [2] стоять" % [recording, task, int(distance)]
+			recording = "Запись фиксации… %d%%   ·   " % int(point.progress * 100.0)
+	var watch: String = ""
+	if _member.has_status(&"own_clock"):
+		var minutes: float = fmod((ExpeditionJournal.START_HOUR + GameState.game_hours) * 60.0 + _member.watch_offset_min + 1440.0, 1440.0)
+		watch = "Ваши часы: %02d:%02d   ·   " % [int(minutes / 60.0), int(fmod(minutes, 60.0))]
+	_objective.text = "%s%s%s   ·   КПП: %d м   ·   [1] за мной  [2] стоять" % [watch, recording, task, int(distance)]
 
 
 func _looks_at_interactable() -> bool:

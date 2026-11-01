@@ -38,6 +38,10 @@ var wake_taps: int = 0
 var noise_level: float = 0.0
 var drowsiness: float = 0.0
 var panic: float = 0.0
+## Пульс, уд/мин (меняют аномалии вроде «Тишины»).
+var pulse_bpm: float = 72.0
+## Сдвиг личных часов, мин (Район 13 «Часы»).
+var watch_offset_min: float = 0.0
 var flashlight_on: bool = false: set = _set_flashlight_on
 ## id статуса -> true. Скрытые статусы тоже здесь (например, ate_dinner).
 var statuses: Dictionary = {}

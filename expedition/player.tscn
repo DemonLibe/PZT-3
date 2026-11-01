@@ -85,6 +85,12 @@ properties/12/replication_mode = 2
 properties/13/path = NodePath("ExpeditionMember:wake_taps")
 properties/13/spawn = true
 properties/13/replication_mode = 2
+properties/14/path = NodePath("ExpeditionMember:pulse_bpm")
+properties/14/spawn = true
+properties/14/replication_mode = 1
+properties/15/path = NodePath("ExpeditionMember:watch_offset_min")
+properties/15/spawn = true
+properties/15/replication_mode = 1
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
@@ -123,7 +129,7 @@ member = NodePath("../../ExpeditionMember")
 
 [node name="ExpeditionMember" type="Node" parent="." node_paths=PackedStringArray("head", "flashlight")]
 script = ExtResource("1_member")
-display_name = "Руководитель"
+display_name = "Орлов"
 head = NodePath("../Head")
 flashlight = NodePath("../Head/Flashlight")
 

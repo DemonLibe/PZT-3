@@ -5,6 +5,9 @@ extends Node
 
 enum State { FOLLOW, HOLD, LOOK_AROUND, PANIC }
 
+## С этими статусами напарник больше не слушает приказов и остаётся на месте.
+const DISOBEY_STATUSES: Array[StringName] = [&"lost_purpose", &"nameless"]
+
 @export var member: ExpeditionMember
 @export var navigator: NPCNavigator
 @export var instincts: NPCInstincts
@@ -44,7 +47,7 @@ func _physics_process(delta: float) -> void:
 		navigator.stop()
 		return
 	_update_state()
-	if state != State.PANIC and not member.has_status(&"lost_purpose") and instincts and instincts.act(delta):
+	if state != State.PANIC and not _disobeys() and instincts and instincts.act(delta):
 		return
 	match state:
 		State.FOLLOW:
@@ -59,8 +62,8 @@ func _physics_process(delta: float) -> void:
 
 
 func _update_state() -> void:
-	if member.has_status(&"lost_purpose"):
-		# Потерял цель: остаётся там, где это случилось, и не слушает приказы.
+	if _disobeys():
+		# Потерял цель или имя: остаётся там, где это случилось, и не слушает приказы.
 		if not _home_set:
 			_home_set = true
 			hold_position = member.body.global_position
@@ -146,8 +149,12 @@ func _connect_squad() -> void:
 
 
 func _on_command(new_command: StringName, _issuer: ExpeditionMember) -> void:
-	if member.has_status(&"lost_purpose"):
+	if _disobeys():
 		return
 	command = new_command
 	if command == Squad.COMMAND_HOLD:
 		hold_position = member.body.global_position
+
+
+func _disobeys() -> bool:
+	return DISOBEY_STATUSES.any(func(id: StringName) -> bool: return member.has_status(id))

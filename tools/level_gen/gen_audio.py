@@ -101,6 +101,21 @@ def heavy_step():
     x = lowpass(noise(n), 0.03); e = env(n, 0.01, 0.09)
     return [(x[i] * 3 + 0.8 * math.sin(2 * math.pi * 45 * i / SR)) * e[i] for i in range(n)]
 
+def radio_static(seconds=6.0):
+    """Эфир: шипение и неразборчивый «голос» (огибающая речи на полосовом шуме)."""
+    n = int(seconds * SR)
+    hiss = lowpass(noise(n), 0.5)
+    voice = lowpass(noise(n), 0.12)
+    out = []
+    for i in range(n):
+        t = i / SR
+        syll = max(0.0, math.sin(2 * math.pi * 3.1 * t) * math.sin(2 * math.pi * 0.43 * t))
+        tone = math.sin(2 * math.pi * (180 + 40 * math.sin(2 * math.pi * 0.7 * t)) * t)
+        out.append(hiss[i] * 0.25 + voice[i] * syll * 2.2 + tone * syll * 0.15)
+    return out
+
+
+save("radio_static.wav", radio_static())
 save("footstep.wav", footstep())
 save("heartbeat.wav", heartbeat())
 save("count_tick.wav", count_tick())

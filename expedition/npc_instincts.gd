@@ -64,8 +64,6 @@ func _pick_target(delta: float) -> void:
 					and _distance(other.body) < wake_radius:
 				_set_target(other.body, &"wake")
 				return
-	if member.has_status(&"ate_dinner"):
-		return
 	for node in get_tree().get_nodes_in_group(&"npc_temptation"):
 		var item: Node3D = node as Node3D
 		if item == null or _distance(item) > temptation_radius:

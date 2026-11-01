@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://anomalies/base/punishment.gd" id="2_punishment"]
+
+[sub_resource type="Resource" id="Resource_punishment"]
+script = ExtResource("2_punishment")
+type = 1
+
+[resource]
+script = ExtResource("1_data")
+id = &"silent"
+display_name = "Тихий"
+location = "Секция 45"
+danger_level = 4
+params = {
+"grow_speed": 0.3,
+"max_radius": 7.0,
+"speed": 0.6,
+"vanish_after": 60.0
+}
+punishment = SubResource("Resource_punishment")
+encyclopedia_text = "Тип: невидимое существо. Опасность: высокая.
+Существо не видно и не слышно напрямую — единственный признак приближения — расширяющаяся зона полной тишины, в которой пропадают даже звуки собственных шагов и дыхания наблюдателя.
+---
+Правило: при ощущении внезапной тишины немедленно отступать в направлении, откуда пришли, не дожидаясь визуального подтверждения угрозы. Наказание: во всех 3 подтверждённых случаях человек, оставшийся в зоне тишины дольше минуты, не обнаружен."

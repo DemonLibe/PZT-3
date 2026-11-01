@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://anomalies/base/punishment.gd" id="2_punishment"]
+
+[sub_resource type="Resource" id="Resource_punishment"]
+script = ExtResource("2_punishment")
+type = 0
+
+[resource]
+script = ExtResource("1_data")
+id = &"puppeteer"
+display_name = "Кукольник"
+location = "Секция 42"
+danger_level = 4
+params = {
+"onset_max_hours": 4.0,
+"onset_min_hours": 2.0
+}
+punishment = SubResource("Resource_punishment")
+encyclopedia_text = "Тип: управляющая сущность. Опасность: высокая, косвенная.
+Наблюдается на расстоянии, никогда не приближается. Управляет фигурами, похожими на двойников (см. Район 7), но напрямую, будто дёргая за нити — движения дублей резкие, неестественные.
+---
+Правило: не атаковать и не трогать дублей, даже если они выглядят угрожающе или похожими на своих. Наказание: атаковавший дубля получает на теле те же повреждения, что нанёс, зеркально, с задержкой в несколько часов."

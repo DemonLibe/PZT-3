@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"collector"
+display_name = "Сборщик"
+location = "Секция 44"
+danger_level = 3
+params = {
+"appear_interval": 15.0,
+"drop_interval": 30.0
+}
+encyclopedia_text = "Тип: сущность, ориентирующаяся по вещам. Опасность: средняя, отложенная.
+Собирает оброненные вещи участников (снаряжение, личные предметы) в кучи в тупиковых помещениях.
+---
+Правило: оброненную вещь не поднимать самостоятельно — оставить. Наказание: поднявший свою же оброненную вещь становится «меченым» — Сборщик начинает появляться поблизости от него на всех последующих обходах данной секции."

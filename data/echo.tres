@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://anomalies/base/punishment.gd" id="2_punishment"]
+
+[sub_resource type="Resource" id="Resource_punishment"]
+script = ExtResource("2_punishment")
+type = 1
+
+[resource]
+script = ExtResource("1_data")
+id = &"echo"
+display_name = "Эхо"
+location = "Секция 43"
+danger_level = 3
+params = {
+"lost_chance": 0.3,
+"lure_distance": 2.0,
+"repeats": 6,
+"wander_max_hours": 24.0,
+"wander_min_hours": 2.0
+}
+punishment = SubResource("Resource_punishment")
+encyclopedia_text = "Тип: акустическое явление. Опасность: средняя, дезориентирующая.
+Любой произнесённый звук повторяется бесконечно, каждый раз чуть громче и с направления, отличного от исходного, постепенно уводя внимание слушающего.
+---
+Правило: не идти на звук собственного или чужого голоса, ориентироваться только по заранее оставленным меткам. Наказание: ушедшие на источник эха возвращаются к отправной точке через часы или сутки блуждания — если возвращаются вообще; пространство внутри секции при этом искажается индивидуально для заблудившегося."

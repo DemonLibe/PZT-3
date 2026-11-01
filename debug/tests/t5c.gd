@@ -12,7 +12,7 @@ func _ready() -> void:
 		if m: break
 		await wait(0.1)
 	check(m != null and m.body.name != "1", "у клиента своё тело (%s)" % (m.body.name if m else "-"))
-	check(level.get_node("Members").get_child_count() == 5, "клиент видит хоста и 3 NPC")
+	check(level.get_node("Members").get_child_count() == 8, "клиент видит хоста и 6 NPC")
 	var view: MirrorView = level.get_node("MirrorView")
 	var win: MirrorWindow = level.get_node("Windows/MirrorWindow2")
 	m.body.global_position = Vector3(-1.5, 0, -1.0)

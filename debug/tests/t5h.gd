@@ -8,9 +8,9 @@ func _ready() -> void:
 	check(NetAuthority.mode == NetAuthority.Mode.HOST, "режим HOST")
 	var members: Node = level.get_node("Members")
 	for i in 200:
-		if members.get_child_count() >= 5: break
+		if members.get_child_count() >= 8: break
 		await wait(0.1)
-	check(members.get_child_count() == 5, "на хосте 2 игрока + 3 NPC")
+	check(members.get_child_count() == 8, "на хосте 2 игрока + 6 NPC")
 	var client_member: ExpeditionMember
 	for b in members.get_children():
 		if b.name != "1" and not b.name.begins_with("npc"): client_member = ExpeditionMember.find_on(b)

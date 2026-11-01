@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"walls"
+display_name = "Дыхание стен"
+location = "Район 28"
+danger_level = 2
+params = {
+"panic_sync": 0.3,
+"touch_limit": 60.0
+}
+guide_hint = "Стены руками не трогать. Дольше минуты — точно нет."
+encyclopedia_text = "Классификация: физическая / биологическая. Опасность: низкая при коротком контакте, высокая при длительном.
+Стены домов на ощупь тёплые и слегка пульсируют, как при дыхании.
+---
+При длительном (свыше минуты) контакте ладонью ощущается ритм, синхронизирующийся с пульсом самого наблюдателя, который затем начинает меняться вслед за «пульсом» стены, а не наоборот."

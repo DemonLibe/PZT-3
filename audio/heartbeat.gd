@@ -28,8 +28,8 @@ func _process(delta: float) -> void:
 	_update_silence()
 	if not member.is_active():
 		return
-	if member.has_status(&"silence"):
-		# В «Тишине» слышно только своё сердце — и его ритм идёт от пульса участника.
+	if member.has_status(&"silence") or member.has_status(&"wall_pulse"):
+		# В «Тишине» и после «Дыхания стен» слышно только своё сердце — и его ритм идёт от пульса участника.
 		_timer -= delta
 		if _timer <= 0.0:
 			_timer = 60.0 / maxf(member.pulse_bpm, 20.0)

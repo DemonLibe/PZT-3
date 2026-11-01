@@ -23,6 +23,10 @@ func toggle_rest() -> void:
 	_request(&"_do_toggle_rest")
 
 
+func radio_reply() -> void:
+	_request(&"_do_radio_reply")
+
+
 func squad_command(command: StringName) -> void:
 	if NetAuthority.is_authority():
 		_do_squad_command(command)
@@ -89,6 +93,12 @@ func _do_squad_command(command: StringName) -> void:
 	var squad: Squad = get_tree().get_first_node_in_group(&"squad") as Squad
 	if squad:
 		squad.issue_command(command, member)
+
+
+@rpc("any_peer", "call_remote", "reliable")
+func _do_radio_reply() -> void:
+	if _is_sender_owner() and member.is_active():
+		EventBus.radio_replied.emit(member)
 
 
 ## Ищем у цели или её родителей метод interact(member).

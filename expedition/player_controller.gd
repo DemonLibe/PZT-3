@@ -50,6 +50,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		actions.toggle_flashlight()
 	elif event.is_action_pressed(&"rest"):
 		actions.toggle_rest()
+	elif event.is_action_pressed(&"radio_reply"):
+		actions.radio_reply()
 	elif event.is_action_pressed(&"squad_follow"):
 		actions.squad_command(Squad.COMMAND_FOLLOW)
 	elif event.is_action_pressed(&"squad_hold"):

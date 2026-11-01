@@ -15,6 +15,9 @@ signal noise_emitted(member: Node, position: Vector3, level: float)
 ## Реплика по рации или вслух (Дорохов, Мельников) — для интерфейса.
 @warning_ignore("unused_signal")
 signal radio_message(speaker: String, text: String)
+## Участник ответил по рации (клавиша R).
+@warning_ignore("unused_signal")
+signal radio_replied(member: Node)
 
 
 func _ready() -> void:

@@ -5,6 +5,7 @@ extends Node3D
 
 const PLAYER_SCENE: PackedScene = preload("res://expedition/player.tscn")
 const RADIO_PANEL: PackedScene = preload("res://ui/radio_panel.tscn")
+const HALLUCINATION: PackedScene = preload("res://ui/hallucination_overlay.tscn")
 const NPC_SCENE: PackedScene = preload("res://expedition/npc.tscn")
 ## Игрок — Максим Орлов. Напарники: сержант Мельников и пятеро заключённых из группы.
 const HOST_NAME: String = "Орлов"
@@ -12,6 +13,8 @@ const NPC_NAMES: PackedStringArray = ["Мельников", "Черных", "В�
 
 ## Название для журнала и HUD.
 @export var title: String = "Район"
+## Дорохов молчит (Район 30 «Ничего»).
+@export var radio_silent: bool = false
 ## Сколько напарников-NPC выходит в экспедицию.
 @export var npc_count: int = 6
 ## Через сколько секунд после потери всех игроков вылазка заканчивается.
@@ -28,9 +31,11 @@ var _ending: bool = false
 func _ready() -> void:
 	_spawner.spawn_function = _spawn_member
 	add_child(RADIO_PANEL.instantiate())
-	var radio: RadioOperator = RadioOperator.new()
-	radio.name = "RadioOperator"
-	add_child(radio)
+	add_child(HALLUCINATION.instantiate())
+	if not radio_silent:
+		var radio: RadioOperator = RadioOperator.new()
+		radio.name = "RadioOperator"
+		add_child(radio)
 	if _navigation:
 		# CSG собирает геометрию отложенно — строим навигацию после этого.
 		_bake_navigation.call_deferred()

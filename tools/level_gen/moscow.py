@@ -106,11 +106,14 @@ def courtyard(sc, m, width=16.0, length=40.0, playground=True, garages=True):
         box(sc, f"TrashBin{i+1}", (5.8, 0.6, 15.5 + i * 1.3), (1.0, 1.2, 1.1), m.paint)
 
 
-def south_gate(sc, m, width=16.0, z=20.0):
-    """Забор с выходом (КПП) на южной стороне двора."""
+def south_gate(sc, m, width=16.0, z=20.0, exit=True):
+    """Забор с выходом (КПП) на южной стороне двора. exit=False — глухой забор."""
     for side in (-1, 1):
         box(sc, f"GateFence{side}", (side * (width / 4 + 0.4), 1.0, z), (width / 2 - 0.8, 2.0, 0.2), m.fence)
-    exit_door(sc, (0, 0, z - 0.2), 180)
+    if exit:
+        exit_door(sc, (0, 0, z - 0.2), 180)
+    else:
+        box(sc, "GateFenceMiddle", (0, 1.0, z), (1.8, 2.0, 0.2), m.fence)
 
 
 NPC_SPAWNS = [(-4, 15), (-2.5, 14), (2.5, 14), (4, 15), (-4, 12.5), (4, 12.5)]
@@ -122,13 +125,22 @@ def spawns(sc):
         spawn(sc, f"Npc{i+1}", (x, 0, z), 0)
 
 
-def standard_yard(sc, name, title, beige=False, room=None, fog=0.045, entrances_left=(-10.5, 1.5, 10.5), garages=True):
+def standard_yard(sc, name, title, beige=False, room=None, fog=0.045, entrances_left=(-10.5, 1.5, 10.5), garages=True,
+                  exit=True):
     """Двор с двумя пятиэтажками по сторонам. Возвращает (материалы, фронт_слева, фронт_справа)."""
     base_level(sc, name, title=title, fog=fog)
     m = Mats(sc, beige)
     courtyard(sc, m, garages=garages)
     left = panel_block(sc, m, "BlockWest", -14, 0, facing=1, room=room, entrances=entrances_left)
     right = panel_block(sc, m, "BlockEast", 14, 0, facing=-1)
-    south_gate(sc, m)
+    south_gate(sc, m, exit=exit)
     spawns(sc)
     return m, left, right
+
+
+def apartment(sc, rx=-11.4, rz=6.0, floor_tex="wood_table", wall_tex="plaster_warm", lamp_energy=1.2):
+    """Пол, обои и лампа в квартире, вырезанной в западном доме (room=(6.0, 6.0))."""
+    box(sc, "AptFloor", (rx, 0.08, rz), (5.8, 0.06, 5.8), material(sc, (0.85, 0.75, 0.6), tex=floor_tex, scale=0.8))
+    box(sc, "AptWallpaper", (rx - 2.95, 1.45, rz), (0.04, 2.7, 5.8), material(sc, (0.95, 0.88, 0.75), tex=wall_tex, scale=0.6),
+        collision=False)
+    lamp(sc, "AptLamp", (rx, 2.5, rz), color=(1.0, 0.8, 0.55), energy=lamp_energy, rng=6.0)

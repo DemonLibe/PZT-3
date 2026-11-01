@@ -19,6 +19,12 @@ const LIST: Array = [
 	{"title": "Район 16", "path": "res://levels/district_16_lullaby.tscn"},
 	{"title": "Район 18", "path": "res://levels/district_18_photos.tscn"},
 	{"title": "Район 20", "path": "res://levels/district_20_steps.tscn"},
+	{"title": "Район 21", "path": "res://levels/district_21_door.tscn"},
+	{"title": "Район 24", "path": "res://levels/district_24_voices.tscn"},
+	{"title": "Район 25", "path": "res://levels/district_25_ceiling.tscn"},
+	{"title": "Район 27", "path": "res://levels/district_27_companion.tscn"},
+	{"title": "Район 28", "path": "res://levels/district_28_walls.tscn"},
+	{"title": "Район 30", "path": "res://levels/district_30_nothing.tscn"},
 	{"title": "Гигадом, секция 32", "path": "res://levels/section_32_cradle.tscn"},
 	{"title": "Гигадом, секция 36", "path": "res://levels/section_36_warden.tscn"},
 ]

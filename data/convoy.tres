@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://anomalies/base/punishment.gd" id="2_punishment"]
+
+[sub_resource type="Resource" id="Resource_punishment"]
+script = ExtResource("2_punishment")
+type = 1
+
+[resource]
+script = ExtResource("1_data")
+id = &"convoy"
+display_name = "Пустой конвой"
+location = "Секция 48"
+danger_level = 4
+params = {
+"interval": 45.0,
+"march_time": 10.0,
+"npc_discipline": 0.85,
+"warning_time": 5.0
+}
+punishment = SubResource("Resource_punishment")
+encyclopedia_text = "Тип: группа марширующих фигур. Опасность: высокая, предотвратима.
+Через равные интервалы по главному коридору секции проходит строй марширующих фигур в военной форме без знаков различия и без лиц.
+---
+Правило: при звуке шагов строя — остановиться, встать по стойке смирно лицом к стене до полного прохождения строя. Наказание: если строй останавливается и разворачивается к нарушителю — по всем известным случаям это последняя запись в журнале конкретной группы."

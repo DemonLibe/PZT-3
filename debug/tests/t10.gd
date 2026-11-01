@@ -39,7 +39,18 @@ func _ready() -> void:
 			lvl.get_node("PauseMenu").close()
 			await frames(2)
 			check(not get_tree().paused, "продолжить")
-		var door: Node3D = lvl.get_node("ExitDoor")
+		var door: Node3D = lvl.get_node_or_null("ExitDoor")
+		if door == null:
+			# Район 30: КПП нет — вылазку прерываем через паузу.
+			get_tree().get_first_node_in_group(&"local_controller").pause_requested.emit()
+			await frames(2)
+			lvl.get_node("PauseMenu")._abort()
+			await wait(0.8)
+			check(scene() != null and scene().name == "JournalView", "%s: нет КПП, вылазка прервана" % dest["title"])
+			var jv: Node = scene()
+			jv.get_node("%BackButton").pressed.emit()
+			await wait(0.6)
+			continue
 		var front: Vector3 = door.global_transform * Vector3(0, 0, 1.6)
 		m.body.global_position = front
 		await frames(2)
@@ -56,7 +67,7 @@ func _ready() -> void:
 	var base2: Node = scene()
 	base2.get_node("%EncyclopediaButton").pressed.emit()
 	await wait(0.6)
-	check(scene().name == "EncyclopediaView" and scene().get_node("%Articles").item_count == 7, "Энциклопедия: 7 статей")
+	check(scene().name == "EncyclopediaView" and scene().get_node("%Articles").item_count == Encyclopedia.list_ids().size(), "Энциклопедия: %d статей" % Encyclopedia.list_ids().size())
 	await open("res://ui/settings_menu.tscn")
 	var panel: Node = scene().find_child("SettingsPanel", true, false)
 	panel.get_node("%Ps1").button_pressed = false

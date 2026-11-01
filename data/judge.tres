@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://anomalies/base/punishment.gd" id="2_punishment"]
+
+[sub_resource type="Resource" id="Resource_punishment"]
+script = ExtResource("2_punishment")
+type = 1
+
+[resource]
+script = ExtResource("1_data")
+id = &"judge"
+display_name = "Судья"
+location = "Секция 47"
+danger_level = 4
+params = {
+"npc_conflict_chance": 0.004
+}
+punishment = SubResource("Resource_punishment")
+encyclopedia_text = "Тип: реагирующая сущность. Опасность: высокая, провоцируется конфликтом.
+Появляется исключительно в ответ на открытый конфликт (крик, драку, угрозы) между членами группы.
+---
+Правило: полный запрет на конфликты внутри группы в пределах секции — любые разногласия решать вне её границ или молча. Наказание: наказывает обе стороны конфликта без разбора вины, вне зависимости от того, кто был инициатором."

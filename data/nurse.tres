@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://anomalies/base/punishment.gd" id="2_punishment"]
+
+[sub_resource type="Resource" id="Resource_punishment"]
+script = ExtResource("2_punishment")
+type = 1
+
+[resource]
+script = ExtResource("1_data")
+id = &"nurse"
+display_name = "Кормилица"
+location = "Секция 46"
+danger_level = 5
+params = {
+"alone_time": 6.0
+}
+punishment = SubResource("Resource_punishment")
+encyclopedia_text = "Тип: материнская сущность. Опасность: критическая для одиночек.
+Фигура, напоминающая заботливую женщину средних лет. Появляется исключительно перед участниками, оказавшимися в одиночестве, вне поля зрения остальной группы.
+---
+Правило: категорический запрет на разделение группы в пределах секции, даже на короткое время. Наказание: найденный в одиночестве человек «уводится» Кормилицей; звуковых или визуальных следов борьбы не остаётся, будто ушёл добровольно."

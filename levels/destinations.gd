@@ -41,5 +41,9 @@ const LIST: Array = [
 	{"title": "Гигадом, секция 43", "path": "res://levels/section_43_echo.tscn"},
 	{"title": "Гигадом, секция 44", "path": "res://levels/section_44_collector.tscn"},
 	{"title": "Гигадом, секция 45", "path": "res://levels/section_45_silent.tscn"},
+	{"title": "Гигадом, секция 46", "path": "res://levels/section_46_nurse.tscn"},
+	{"title": "Гигадом, секция 47", "path": "res://levels/section_47_judge.tscn"},
+	{"title": "Гигадом, секция 48", "path": "res://levels/section_48_convoy.tscn"},
+	{"title": "Гигадом, секция 49", "path": "res://levels/section_49_shaft.tscn"},
 	{"title": "Гигадом, секция 50", "path": "res://levels/section_50_threshold.tscn"},
 ]

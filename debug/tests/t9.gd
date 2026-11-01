@@ -3,16 +3,18 @@ extends TestHarness
 func level() -> Node:
 	return get_tree().current_scene
 
-func go(index: int) -> void:
+func go(title: String) -> void:
 	get_tree().current_scene = null  # чтобы смена сцены не удалила тест
-	GameState.begin_expedition(Destinations.LIST[index])
+	for d in Destinations.LIST:
+		if d["title"] == title:
+			GameState.begin_expedition(d)
 	await wait(1.0)
 
 func _ready() -> void:
 	await frames(2)
 	Encyclopedia.reset()
 	# 1. Район 5: игрок пропадает в Зеркале
-	await go(2)
+	await go("Район 5")
 	check(level() != null and level().name == "District05Mirror", "экспедиция вышла в Район 5")
 	check(GameState.is_expedition_active() and GameState.journal.number == 1, "журнал №1 заведён")
 	var m := local_member()
@@ -36,7 +38,7 @@ func _ready() -> void:
 	check(FileAccess.file_exists(Encyclopedia.SAVE_PATH), "Энциклопедия сохранена на диск")
 	print("   ", Encyclopedia.get_article_text(&"mirror").replace("\n", " | "))
 	# 2. Район 1: возвращение через выход
-	await go(0)
+	await go("Район 1")
 	m = local_member()
 	var door: Node3D = level().get_node("ExitDoor")
 	m.body.global_position = door.global_position + Vector3(0, 0, -1.6)
@@ -50,7 +52,7 @@ func _ready() -> void:
 	check(j.fates.get("Орлов") == "вернулся" and j.fates.get("Мельников") == "вернулся", "все вернулись")
 	check(Encyclopedia.article_level(&"dinner") == 0, "в дом с ужином не заходили — статья закрыта")
 	# 3. Потеря цели: выход не открывается
-	await go(0)
+	await go("Район 1")
 	m = local_member()
 	m.add_status(&"lost_purpose")
 	door = level().get_node("ExitDoor")

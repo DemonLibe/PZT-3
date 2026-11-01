@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://expedition/npc_brain.gd" id="6_brain"]
 [ext_resource type="Script" path="res://expedition/npc_navigator.gd" id="7_navigator"]
 [ext_resource type="Script" path="res://expedition/npc_instincts.gd" id="8_instincts"]
+[ext_resource type="Texture2D" path="res://world/textures/uniform.png" id="11_uniform"]
 
 [sub_resource type="CapsuleShape3D" id="Shape_body"]
 radius = 0.35
@@ -19,7 +20,10 @@ radius = 0.35
 height = 1.8
 
 [sub_resource type="StandardMaterial3D" id="Material_body"]
-albedo_color = Color(0.42, 0.38, 0.3, 1)
+albedo_color = Color(0.75, 0.68, 0.52, 1)
+albedo_texture = ExtResource("11_uniform")
+texture_filter = 0
+uv1_scale = Vector3(2, 2, 2)
 roughness = 1.0
 
 [sub_resource type="SceneReplicationConfig" id="Replication_body"]

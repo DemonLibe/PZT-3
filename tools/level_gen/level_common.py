@@ -18,8 +18,12 @@ def base_level(sc, name, title="Район", sound="res://audio/sfx/ambient_dist
     sc.node("MemberSpawner", "MultiplayerSpawner", ".", spawn_path=NP("../Members"))
     sc.node("Squad", "Node", ".", script=sc.ext_res("Script", "res://expedition/squad.gd"), members_root=NP("../Members"))
 
-def material(sc, color, rough=1.0, emission=None, energy=1.0):
+def material(sc, color, rough=1.0, emission=None, energy=1.0, tex=None, scale=0.5):
+    """Материал; tex — имя текстуры из world/textures (накладывается по мировым координатам)."""
     props = dict(albedo_color=C(*color), roughness=rough)
+    if tex:
+        props.update(albedo_texture=sc.ext_res("Texture2D", f"res://world/textures/{tex}.png"),
+                     texture_filter=0, uv1_scale=V3(scale, scale, scale), uv1_triplanar=True, uv1_world_triplanar=True)
     if emission:
         props.update(emission_enabled=True, emission=C(*emission), emission_energy_multiplier=energy)
     return sc.sub_res("StandardMaterial3D", **props)
@@ -58,3 +62,14 @@ def standard_spawns(sc, z=17.0):
     spawn(sc, "Player", (0, 0, z), 0)
     for i in range(3):
         spawn(sc, f"Npc{i+1}", (-1.5 + 1.5 * i, 0, z + 2), 0)
+
+def cylinder(sc, name, pos, radius, height, mat, parent="NavigationRegion3D/Geometry", collision=True, rot_x=0.0, yaw=0.0):
+    sc.node(name, "CSGCylinder3D", parent, transform=T(*pos, yaw=yaw, pitch=rot_x), use_collision=collision,
+            radius=radius, height=height, sides=8, material=mat)
+
+def survey(sc, idx, pos, yaw=0.0):
+    """Точка замера — цель вылазки."""
+    if idx == 1:
+        sc.node("SurveyPoints", "Node3D", ".")
+    sc.node(f"SurveyPoint{idx}", None, "SurveyPoints",
+            instance=sc.ext_res("PackedScene", "res://world/survey_point.tscn"), transform=T(*pos, yaw=yaw))

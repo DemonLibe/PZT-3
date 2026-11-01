@@ -18,6 +18,8 @@ var opened_articles: Dictionary = {}
 ## id аномалии -> список записей о пропавших и погибших
 var incidents: Dictionary = {}
 var expedition_count: int = 0
+## Название направления -> задание выполнено (все замеры собраны и отряд вернулся).
+var completed: Dictionary = {}
 
 var _data_cache: Dictionary = {}
 
@@ -40,6 +42,14 @@ func open_article(anomaly_id: StringName, level: int) -> void:
 
 func article_level(anomaly_id: StringName) -> int:
 	return int(opened_articles.get(String(anomaly_id), LEVEL_NONE))
+
+
+func mark_completed(destination_title: String) -> void:
+	completed[destination_title] = true
+
+
+func is_completed(destination_title: String) -> bool:
+	return completed.has(destination_title)
 
 
 func add_incident(anomaly_id: StringName, text: String) -> void:
@@ -99,7 +109,8 @@ func save_to_disk() -> void:
 		push_warning("[Encyclopedia] не удалось сохранить: %d" % FileAccess.get_open_error())
 		return
 	file.store_string(JSON.stringify({
-		"articles": opened_articles, "incidents": incidents, "expedition_count": expedition_count}, "\t"))
+		"articles": opened_articles, "incidents": incidents, "expedition_count": expedition_count,
+		"completed": completed}, "\t"))
 
 
 func load_from_disk() -> void:
@@ -110,6 +121,7 @@ func load_from_disk() -> void:
 		opened_articles = parsed.get("articles", {})
 		incidents = parsed.get("incidents", {})
 		expedition_count = int(parsed.get("expedition_count", 0))
+		completed = parsed.get("completed", {})
 
 
 ## Отладка: стереть всё.
@@ -117,4 +129,5 @@ func reset() -> void:
 	opened_articles = {}
 	incidents = {}
 	expedition_count = 0
+	completed = {}
 	save_to_disk()

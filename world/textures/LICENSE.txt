@@ -1,0 +1,6 @@
+Текстуры: Screaming Brain Studios — Tiny Texture Pack 1, 2, 3 (128×128)
+https://opengameart.org/content/tiny-texture-pack-1
+https://opengameart.org/content/tiny-texture-pack-2
+https://opengameart.org/content/tiny-texture-pack-3
+Лицензия: CC0 / Public Domain — можно использовать в любых проектах, в том числе коммерческих, без указания автора.
+Скачать заново: python3 tools/level_gen/fetch_textures.py

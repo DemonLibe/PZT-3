@@ -11,9 +11,11 @@ const NET_SCENE: String = "res://debug/net_menu.tscn"
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	NetAuthority.prepare(NetAuthority.Mode.SOLO)
-	%Subtitle.text = "База экспедиции · экспедиций проведено: %d" % Encyclopedia.expedition_count
+	%Subtitle.text = "База экспедиции · экспедиций: %d · заданий выполнено: %d из %d" % [
+		Encyclopedia.expedition_count, Encyclopedia.completed.size(), DESTINATIONS.LIST.size()]
 	for destination in DESTINATIONS.LIST:
-		%Destination.add_item(destination["title"])
+		var done: bool = Encyclopedia.is_completed(destination["title"])
+		%Destination.add_item(("✓  " if done else "    ") + destination["title"])
 	%JournalButton.visible = GameState.last_journal != null
 	%SettingsButton.visible = ResourceLoader.exists(SETTINGS_SCENE)
 	%StartButton.pressed.connect(func() -> void: GameState.begin_expedition(DESTINATIONS.LIST[%Destination.selected]))

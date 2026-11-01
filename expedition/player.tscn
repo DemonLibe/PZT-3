@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://expedition/member_actions.gd" id="4_actions"]
 [ext_resource type="Script" path="res://expedition/gaze_sensor.gd" id="5_gaze"]
 [ext_resource type="Script" path="res://expedition/player_controller.gd" id="6_controller"]
+[ext_resource type="Texture2D" path="res://world/textures/uniform.png" id="11_uniform"]
 
 [sub_resource type="CapsuleShape3D" id="Shape_body"]
 radius = 0.35
@@ -18,7 +19,10 @@ radius = 0.35
 height = 1.8
 
 [sub_resource type="StandardMaterial3D" id="Material_body"]
-albedo_color = Color(0.32, 0.36, 0.3, 1)
+albedo_color = Color(0.55, 0.62, 0.5, 1)
+albedo_texture = ExtResource("11_uniform")
+texture_filter = 0
+uv1_scale = Vector3(2, 2, 2)
 roughness = 1.0
 
 [sub_resource type="SceneReplicationConfig" id="Replication_body"]

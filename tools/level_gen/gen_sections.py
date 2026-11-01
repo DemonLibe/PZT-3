@@ -10,9 +10,11 @@ G = "NavigationRegion3D/Geometry"
 def section_32():
     sc = Scene()
     base_level(sc, "Section32Cradle", title="Гигадом, секция 32", sound="res://audio/sfx/ambient_gigadom.wav", fog=0.06, bg=(0.015, 0.015, 0.018), ambient=(0.2, 0.21, 0.24), ambient_energy=0.3)
-    concrete = material(sc, (0.42, 0.42, 0.41))
-    dark = material(sc, (0.3, 0.3, 0.3))
-    box(sc, "Floor", (0, -0.25, 0), (40, 0.5, 40), concrete)
+    concrete = material(sc, (0.75, 0.75, 0.74), tex="concrete", scale=0.3)
+    dark = material(sc, (0.7, 0.72, 0.7), tex="concrete_damp", scale=0.4)
+    floor_mat = material(sc, (0.6, 0.6, 0.6), tex="concrete_floor", scale=0.3)
+    pipe = material(sc, (0.7, 0.7, 0.7), tex="metal_rust", scale=1.0)
+    box(sc, "Floor", (0, -0.25, 0), (40, 0.5, 40), floor_mat)
     box(sc, "Ceiling", (0, 6.25, 0), (40, 0.5, 40), dark)
     for i, (x, z, sx, sz) in enumerate(((0, -20.25, 40, 0.5), (0, 20.25, 40, 0.5), (-20.25, 0, 0.5, 40), (20.25, 0, 0.5, 40))):
         box(sc, f"Wall{i+1}", (x, 3, z), (sx, 6, sz), concrete)
@@ -21,7 +23,10 @@ def section_32():
         for z in (-12, -4, 4, 12):
             k += 1
             box(sc, f"Pillar{k}", (x, 3, z), (1.2, 6, 1.2), dark)
-    box(sc, "Crate", (7, 0.4, 15), (1.4, 0.8, 1.0), material(sc, (0.35, 0.3, 0.22)))
+    box(sc, "Crate", (7, 0.4, 15), (1.4, 0.8, 1.0), material(sc, (0.85, 0.8, 0.7), tex="wood_fence", scale=1.0))
+    for i, x in enumerate((-19.6, 19.6)):
+        cylinder(sc, f"Pipe{i+1}", (x, 4.8, 0), 0.25, 40.0, pipe, collision=False, rot_x=90.0)
+        cylinder(sc, f"PipeB{i+1}", (x, 5.4, 0), 0.12, 40.0, pipe, collision=False, rot_x=90.0)
     food = sc.ext_res("PackedScene", "res://world/food_item.tscn")
     for i, dx in enumerate((-0.35, 0.35)):
         sc.node(f"Food{i+1}", None, ".", instance=food, transform=T(7 + dx, 0.8, 15))
@@ -31,6 +36,9 @@ def section_32():
     exit_door(sc, (0, 0, 19.7), 180)
     for i in range(3):
         spawn(sc, f"Npc{i+1}", (3 + 1.5 * i, 0, 16), 0)
+    survey(sc, 1, (-12.0, 0, -8.0))
+    survey(sc, 2, (12.0, 0, -8.0))
+    survey(sc, 3, (0.0, 0, -18.0))
     sc.node("Cradle", None, ".", instance=sc.ext_res("PackedScene", "res://creatures/cradle/cradle.tscn"), transform=T(0, 0, -15))
     ui(sc)
     sc.save(ROOT + "/levels/section_32_cradle.tscn")
@@ -38,9 +46,11 @@ def section_32():
 def section_36():
     sc = Scene()
     base_level(sc, "Section36Warden", title="Гигадом, секция 36", sound="res://audio/sfx/ambient_gigadom.wav", fog=0.05, bg=(0.015, 0.015, 0.018), ambient=(0.2, 0.21, 0.24), ambient_energy=0.3)
-    concrete = material(sc, (0.42, 0.42, 0.41))
-    room_floor = material(sc, (0.36, 0.35, 0.33))
-    box(sc, "Floor", (0, -0.25, -3), (36, 0.5, 13), concrete)
+    concrete = material(sc, (0.75, 0.75, 0.74), tex="concrete", scale=0.3)
+    room_floor = material(sc, (0.7, 0.72, 0.7), tex="concrete_damp", scale=0.4)
+    pipe = material(sc, (0.7, 0.7, 0.7), tex="metal_rust", scale=1.0)
+    box(sc, "Floor", (0, -0.25, -3), (36, 0.5, 13), material(sc, (0.6, 0.6, 0.6), tex="concrete_floor", scale=0.3))
+    cylinder(sc, "CorridorPipe", (0, 3.3, 1.2), 0.15, 33.0, pipe, collision=False, rot_x=90.0, yaw=90.0)
     sc.node("Structure", "CSGCombiner3D", G, use_collision=True)
     S = f"{G}/Structure"
     sc.node("Outer", "CSGBox3D", S, transform=T(0, 2, -3.25), size=V3(34, 4, 10.5), material=concrete)
@@ -64,6 +74,8 @@ def section_36():
         lamp(sc, f"CorridorLamp{i+1}", (x, 3.3, 0), color=COLD, energy=0.8, rng=7.0)
     curve = sc.sub_res("Curve3D", _data=Raw('{\n"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -15.5, 0, 0.6, 0, 0, 0, 0, 0, 0, 15.5, 0, 0.6, 0, 0, 0, 0, 0, 0, -15.5, 0, 0.55),\n"tilts": PackedFloat32Array(0, 0, 0)\n}'), point_count=3)
     sc.node("WardenPath", "Path3D", ".", curve=curve)
+    for i, x in enumerate((-12, -4, 4)):
+        survey(sc, i + 1, (x - 2.5, 0, -6.8))
     sc.node("Warden", None, ".", instance=sc.ext_res("PackedScene", "res://creatures/warden/warden.tscn"),
             transform=T(-15.5, 0, 0.6), path=NP("../WardenPath"), rooms_root=NP("../Rooms"))
     spawn(sc, "Player", (12, 0, -5), 180)

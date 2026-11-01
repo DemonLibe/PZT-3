@@ -46,7 +46,7 @@ func _ready() -> void:
 	await press(&"interact")
 	await wait(0.5)
 	j = GameState.last_journal
-	check(j.number == 2 and j.outcome == "возвращение на базу", "экспедиция №2 вернулась через выход")
+	check(j.number == 2 and j.outcome.begins_with("возвращение на базу"), "экспедиция №2 вернулась через выход: " + j.outcome)
 	check(j.fates.get("Руководитель") == "вернулся" and j.fates.get("Сато") == "вернулся", "все вернулись")
 	check(Encyclopedia.article_level(&"dinner") == 0, "в дом с ужином не заходили — статья закрыта")
 	# 3. Потеря цели: выход не открывается

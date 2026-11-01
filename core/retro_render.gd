@@ -69,6 +69,9 @@ func _convert(source: Material) -> Material:
 		if standard.albedo_texture:
 			material.set_shader_parameter(&"albedo_texture", standard.albedo_texture)
 			material.set_shader_parameter(&"use_texture", true)
+			if standard.uv1_triplanar:
+				material.set_shader_parameter(&"use_triplanar", true)
+				material.set_shader_parameter(&"triplanar_scale", standard.uv1_scale.x)
 		if standard.emission_enabled:
 			material.set_shader_parameter(&"emission", standard.emission)
 			material.set_shader_parameter(&"emission_energy", standard.emission_energy_multiplier)

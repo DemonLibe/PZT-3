@@ -25,4 +25,12 @@ func interact(member: ExpeditionMember) -> void:
 			left_behind.append(other)
 		else:
 			survivors.append(other)
-	GameState.end_expedition("возвращение на базу", survivors, left_behind)
+	var points: Array[Node] = get_tree().get_nodes_in_group(&"survey_point")
+	var done: int = points.filter(func(p: Node) -> bool: return p.is_done).size()
+	var result: String = "возвращение на базу, замеры %d из %d" % [done, points.size()]
+	if done == points.size() and points.size() > 0:
+		result += " — задание выполнено"
+		var level: Level = owner as Level
+		if level:
+			Encyclopedia.mark_completed(level.title)
+	GameState.end_expedition(result, survivors, left_behind)

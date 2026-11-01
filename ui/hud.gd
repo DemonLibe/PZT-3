@@ -4,6 +4,8 @@ extends CanvasLayer
 
 const MESSAGES: Dictionary = {
 	&"exit_refused": "Дверь не открывается.",
+	&"survey_done": "Замер записан.",
+	&"survey_interrupted": "Запись прервана.",
 }
 
 @export var message_time: float = 2.5
@@ -34,7 +36,16 @@ func _update_objective() -> void:
 		_objective.text = ""
 		return
 	var distance: float = _member.body.global_position.distance_to(exit.global_position)
-	_objective.text = "Выход: %d м   ·   [1] за мной   [2] стоять" % int(distance)
+	var points: Array[Node] = get_tree().get_nodes_in_group(&"survey_point")
+	var done: int = points.filter(func(p: Node) -> bool: return p.is_done).size()
+	var task: String = "Замеры: %d из %d" % [done, points.size()]
+	if done == points.size():
+		task = "Замеры собраны — к выходу"
+	var recording: String = ""
+	for point in points:
+		if point.recorder_path == _member.get_path():
+			recording = "Запись замера… %d%%   ·   " % int(point.progress * 100.0)
+	_objective.text = "%s%s   ·   Выход: %d м   ·   [1] за мной  [2] стоять" % [recording, task, int(distance)]
 
 
 func _looks_at_interactable() -> bool:

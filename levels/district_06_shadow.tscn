@@ -4,14 +4,20 @@
 [ext_resource type="Script" path="res://audio/ambience.gd" id="2_r"]
 [ext_resource type="AudioStream" path="res://audio/sfx/ambient_district.wav" id="3_r"]
 [ext_resource type="Script" path="res://expedition/squad.gd" id="4_r"]
-[ext_resource type="PackedScene" path="res://world/exit_door.tscn" id="5_r"]
-[ext_resource type="Script" path="res://anomalies/districts/shadow/shadow_zone.gd" id="6_r"]
-[ext_resource type="Resource" path="res://data/shadow.tres" id="7_r"]
-[ext_resource type="PackedScene" path="res://ui/hud.tscn" id="8_r"]
-[ext_resource type="PackedScene" path="res://ui/pause_menu.tscn" id="9_r"]
-[ext_resource type="PackedScene" path="res://ui/fate_overlay.tscn" id="10_r"]
-[ext_resource type="PackedScene" path="res://ui/sleep_overlay.tscn" id="11_r"]
-[ext_resource type="PackedScene" path="res://debug/debug_hud.tscn" id="12_r"]
+[ext_resource type="Texture2D" path="res://world/textures/sidewalk.png" id="5_r"]
+[ext_resource type="Texture2D" path="res://world/textures/plaster_grey.png" id="6_r"]
+[ext_resource type="Texture2D" path="res://world/textures/metal_rust.png" id="7_r"]
+[ext_resource type="Texture2D" path="res://world/textures/metal_clean.png" id="8_r"]
+[ext_resource type="Texture2D" path="res://world/textures/wood_fence.png" id="9_r"]
+[ext_resource type="PackedScene" path="res://world/exit_door.tscn" id="10_r"]
+[ext_resource type="Script" path="res://anomalies/districts/shadow/shadow_zone.gd" id="11_r"]
+[ext_resource type="Resource" path="res://data/shadow.tres" id="12_r"]
+[ext_resource type="PackedScene" path="res://world/survey_point.tscn" id="13_r"]
+[ext_resource type="PackedScene" path="res://ui/hud.tscn" id="14_r"]
+[ext_resource type="PackedScene" path="res://ui/pause_menu.tscn" id="15_r"]
+[ext_resource type="PackedScene" path="res://ui/fate_overlay.tscn" id="16_r"]
+[ext_resource type="PackedScene" path="res://ui/sleep_overlay.tscn" id="17_r"]
+[ext_resource type="PackedScene" path="res://debug/debug_hud.tscn" id="18_r"]
 
 [sub_resource type="Environment" id="Environment_1"]
 background_mode = 1
@@ -33,24 +39,49 @@ cell_size = 0.25
 cell_height = 0.25
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3"]
-albedo_color = Color(0.3, 0.3, 0.3, 1.0)
+albedo_color = Color(0.75, 0.75, 0.73, 1.0)
 roughness = 1.0
+albedo_texture = ExtResource("5_r")
+texture_filter = 0
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_world_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4"]
-albedo_color = Color(0.55, 0.53, 0.5, 1.0)
+albedo_color = Color(0.9, 0.9, 0.9, 1.0)
 roughness = 1.0
+albedo_texture = ExtResource("6_r")
+texture_filter = 0
+uv1_scale = Vector3(0.35, 0.35, 0.35)
+uv1_triplanar = true
+uv1_world_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5"]
-albedo_color = Color(0.15, 0.15, 0.15, 1.0)
+albedo_color = Color(0.7, 0.7, 0.7, 1.0)
 roughness = 1.0
+albedo_texture = ExtResource("7_r")
+texture_filter = 0
+uv1_scale = Vector3(1.0, 1.0, 1.0)
+uv1_triplanar = true
+uv1_world_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6"]
-albedo_color = Color(0.4, 0.42, 0.38, 1.0)
+albedo_color = Color(0.6, 0.7, 0.6, 1.0)
 roughness = 1.0
+albedo_texture = ExtResource("8_r")
+texture_filter = 0
+uv1_scale = Vector3(1.0, 1.0, 1.0)
+uv1_triplanar = true
+uv1_world_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7"]
-albedo_color = Color(0.3, 0.22, 0.15, 1.0)
+albedo_color = Color(0.8, 0.75, 0.7, 1.0)
 roughness = 1.0
+albedo_texture = ExtResource("9_r")
+texture_filter = 0
+uv1_scale = Vector3(1.0, 1.0, 1.0)
+uv1_triplanar = true
+uv1_world_triplanar = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8"]
 size = Vector3(16.0, 4.0, 16.0)
@@ -166,7 +197,7 @@ material = SubResource("StandardMaterial3D_5")
 [node name="Player" type="Marker3D" parent="SpawnPoints"]
 transform = Transform3D(-0.70711, -0.0, -0.70711, 0.0, 1.0, -0.0, 0.70711, -0.0, -0.70711, -9.0, 0.0, 9.0)
 
-[node name="ExitDoor" parent="." instance=ExtResource("5_r")]
+[node name="ExitDoor" parent="." instance=ExtResource("10_r")]
 transform = Transform3D(-0.70711, 0.0, 0.70711, 0.0, 1.0, -0.0, -0.70711, -0.0, -0.70711, -12.2, 0.0, 12.2)
 
 [node name="Npc1" type="Marker3D" parent="SpawnPoints"]
@@ -179,20 +210,31 @@ transform = Transform3D(-0.70711, -0.0, -0.70711, 0.0, 1.0, -0.0, 0.70711, -0.0,
 transform = Transform3D(-0.70711, -0.0, -0.70711, 0.0, 1.0, -0.0, 0.70711, -0.0, -0.70711, -8.6, 0.0, 11.0)
 
 [node name="ShadowZone" type="Area3D" parent="." node_paths=PackedStringArray("light")]
-script = ExtResource("6_r")
-data = ExtResource("7_r")
+script = ExtResource("11_r")
+data = ExtResource("12_r")
 light = NodePath("../ShadowLight")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ShadowZone"]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 2.0, 0.0)
 shape = SubResource("BoxShape3D_8")
 
-[node name="HUD" parent="." instance=ExtResource("8_r")]
+[node name="SurveyPoints" type="Node3D" parent="."]
 
-[node name="PauseMenu" parent="." instance=ExtResource("9_r")]
+[node name="SurveyPoint1" parent="SurveyPoints" instance=ExtResource("13_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 2.0, 0.0, -2.0)
 
-[node name="FateOverlay" parent="." instance=ExtResource("10_r")]
+[node name="SurveyPoint2" parent="SurveyPoints" instance=ExtResource("13_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 6.0, 0.0, -9.0)
 
-[node name="SleepOverlay" parent="." instance=ExtResource("11_r")]
+[node name="SurveyPoint3" parent="SurveyPoints" instance=ExtResource("13_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -9.0, 0.0, -4.0)
 
-[node name="DebugHUD" parent="." instance=ExtResource("12_r")]
+[node name="HUD" parent="." instance=ExtResource("14_r")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("15_r")]
+
+[node name="FateOverlay" parent="." instance=ExtResource("16_r")]
+
+[node name="SleepOverlay" parent="." instance=ExtResource("17_r")]
+
+[node name="DebugHUD" parent="." instance=ExtResource("18_r")]

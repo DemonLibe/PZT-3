@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://anomalies/base/punishment.gd" id="2_punishment"]
+
+[sub_resource type="Resource" id="Resource_punishment"]
+script = ExtResource("2_punishment")
+type = 2
+status_id = &"lost_purpose"
+
+[resource]
+script = ExtResource("1_data")
+id = &"dinner"
+display_name = "Ужин"
+location = "Район 1"
+danger_level = 3
+params = {
+"drowsiness_relief": 0.4,
+"eat_duration": 3.0,
+"onset_max_hours": 9.0,
+"onset_min_hours": 3.0
+}
+punishment = SubResource("Resource_punishment")
+encyclopedia_text = "Во всех домах района накрыт стол. Еда тёплая. Анализ проб: отклонений не обнаружено. Мест за столом на одно больше, чем участников экспедиции.
+---
+Правило: съевший на время перестаёт хотеть спать. Через 3–9 ч игрового времени он теряет цель и отказывается уходить из района. Обратимость не задокументирована."

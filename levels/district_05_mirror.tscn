@@ -7,7 +7,8 @@
 [ext_resource type="Script" path="res://anomalies/districts/mirror/mirror_zone.gd" id="5_r"]
 [ext_resource type="Resource" path="res://data/mirror.tres" id="6_r"]
 [ext_resource type="PackedScene" path="res://ui/fate_overlay.tscn" id="7_r"]
-[ext_resource type="PackedScene" path="res://debug/debug_hud.tscn" id="8_r"]
+[ext_resource type="PackedScene" path="res://ui/sleep_overlay.tscn" id="8_r"]
+[ext_resource type="PackedScene" path="res://debug/debug_hud.tscn" id="9_r"]
 
 [sub_resource type="Environment" id="Environment_1"]
 background_mode = 1
@@ -20,11 +21,11 @@ fog_light_color = Color(0.04, 0.04, 0.075, 1.0)
 fog_density = 0.045
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_2"]
-geometry_parsed_geometry_type = 2
+geometry_parsed_geometry_type = 1
 geometry_collision_mask = 1
-agent_radius = 0.4
-agent_height = 1.8
-agent_max_climb = 0.3
+agent_radius = 0.5
+agent_height = 2.0
+agent_max_climb = 0.25
 cell_size = 0.25
 cell_height = 0.25
 
@@ -449,4 +450,6 @@ shape = SubResource("BoxShape3D_13")
 
 [node name="FateOverlay" parent="." instance=ExtResource("7_r")]
 
-[node name="DebugHUD" parent="." instance=ExtResource("8_r")]
+[node name="SleepOverlay" parent="." instance=ExtResource("8_r")]
+
+[node name="DebugHUD" parent="." instance=ExtResource("9_r")]

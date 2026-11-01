@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 		return
 	if not body.is_on_floor():
 		body.velocity.y -= _gravity * delta
-	var active: bool = member.can_act()
+	var active: bool = member.can_act() and not member.is_eating
 	var input: Vector2 = member.move_intent.limit_length(1.0) if active else Vector2.ZERO
 	var crouching: bool = active and member.wants_crouch
 	var running: bool = active and member.wants_sprint and not crouching and input.length() > 0.1

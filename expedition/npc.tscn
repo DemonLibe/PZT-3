@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://expedition/gaze_sensor.gd" id="5_gaze"]
 [ext_resource type="Script" path="res://expedition/npc_brain.gd" id="6_brain"]
 [ext_resource type="Script" path="res://expedition/npc_navigator.gd" id="7_navigator"]
+[ext_resource type="Script" path="res://expedition/npc_instincts.gd" id="8_instincts"]
 
 [sub_resource type="CapsuleShape3D" id="Shape_body"]
 radius = 0.35
@@ -141,10 +142,17 @@ script = ExtResource("7_navigator")
 member = NodePath("../ExpeditionMember")
 agent = NodePath("../NavigationAgent3D")
 
-[node name="NPCBrain" type="Node" parent="." node_paths=PackedStringArray("member", "navigator")]
+[node name="NPCInstincts" type="Node" parent="." node_paths=PackedStringArray("member", "navigator", "actions")]
+script = ExtResource("8_instincts")
+member = NodePath("../ExpeditionMember")
+navigator = NodePath("../NPCNavigator")
+actions = NodePath("../MemberActions")
+
+[node name="NPCBrain" type="Node" parent="." node_paths=PackedStringArray("member", "navigator", "instincts")]
 script = ExtResource("6_brain")
 member = NodePath("../ExpeditionMember")
 navigator = NodePath("../NPCNavigator")
+instincts = NodePath("../NPCInstincts")
 
 [node name="BodySync" type="MultiplayerSynchronizer" parent="."]
 root_path = NodePath("..")

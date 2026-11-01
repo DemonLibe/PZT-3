@@ -21,7 +21,7 @@ func _ready() -> void:
 	_spawner.spawn_function = _spawn_member
 	if _navigation:
 		# CSG собирает геометрию отложенно — строим навигацию после этого.
-		_navigation.bake_navigation_mesh.call_deferred(false)
+		_bake_navigation.call_deferred()
 	NetAuthority.session_failed.connect(_on_session_failed)
 	NetAuthority.begin_session()
 	# Смена сетевого пира сбрасывает спавнер — заново указываем, куда выпускать.
@@ -62,6 +62,20 @@ func _spawn_member(data: Dictionary) -> Node:
 	var member: ExpeditionMember = ExpeditionMember.find_on(body)
 	member.display_name = data["name"]
 	return body
+
+
+## Навигация из коллизий CSG (быстрее, чем разбирать видимые меши).
+func _bake_navigation() -> void:
+	var source: NavigationMeshSourceGeometryData3D = NavigationMeshSourceGeometryData3D.new()
+	for node in _navigation.find_children("*", "CSGShape3D", true, false):
+		var csg: CSGShape3D = node
+		if not csg.is_root_shape() or not csg.use_collision:
+			continue
+		var shape: ConcavePolygonShape3D = csg.bake_collision_shape()
+		if shape:
+			source.add_faces(shape.get_faces(), csg.global_transform)
+	NavigationServer3D.bake_from_source_geometry_data(_navigation.navigation_mesh, source)
+	_navigation.navigation_mesh = _navigation.navigation_mesh
 
 
 func _spawn_transform(marker_name: String) -> Transform3D:

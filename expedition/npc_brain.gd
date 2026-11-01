@@ -7,6 +7,7 @@ enum State { FOLLOW, HOLD, LOOK_AROUND, PANIC }
 
 @export var member: ExpeditionMember
 @export var navigator: NPCNavigator
+@export var instincts: NPCInstincts
 @export var follow_distance: float = 2.5
 @export var run_distance: float = 8.0
 @export var panic_enter: float = 0.75
@@ -39,6 +40,8 @@ func _physics_process(delta: float) -> void:
 		navigator.stop()
 		return
 	_update_state()
+	if state != State.PANIC and not member.has_status(&"lost_purpose") and instincts and instincts.act(delta):
+		return
 	match state:
 		State.FOLLOW:
 			_do_follow(delta)

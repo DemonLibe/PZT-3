@@ -74,4 +74,6 @@ func _on_body_exited(body: Node3D) -> void:
 	var member: ExpeditionMember = ExpeditionMember.find_on(body)
 	if member and members.has(member):
 		members.erase(member)
-		_on_member_exited(member)
+		# Тело удаляют со сцены (выход с уровня, отключение) — реагировать не нужно.
+		if body.is_inside_tree() and member.is_inside_tree() and is_inside_tree():
+			_on_member_exited(member)

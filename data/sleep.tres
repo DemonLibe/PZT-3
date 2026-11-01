@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://anomalies/base/punishment.gd" id="2_punishment"]
+
+[sub_resource type="Resource" id="Resource_punishment"]
+script = ExtResource("2_punishment")
+type = 0
+
+[resource]
+script = ExtResource("1_data")
+id = &"sleep"
+display_name = "Сон"
+location = "Район 8"
+danger_level = 4
+params = {
+"death_max": 40.0,
+"death_min": 20.0,
+"drowsiness_rate": 0.01,
+"wake_drowsiness": 0.5,
+"wake_taps": 8,
+"watch_limit_minutes": 40
+}
+punishment = SubResource("Resource_punishment")
+encyclopedia_text = "В районе зафиксирована непреодолимая сонливость. Она нарастает со временем, проведённым в районе.
+---
+Правило: спать нельзя. Уснувший погибает через 20–40 с. Перед этим рядом слышен тихий ритмичный звук, похожий на счёт. Уснувшего может разбудить другой участник. Сам он просыпается, только если сопротивляется сну."

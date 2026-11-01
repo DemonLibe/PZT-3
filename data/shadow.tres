@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://anomalies/base/punishment.gd" id="2_punishment"]
+
+[sub_resource type="Resource" id="Resource_punishment"]
+script = ExtResource("2_punishment")
+type = 1
+
+[resource]
+script = ExtResource("1_data")
+id = &"shadow"
+display_name = "Тень"
+location = "Район 6"
+danger_level = 5
+params = {
+"check_interval": 5.0,
+"journal_cut": true,
+"point_chance": 0.15,
+"point_duration": 6.0,
+"turn_deg": 150.0,
+"turn_window": 1.0
+}
+punishment = SubResource("Resource_punishment")
+encyclopedia_text = "При освещении особого источника тени участников ведут себя иначе.
+---
+Правило: иногда тень перестаёт повторять движения и указывает за спину. Все, кто обернулся, пока тень указывала, пропали. Их отчёты обрываются одинаково."

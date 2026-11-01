@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"windows"
+display_name = "Окна"
+location = "Район 2"
+danger_level = 1
+params = {
+"cone_deg": 25.0,
+"delay_max": 1.0,
+"delay_min": 0.5,
+"panic_add": 0.05,
+"relight_after": 6.0,
+"sharp_turn_deg_per_sec": 180.0
+}
+encyclopedia_text = "В окнах жилых домов горит тёплый свет. Зафиксировано: свет гаснет до того, как на окно посмотрят.
+---
+Правило: свет в окне гаснет за 0,5–1 с до прямого взгляда и загорается снова примерно через 6 с. Вреда участникам не зафиксировано. Резкие повороты головы повышают тревожность наблюдателя."

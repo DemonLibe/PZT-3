@@ -31,6 +31,9 @@ func _process(_delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"debug_hud"):
 		visible = not visible
+	elif event.is_action_pressed(&"debug_skip_hour"):
+		GameState.debug_skip_hours(1.0)
+		print("[Debug] игровое время: %.1f ч" % GameState.game_hours)
 
 
 func _yes(value: bool) -> String:

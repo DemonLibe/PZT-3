@@ -1,0 +1,469 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://levels/level.gd" id="1_r"]
+[ext_resource type="Script" path="res://expedition/squad.gd" id="2_r"]
+[ext_resource type="Script" path="res://anomalies/districts/dinner/dinner_food.gd" id="3_r"]
+[ext_resource type="Script" path="res://anomalies/districts/dinner/dinner_zone.gd" id="4_r"]
+[ext_resource type="Resource" path="res://data/dinner.tres" id="5_r"]
+[ext_resource type="PackedScene" path="res://ui/fate_overlay.tscn" id="6_r"]
+[ext_resource type="PackedScene" path="res://ui/sleep_overlay.tscn" id="7_r"]
+[ext_resource type="PackedScene" path="res://debug/debug_hud.tscn" id="8_r"]
+
+[sub_resource type="Environment" id="Environment_1"]
+background_mode = 1
+background_color = Color(0.02, 0.02, 0.03, 1.0)
+ambient_light_source = 2
+ambient_light_color = Color(0.25, 0.25, 0.3, 1.0)
+ambient_light_energy = 0.35
+fog_enabled = true
+fog_light_color = Color(0.04, 0.04, 0.075, 1.0)
+fog_density = 0.04
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_2"]
+geometry_parsed_geometry_type = 1
+geometry_collision_mask = 1
+agent_radius = 0.5
+agent_height = 2.0
+agent_max_climb = 0.25
+cell_size = 0.25
+cell_height = 0.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3"]
+albedo_color = Color(0.18, 0.18, 0.19, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4"]
+albedo_color = Color(0.38, 0.37, 0.35, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5"]
+albedo_color = Color(0.6, 0.56, 0.5, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6"]
+albedo_color = Color(0.22, 0.2, 0.22, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7"]
+albedo_color = Color(0.25, 0.17, 0.12, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8"]
+albedo_color = Color(0.3, 0.3, 0.3, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_9"]
+albedo_color = Color(0.15, 0.15, 0.15, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10"]
+albedo_color = Color(0.6, 0.56, 0.5, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_11"]
+albedo_color = Color(0.42, 0.32, 0.22, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_12"]
+albedo_color = Color(0.35, 0.22, 0.13, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_13"]
+albedo_color = Color(0.75, 0.72, 0.66, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_14"]
+albedo_color = Color(0.22, 0.2, 0.22, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_15"]
+albedo_color = Color(0.92, 0.9, 0.85, 1.0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_16"]
+albedo_color = Color(0.65, 0.38, 0.18, 1.0)
+emission_enabled = true
+emission = Color(0.35, 0.15, 0.05, 1.0)
+emission_energy_multiplier = 0.6
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_17"]
+material = SubResource("StandardMaterial3D_15")
+top_radius = 0.16
+bottom_radius = 0.13
+height = 0.03
+
+[sub_resource type="SphereMesh" id="SphereMesh_18"]
+material = SubResource("StandardMaterial3D_16")
+radius = 0.09
+height = 0.09
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_19"]
+size = Vector3(0.32, 0.14, 0.32)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_20"]
+size = Vector3(6.6, 3.6, 6.6)
+
+[node name="District01Dinner" type="Node3D"]
+script = ExtResource("1_r")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_2")
+
+[node name="Geometry" type="Node3D" parent="NavigationRegion3D"]
+
+[node name="SpawnPoints" type="Node3D" parent="."]
+
+[node name="Members" type="Node3D" parent="."]
+
+[node name="MemberSpawner" type="MultiplayerSpawner" parent="." node_paths=PackedStringArray("spawn_path")]
+spawn_path = NodePath("../Members")
+
+[node name="Squad" type="Node" parent="." node_paths=PackedStringArray("members_root")]
+script = ExtResource("2_r")
+members_root = NodePath("../Members")
+
+[node name="Ground" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, -0.25, 0.0)
+use_collision = true
+size = Vector3(30.0, 0.5, 48.0)
+material = SubResource("StandardMaterial3D_3")
+
+[node name="WalkLeft" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -4.6, 0.05, 0.0)
+use_collision = true
+size = Vector3(1.2, 0.1, 44.0)
+material = SubResource("StandardMaterial3D_4")
+
+[node name="WalkRight" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 4.6, 0.05, 0.0)
+use_collision = true
+size = Vector3(1.2, 0.1, 44.0)
+material = SubResource("StandardMaterial3D_4")
+
+[node name="EndNorth" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 1.5, -23.0)
+use_collision = true
+size = Vector3(30.0, 3.0, 0.4)
+material = SubResource("StandardMaterial3D_8")
+
+[node name="EndSouth" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 1.5, 23.0)
+use_collision = true
+size = Vector3(30.0, 3.0, 0.4)
+material = SubResource("StandardMaterial3D_8")
+
+[node name="HouseL1" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.7, 2.5, -12.0)
+use_collision = true
+size = Vector3(7.0, 5.0, 7.0)
+material = SubResource("StandardMaterial3D_5")
+
+[node name="HouseL1Roof" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.7, 5.15, -12.0)
+use_collision = true
+size = Vector3(7.6, 0.3, 7.6)
+material = SubResource("StandardMaterial3D_6")
+
+[node name="HouseL1Door" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -5.17, 1.0, -10.0)
+use_collision = true
+size = Vector3(0.06, 2.0, 1.0)
+material = SubResource("StandardMaterial3D_7")
+
+[node name="HouseL1Fence" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -5.6, 0.5, -15.6)
+use_collision = true
+size = Vector3(1.2, 1.0, 0.1)
+material = SubResource("StandardMaterial3D_8")
+
+[node name="HouseL2" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.7, 2.5, 12.0)
+use_collision = true
+size = Vector3(7.0, 5.0, 7.0)
+material = SubResource("StandardMaterial3D_5")
+
+[node name="HouseL2Roof" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.7, 5.15, 12.0)
+use_collision = true
+size = Vector3(7.6, 0.3, 7.6)
+material = SubResource("StandardMaterial3D_6")
+
+[node name="HouseL2Door" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -5.17, 1.0, 14.0)
+use_collision = true
+size = Vector3(0.06, 2.0, 1.0)
+material = SubResource("StandardMaterial3D_7")
+
+[node name="HouseL2Fence" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -5.6, 0.5, 8.4)
+use_collision = true
+size = Vector3(1.2, 1.0, 0.1)
+material = SubResource("StandardMaterial3D_8")
+
+[node name="HouseR1" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 8.7, 2.5, -12.0)
+use_collision = true
+size = Vector3(7.0, 5.0, 7.0)
+material = SubResource("StandardMaterial3D_5")
+
+[node name="HouseR1Roof" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 8.7, 5.15, -12.0)
+use_collision = true
+size = Vector3(7.6, 0.3, 7.6)
+material = SubResource("StandardMaterial3D_6")
+
+[node name="HouseR1Door" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 5.17, 1.0, -10.0)
+use_collision = true
+size = Vector3(0.06, 2.0, 1.0)
+material = SubResource("StandardMaterial3D_7")
+
+[node name="HouseR1Fence" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 5.6, 0.5, -15.6)
+use_collision = true
+size = Vector3(1.2, 1.0, 0.1)
+material = SubResource("StandardMaterial3D_8")
+
+[node name="HouseR2" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 8.7, 2.5, 12.0)
+use_collision = true
+size = Vector3(7.0, 5.0, 7.0)
+material = SubResource("StandardMaterial3D_5")
+
+[node name="HouseR2Roof" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 8.7, 5.15, 12.0)
+use_collision = true
+size = Vector3(7.6, 0.3, 7.6)
+material = SubResource("StandardMaterial3D_6")
+
+[node name="HouseR2Door" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 5.17, 1.0, 14.0)
+use_collision = true
+size = Vector3(0.06, 2.0, 1.0)
+material = SubResource("StandardMaterial3D_7")
+
+[node name="HouseR2Fence" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 5.6, 0.5, 8.4)
+use_collision = true
+size = Vector3(1.2, 1.0, 0.1)
+material = SubResource("StandardMaterial3D_8")
+
+[node name="LampPole1" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -3.6, 2.0, -15.0)
+use_collision = true
+size = Vector3(0.12, 4.0, 0.12)
+material = SubResource("StandardMaterial3D_9")
+
+[node name="StreetLamp1" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -3.6, 3.9, -15.0)
+light_color = Color(1.0, 0.85, 0.6, 1.0)
+light_energy = 1.4
+omni_range = 10.0
+
+[node name="LampPole2" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 3.6, 2.0, -5.0)
+use_collision = true
+size = Vector3(0.12, 4.0, 0.12)
+material = SubResource("StandardMaterial3D_9")
+
+[node name="StreetLamp2" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 3.6, 3.9, -5.0)
+light_color = Color(1.0, 0.85, 0.6, 1.0)
+light_energy = 1.4
+omni_range = 10.0
+
+[node name="LampPole3" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -3.6, 2.0, 5.0)
+use_collision = true
+size = Vector3(0.12, 4.0, 0.12)
+material = SubResource("StandardMaterial3D_9")
+
+[node name="StreetLamp3" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -3.6, 3.9, 5.0)
+light_color = Color(1.0, 0.85, 0.6, 1.0)
+light_energy = 1.4
+omni_range = 10.0
+
+[node name="LampPole4" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 3.6, 2.0, 15.0)
+use_collision = true
+size = Vector3(0.12, 4.0, 0.12)
+material = SubResource("StandardMaterial3D_9")
+
+[node name="StreetLamp4" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 3.6, 3.9, 15.0)
+light_color = Color(1.0, 0.85, 0.6, 1.0)
+light_energy = 1.4
+omni_range = 10.0
+
+[node name="Player" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.0, 17.0)
+
+[node name="Npc1" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -1.5, 0.0, 19.0)
+
+[node name="Npc2" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.0, 19.0)
+
+[node name="Npc3" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 1.5, 0.0, 19.0)
+
+[node name="DinnerHouse" type="CSGCombiner3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.7, 2.0, 0.0)
+use_collision = true
+
+[node name="Outer" type="CSGBox3D" parent="NavigationRegion3D/Geometry/DinnerHouse"]
+size = Vector3(7.0, 4.0, 7.0)
+material = SubResource("StandardMaterial3D_10")
+
+[node name="Inner" type="CSGBox3D" parent="NavigationRegion3D/Geometry/DinnerHouse"]
+operation = 2
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.05, 0.0)
+size = Vector3(6.6, 3.7, 6.6)
+material = SubResource("StandardMaterial3D_10")
+
+[node name="Doorway" type="CSGBox3D" parent="NavigationRegion3D/Geometry/DinnerHouse"]
+operation = 2
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 3.4, -0.85, 1.5)
+size = Vector3(0.8, 2.3, 1.3)
+material = SubResource("StandardMaterial3D_10")
+
+[node name="DinnerHouseRoof" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.7, 4.15, 0.0)
+use_collision = true
+size = Vector3(7.6, 0.3, 7.6)
+material = SubResource("StandardMaterial3D_14")
+
+[node name="DinnerFloor" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.7, 0.03, 0.0)
+use_collision = true
+size = Vector3(6.6, 0.06, 6.6)
+material = SubResource("StandardMaterial3D_11")
+
+[node name="Table" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.7, 0.37, -0.5)
+use_collision = true
+size = Vector3(1.8, 0.74, 1.1)
+material = SubResource("StandardMaterial3D_12")
+
+[node name="TableCloth" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.7, 0.75, -0.5)
+use_collision = false
+size = Vector3(1.9, 0.02, 1.2)
+material = SubResource("StandardMaterial3D_13")
+
+[node name="DinnerLamp" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.7, 2.6, -0.5)
+light_color = Color(1.0, 0.78, 0.5, 1.0)
+light_energy = 1.6
+omni_range = 6.0
+shadow_enabled = true
+
+[node name="Plates" type="Node3D" parent="."]
+
+[node name="Plate1" type="StaticBody3D" parent="Plates"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -9.299999999999999, 0.78, -0.8200000000000001)
+script = ExtResource("3_r")
+
+[node name="PlateMesh" type="MeshInstance3D" parent="Plates/Plate1"]
+mesh = SubResource("CylinderMesh_17")
+
+[node name="FoodMesh" type="MeshInstance3D" parent="Plates/Plate1"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.05, 0.0)
+mesh = SubResource("SphereMesh_18")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plates/Plate1"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.05, 0.0)
+shape = SubResource("BoxShape3D_19")
+
+[node name="Plate2" type="StaticBody3D" parent="Plates"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -9.299999999999999, 0.78, -0.18)
+script = ExtResource("3_r")
+
+[node name="PlateMesh" type="MeshInstance3D" parent="Plates/Plate2"]
+mesh = SubResource("CylinderMesh_17")
+
+[node name="FoodMesh" type="MeshInstance3D" parent="Plates/Plate2"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.05, 0.0)
+mesh = SubResource("SphereMesh_18")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plates/Plate2"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.05, 0.0)
+shape = SubResource("BoxShape3D_19")
+
+[node name="Plate3" type="StaticBody3D" parent="Plates"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.7, 0.78, -0.8200000000000001)
+script = ExtResource("3_r")
+
+[node name="PlateMesh" type="MeshInstance3D" parent="Plates/Plate3"]
+mesh = SubResource("CylinderMesh_17")
+
+[node name="FoodMesh" type="MeshInstance3D" parent="Plates/Plate3"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.05, 0.0)
+mesh = SubResource("SphereMesh_18")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plates/Plate3"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.05, 0.0)
+shape = SubResource("BoxShape3D_19")
+
+[node name="Plate4" type="StaticBody3D" parent="Plates"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.7, 0.78, -0.18)
+script = ExtResource("3_r")
+
+[node name="PlateMesh" type="MeshInstance3D" parent="Plates/Plate4"]
+mesh = SubResource("CylinderMesh_17")
+
+[node name="FoodMesh" type="MeshInstance3D" parent="Plates/Plate4"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.05, 0.0)
+mesh = SubResource("SphereMesh_18")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plates/Plate4"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.05, 0.0)
+shape = SubResource("BoxShape3D_19")
+
+[node name="Plate5" type="StaticBody3D" parent="Plates"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.1, 0.78, -0.8200000000000001)
+script = ExtResource("3_r")
+
+[node name="PlateMesh" type="MeshInstance3D" parent="Plates/Plate5"]
+mesh = SubResource("CylinderMesh_17")
+
+[node name="FoodMesh" type="MeshInstance3D" parent="Plates/Plate5"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.05, 0.0)
+mesh = SubResource("SphereMesh_18")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plates/Plate5"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.05, 0.0)
+shape = SubResource("BoxShape3D_19")
+
+[node name="Plate6" type="StaticBody3D" parent="Plates"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.1, 0.78, -0.18)
+script = ExtResource("3_r")
+
+[node name="PlateMesh" type="MeshInstance3D" parent="Plates/Plate6"]
+mesh = SubResource("CylinderMesh_17")
+
+[node name="FoodMesh" type="MeshInstance3D" parent="Plates/Plate6"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.05, 0.0)
+mesh = SubResource("SphereMesh_18")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plates/Plate6"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.05, 0.0)
+shape = SubResource("BoxShape3D_19")
+
+[node name="DinnerZone" type="Area3D" parent="." node_paths=PackedStringArray("plates_root")]
+script = ExtResource("4_r")
+data = ExtResource("5_r")
+plates_root = NodePath("../Plates")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DinnerZone"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.7, 1.8, 0.0)
+shape = SubResource("BoxShape3D_20")
+
+[node name="FateOverlay" parent="." instance=ExtResource("6_r")]
+
+[node name="SleepOverlay" parent="." instance=ExtResource("7_r")]
+
+[node name="DebugHUD" parent="." instance=ExtResource("8_r")]

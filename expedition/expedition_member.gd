@@ -7,6 +7,8 @@ signal died(cause: StringName)
 signal vanished(cause: StringName)
 signal sleeping_changed(value: bool)
 signal status_changed(status_id: StringName, active: bool)
+## Событие от аномалии (наказание типа EVENT).
+signal event_received(event_id: StringName)
 
 enum Motion { IDLE, CROUCH, WALK, RUN }
 

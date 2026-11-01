@@ -2,6 +2,9 @@
 
 [ext_resource type="PackedScene" path="res://expedition/player.tscn" id="1_player"]
 [ext_resource type="PackedScene" path="res://debug/debug_hud.tscn" id="2_hud"]
+[ext_resource type="Script" path="res://debug/gaze_test_zone.gd" id="3_zone"]
+[ext_resource type="Resource" path="res://data/test_cube.tres" id="4_data"]
+[ext_resource type="PackedScene" path="res://ui/fate_overlay.tscn" id="5_fate"]
 
 [sub_resource type="Environment" id="Environment_room"]
 background_mode = 1
@@ -12,6 +15,13 @@ ambient_light_energy = 0.4
 fog_enabled = true
 fog_light_color = Color(0.08, 0.08, 0.1, 1)
 fog_density = 0.06
+
+[sub_resource type="StandardMaterial3D" id="Material_red"]
+albedo_color = Color(0.75, 0.05, 0.04, 1)
+roughness = 0.8
+
+[sub_resource type="BoxShape3D" id="Shape_zone"]
+size = Vector3(20, 4, 20)
 
 [sub_resource type="StandardMaterial3D" id="Material_floor"]
 albedo_color = Color(0.35, 0.34, 0.32, 1)
@@ -69,7 +79,23 @@ use_collision = true
 size = Vector3(1, 2, 1)
 material = SubResource("Material_wall")
 
+[node name="RedCube" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, 0)
+use_collision = true
+material = SubResource("Material_red")
+
+[node name="GazeTestZone" type="Area3D" parent="." node_paths=PackedStringArray("target")]
+script = ExtResource("3_zone")
+data = ExtResource("4_data")
+target = NodePath("../RedCube")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GazeTestZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("Shape_zone")
+
 [node name="Player" parent="." instance=ExtResource("1_player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
 
 [node name="DebugHUD" parent="." instance=ExtResource("2_hud")]
+
+[node name="FateOverlay" parent="." instance=ExtResource("5_fate")]

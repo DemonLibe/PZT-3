@@ -15,4 +15,13 @@ signal noise_emitted(member: Node, position: Vector3, level: float)
 
 
 func _ready() -> void:
+	rule_violated.connect(func(m: Node, id: StringName) -> void: _log("нарушено правило '%s'" % id, m))
+	member_died.connect(func(m: Node) -> void: _log("погиб", m))
+	member_vanished.connect(func(m: Node) -> void: _log("пропал", m))
+	anomaly_observed.connect(func(m: Node, id: StringName) -> void: _log("наблюдает аномалию '%s'" % id, m))
 	print("[EventBus] готов")
+
+
+func _log(text: String, member: Node) -> void:
+	var who: String = String(member.get(&"display_name")) if member else "?"
+	print("[EventBus] %s: %s" % [who, text])

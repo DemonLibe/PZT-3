@@ -32,5 +32,9 @@ const LIST: Array = [
 	{"title": "Гигадом, секция 34", "path": "res://levels/section_34_weaver.tscn"},
 	{"title": "Гигадом, секция 35", "path": "res://levels/section_35_choir.tscn"},
 	{"title": "Гигадом, секция 36", "path": "res://levels/section_36_warden.tscn"},
+	{"title": "Гигадом, секция 37", "path": "res://levels/section_37_butcher.tscn"},
+	{"title": "Гигадом, секция 38", "path": "res://levels/section_38_mourners.tscn"},
+	{"title": "Гигадом, секция 39", "path": "res://levels/section_39_grinder.tscn"},
+	{"title": "Гигадом, секция 40", "path": "res://levels/section_40_keymaster.tscn"},
 	{"title": "Гигадом, секция 50", "path": "res://levels/section_50_threshold.tscn"},
 ]

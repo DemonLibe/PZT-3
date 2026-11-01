@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+
+[resource]
+script = ExtResource("1_data")
+id = &"mourners"
+display_name = "Плакальщицы"
+location = "Секция 38"
+danger_level = 3
+params = {
+"approach_distance": 3.0,
+"close_in": 3.0,
+"panic_contact": 0.2,
+"turn_interval": 8.0
+}
+encyclopedia_text = "Тип: группа женоподобных сущностей. Опасность: средняя, эскалирует при контакте.
+В коридорах — плачущие фигуры, стоящие спиной или отвернувшись. Голос убедительно похож на реальных людей, знакомых участнику лично (жена, мать, дочь).
+---
+Правило: не подходить, не заговаривать, не смотреть в глаза при развороте. Наказание: при контакте фигура «размножается» — на следующем обходе плачущих становится больше, и они начинают следовать за группой на расстоянии, сокращающемся с каждым обходом."

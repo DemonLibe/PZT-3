@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://anomalies/base/punishment.gd" id="2_punishment"]
+
+[sub_resource type="Resource" id="Resource_punishment"]
+script = ExtResource("2_punishment")
+type = 1
+
+[resource]
+script = ExtResource("1_data")
+id = &"grinder"
+display_name = "Точильщик"
+location = "Секция 39"
+danger_level = 4
+params = {
+
+}
+punishment = SubResource("Resource_punishment")
+encyclopedia_text = "Тип: существо, обитающее в вентиляции. Опасность: высокая.
+Крупное протяжённое существо перемещается в вентиляционных коробах и технических полостях стен. Не видно целиком ни разу.
+---
+Реагирует на вибрацию шагов по металлическим поверхностям (решётки, листовой настил). Правило: передвигаться по металлическим участкам пола только шагом, без рывков и бега, по возможности — в обход. Наказание: участок пола проваливается, дальнейшая судьба провалившегося неизвестна — звук обрывается сразу."

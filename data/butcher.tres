@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="AnomalyData" format=3]
+
+[ext_resource type="Script" path="res://anomalies/base/anomaly_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://anomalies/base/punishment.gd" id="2_punishment"]
+
+[sub_resource type="Resource" id="Resource_punishment"]
+script = ExtResource("2_punishment")
+type = 0
+
+[resource]
+script = ExtResource("1_data")
+id = &"butcher"
+display_name = "Мясник"
+location = "Секция 37"
+danger_level = 4
+params = {
+
+}
+punishment = SubResource("Resource_punishment")
+encyclopedia_text = "Тип: существо, реагирующее на оружие. Опасность: высокая, предотвратима.
+В помещении с мясницкими крюками обитает крупная фигура в фартуке, лица не видно. Не проявляет агрессии к безоружным.
+---
+Правило: перед входом убрать любое оружие в чехлы, ничего не держать в руках открыто. Наказание: мгновенная атака при виде обнажённого оружия любого типа."

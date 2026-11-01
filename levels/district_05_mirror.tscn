@@ -83,6 +83,9 @@ navigation_mesh = SubResource("NavigationMesh_2")
 
 [node name="Members" type="Node3D" parent="."]
 
+[node name="MemberSpawner" type="MultiplayerSpawner" parent="." node_paths=PackedStringArray("spawn_path")]
+spawn_path = NodePath("../Members")
+
 [node name="Ground" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, -0.25, 0.0)
 use_collision = true

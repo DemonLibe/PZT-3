@@ -10,6 +10,8 @@ func _ready() -> void:
 	await press(&"squad_hold")
 	n.body.global_position = Vector3(0, 0, 0)
 	m.body.global_position = Vector3(0, 0, -12)
+	await wait(0.3)
+	n.body.get_node("NPCBrain").command = Squad.COMMAND_HOLD
 	n.body.get_node("NPCBrain").hold_position = Vector3(0, 0, 8)
 	await wait(1.0)
 	check(zone.get_debug_text(m).contains("Наумов") or zone._last == n, "замыкающий — NPC позади")

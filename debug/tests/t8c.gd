@@ -52,6 +52,7 @@ func _ready() -> void:
 	var npcs := npcs_of(lvl2)
 	await press(&"squad_hold")
 	var n := npcs[0]
+	n.body.global_position = Vector3(10, 0, 15)  # подальше: пусть идёт долго и шумно
 	n.body.get_node("NPCBrain").command = Squad.COMMAND_HOLD
 	n.body.get_node("NPCBrain").hold_position = Vector3(-10, 0, -8)
 	for i in 80:

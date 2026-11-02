@@ -2,6 +2,7 @@ extends TestHarness
 
 func _ready() -> void:
 	var level: Node = load("res://levels/district_05_mirror.tscn").instantiate()
+	level.npc_count = 6
 	add_child(level)
 	await frames(10)
 	var m := local_member()
@@ -13,6 +14,10 @@ func _ready() -> void:
 	var npcs: Array[ExpeditionMember] = []
 	for b in level.get_node("Members").get_children():
 		if b.name.begins_with("npc"): npcs.append(ExpeditionMember.find_on(b))
+	for i in npcs.size():
+		npcs[i].body.global_position = Vector3(-5.0 + 2.0 * i, 0, 14)
+	m.body.global_position = Vector3(0, 0, 16)
+	await wait(0.5)
 	# Игрок уходит вперёд на 20 м
 	m.body.global_position = Vector3(0, 0, -5)
 	await wait(9.0)

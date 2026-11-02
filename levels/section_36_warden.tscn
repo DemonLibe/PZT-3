@@ -16,13 +16,13 @@
 [ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/corridor_straight.glb" id="14_r"]
 [ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/corridor_corner.glb" id="15_r"]
 [ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/fluorescent_lamp.glb" id="16_r"]
-[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/corridor_door_side.glb" id="17_r"]
-[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/steel_door.glb" id="18_r"]
-[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/barrel_rusty.glb" id="19_r"]
-[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/corridor_t_junction.glb" id="20_r"]
-[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/bunk_bed.glb" id="21_r"]
-[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/corridor_dead_end.glb" id="22_r"]
-[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/junk_pile.glb" id="23_r"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/barrel_rusty.glb" id="17_r"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/corridor_t_junction.glb" id="18_r"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/bunk_bed.glb" id="19_r"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/corridor_dead_end.glb" id="20_r"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/junk_pile.glb" id="21_r"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/corridor_door_side.glb" id="22_r"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/steel_door.glb" id="23_r"]
 [ext_resource type="PackedScene" path="res://world/exit_door.tscn" id="24_r"]
 [ext_resource type="PackedScene" path="res://ui/hud.tscn" id="25_r"]
 [ext_resource type="PackedScene" path="res://ui/pause_menu.tscn" id="26_r"]
@@ -379,13 +379,10 @@ light_color = Color(0.82, 0.9, 1.0, 1.0)
 light_energy = 0.9
 omni_range = 6.5
 
-[node name="WestCell5" parent="Props" instance=ExtResource("17_r")]
+[node name="WestCell5" parent="Props" instance=ExtResource("14_r")]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -27.0, 0.0, 0.0)
 
-[node name="WestDoor5" parent="Props" instance=ExtResource("18_r")]
-transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -24.95, 0.0, 0.0)
-
-[node name="WestProp5" parent="Props" instance=ExtResource("19_r")]
+[node name="WestProp5" parent="Props" instance=ExtResource("17_r")]
 transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -28.3, 0.0, 0.0)
 
 [node name="WestCell6" parent="Props" instance=ExtResource("15_r")]
@@ -400,7 +397,7 @@ light_color = Color(0.82, 0.9, 1.0, 1.0)
 light_energy = 0.9
 omni_range = 6.5
 
-[node name="WestCell7" parent="Props" instance=ExtResource("20_r")]
+[node name="WestCell7" parent="Props" instance=ExtResource("18_r")]
 transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -31.0, 0.0, 4.0)
 
 [node name="WestCell8" parent="Props" instance=ExtResource("15_r")]
@@ -418,10 +415,10 @@ omni_range = 6.5
 [node name="WestCell9" parent="Props" instance=ExtResource("14_r")]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -35.0, 0.0, 8.0)
 
-[node name="WestProp9" parent="Props" instance=ExtResource("21_r")]
+[node name="WestProp9" parent="Props" instance=ExtResource("19_r")]
 transform = Transform3D(-0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, -0.0, -0.0, -33.7, 0.0, 8.0)
 
-[node name="WestCell10" parent="Props" instance=ExtResource("20_r")]
+[node name="WestCell10" parent="Props" instance=ExtResource("18_r")]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -35.0, 0.0, 12.0)
 
 [node name="WestTube10" parent="Props" instance=ExtResource("16_r")]
@@ -433,7 +430,7 @@ light_color = Color(0.82, 0.9, 1.0, 1.0)
 light_energy = 0.9
 omni_range = 6.5
 
-[node name="WestCell11" parent="Props" instance=ExtResource("20_r")]
+[node name="WestCell11" parent="Props" instance=ExtResource("18_r")]
 transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -39.0, 0.0, 12.0)
 
 [node name="WestCell12" parent="Props" instance=ExtResource("14_r")]
@@ -448,10 +445,10 @@ light_color = Color(0.82, 0.9, 1.0, 1.0)
 light_energy = 0.9
 omni_range = 6.5
 
-[node name="WestCell13" parent="Props" instance=ExtResource("20_r")]
+[node name="WestCell13" parent="Props" instance=ExtResource("18_r")]
 transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, -47.0, 0.0, 12.0)
 
-[node name="WestCell14" parent="Props" instance=ExtResource("22_r")]
+[node name="WestCell14" parent="Props" instance=ExtResource("20_r")]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -47.0, 0.0, 8.0)
 
 [node name="WestTube14" parent="Props" instance=ExtResource("16_r")]
@@ -463,10 +460,10 @@ light_color = Color(0.82, 0.9, 1.0, 1.0)
 light_energy = 0.9
 omni_range = 6.5
 
-[node name="WestCell15" parent="Props" instance=ExtResource("22_r")]
+[node name="WestCell15" parent="Props" instance=ExtResource("20_r")]
 transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, -47.0, 0.0, 16.0)
 
-[node name="WestCell16" parent="Props" instance=ExtResource("22_r")]
+[node name="WestCell16" parent="Props" instance=ExtResource("20_r")]
 transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, -35.0, 0.0, 16.0)
 
 [node name="WestTube16" parent="Props" instance=ExtResource("16_r")]
@@ -478,13 +475,13 @@ light_color = Color(0.82, 0.9, 1.0, 1.0)
 light_energy = 0.9
 omni_range = 6.5
 
-[node name="WestProp16" parent="Props" instance=ExtResource("23_r")]
-transform = Transform3D(-0.96359, -0.0, -0.2674, 0.0, 1.0, -0.0, 0.2674, -0.0, -0.96359, -35.0, 0.0, 16.0)
-
-[node name="WestCell17" parent="Props" instance=ExtResource("22_r")]
+[node name="WestCell17" parent="Props" instance=ExtResource("20_r")]
 transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, -31.0, 0.0, 8.0)
 
-[node name="WestCell18" parent="Props" instance=ExtResource("22_r")]
+[node name="WestProp17" parent="Props" instance=ExtResource("21_r")]
+transform = Transform3D(-0.96359, -0.0, -0.2674, 0.0, 1.0, -0.0, 0.2674, -0.0, -0.96359, -31.0, 0.0, 8.0)
+
+[node name="WestCell18" parent="Props" instance=ExtResource("20_r")]
 transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, -39.0, 0.0, 16.0)
 
 [node name="WestTube18" parent="Props" instance=ExtResource("16_r")]
@@ -496,16 +493,13 @@ light_color = Color(0.82, 0.9, 1.0, 1.0)
 light_energy = 0.9
 omni_range = 6.5
 
-[node name="WestProp18" parent="Props" instance=ExtResource("23_r")]
-transform = Transform3D(-0.96697, -0.0, -0.25489, 0.0, 1.0, -0.0, 0.25489, -0.0, -0.96697, -39.0, 0.0, 16.0)
-
 [node name="Player" type="Marker3D" parent="SpawnPoints"]
 transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, -47.0, 0.0, 8.0)
 
 [node name="EastCell1" parent="Props" instance=ExtResource("15_r")]
 transform = Transform3D(-0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, -0.0, -0.0, 19.0, 0.0, 0.0)
 
-[node name="EastCell2" parent="Props" instance=ExtResource("20_r")]
+[node name="EastCell2" parent="Props" instance=ExtResource("18_r")]
 transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, 19.0, 0.0, -4.0)
 
 [node name="EastTube2" parent="Props" instance=ExtResource("16_r")]
@@ -517,7 +511,7 @@ light_color = Color(0.82, 0.9, 1.0, 1.0)
 light_energy = 0.9
 omni_range = 6.5
 
-[node name="EastCell3" parent="Props" instance=ExtResource("20_r")]
+[node name="EastCell3" parent="Props" instance=ExtResource("18_r")]
 transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, 19.0, 0.0, -8.0)
 
 [node name="EastCell4" parent="Props" instance=ExtResource("15_r")]
@@ -535,7 +529,7 @@ omni_range = 6.5
 [node name="EastCell5" parent="Props" instance=ExtResource("14_r")]
 transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, 23.0, 0.0, -12.0)
 
-[node name="EastProp5" parent="Props" instance=ExtResource("21_r")]
+[node name="EastProp5" parent="Props" instance=ExtResource("19_r")]
 transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, 23.0, 0.0, -10.7)
 
 [node name="EastCell6" parent="Props" instance=ExtResource("14_r")]
@@ -568,13 +562,13 @@ omni_range = 6.5
 [node name="EastCell9" parent="Props" instance=ExtResource("14_r")]
 transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, 35.0, 0.0, -8.0)
 
-[node name="EastProp9" parent="Props" instance=ExtResource("23_r")]
+[node name="EastProp9" parent="Props" instance=ExtResource("21_r")]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 35.0, 0.0, -9.3)
 
-[node name="EastCell10" parent="Props" instance=ExtResource("17_r")]
+[node name="EastCell10" parent="Props" instance=ExtResource("22_r")]
 transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, 39.0, 0.0, -8.0)
 
-[node name="EastDoor10" parent="Props" instance=ExtResource("18_r")]
+[node name="EastDoor10" parent="Props" instance=ExtResource("23_r")]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 39.0, 0.0, -10.05)
 
 [node name="EastTube10" parent="Props" instance=ExtResource("16_r")]
@@ -586,13 +580,13 @@ light_color = Color(0.82, 0.9, 1.0, 1.0)
 light_energy = 0.9
 omni_range = 6.5
 
-[node name="EastProp10" parent="Props" instance=ExtResource("19_r")]
+[node name="EastProp10" parent="Props" instance=ExtResource("17_r")]
 transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, 39.0, 0.0, -6.7)
 
-[node name="EastCell11" parent="Props" instance=ExtResource("20_r")]
+[node name="EastCell11" parent="Props" instance=ExtResource("18_r")]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 43.0, 0.0, -8.0)
 
-[node name="EastCell12" parent="Props" instance=ExtResource("22_r")]
+[node name="EastCell12" parent="Props" instance=ExtResource("20_r")]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 43.0, 0.0, -12.0)
 
 [node name="EastTube12" parent="Props" instance=ExtResource("16_r")]
@@ -604,13 +598,13 @@ light_color = Color(0.82, 0.9, 1.0, 1.0)
 light_energy = 0.9
 omni_range = 6.5
 
-[node name="EastProp12" parent="Props" instance=ExtResource("23_r")]
-transform = Transform3D(-0.99746, -0.0, -0.07126, 0.0, 1.0, -0.0, 0.07126, -0.0, -0.99746, 43.0, 0.0, -12.0)
-
-[node name="EastCell13" parent="Props" instance=ExtResource("22_r")]
+[node name="EastCell13" parent="Props" instance=ExtResource("20_r")]
 transform = Transform3D(-0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, -0.0, -0.0, 23.0, 0.0, -8.0)
 
-[node name="EastCell14" parent="Props" instance=ExtResource("22_r")]
+[node name="EastProp13" parent="Props" instance=ExtResource("21_r")]
+transform = Transform3D(-0.99746, -0.0, -0.07126, 0.0, 1.0, -0.0, 0.07126, -0.0, -0.99746, 23.0, 0.0, -8.0)
+
+[node name="EastCell14" parent="Props" instance=ExtResource("20_r")]
 transform = Transform3D(-0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, -0.0, -0.0, 23.0, 0.0, -4.0)
 
 [node name="EastTube14" parent="Props" instance=ExtResource("16_r")]
@@ -622,14 +616,11 @@ light_color = Color(0.82, 0.9, 1.0, 1.0)
 light_energy = 0.9
 omni_range = 6.5
 
-[node name="EastCell15" parent="Props" instance=ExtResource("22_r")]
+[node name="EastCell15" parent="Props" instance=ExtResource("20_r")]
 transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, 43.0, 0.0, -4.0)
 
-[node name="EastProp15" parent="Props" instance=ExtResource("23_r")]
-transform = Transform3D(0.4179, 0.0, 0.90849, 0.0, 1.0, -0.0, -0.90849, 0.0, 0.4179, 43.0, 0.0, -4.0)
-
 [node name="ExitDoor" parent="." instance=ExtResource("24_r")]
-transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, 43.0, 0.0, -13.5)
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 43.0, 0.0, -13.5)
 
 [node name="HUD" parent="." instance=ExtResource("25_r")]
 

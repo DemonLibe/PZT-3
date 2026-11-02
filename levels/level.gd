@@ -59,6 +59,9 @@ func _ready() -> void:
 		_spawn_player(peer_id)
 	for i in npc_count:
 		var spawn: Transform3D = _spawn_transform("Npc%d" % (i + 1))
+		if not _spawn_points.has_node("Npc%d" % (i + 1)):
+			# Отдельных точек нет — ставим рядом с игроком, не друг в друга.
+			spawn = _spawn_transform("Player").translated_local(Vector3(-2.0 + 1.6 * (i % 3), 0.0, 2.0 + 1.6 * (i / 3)))
 		_spawner.spawn({"kind": "npc", "peer": 1, "id": "npc_%d" % (i + 1),
 			"name": NPC_NAMES[i % NPC_NAMES.size()], "transform": spawn})
 

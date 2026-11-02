@@ -446,14 +446,11 @@ light_color = Color(0.82, 0.9, 1.0, 1.0)
 light_energy = 0.9
 omni_range = 6.5
 
-[node name="SouthProp16" parent="Props" instance=ExtResource("17_r")]
-transform = Transform3D(-0.57684, -0.0, -0.81686, 0.0, 1.0, -0.0, 0.81686, -0.0, -0.57684, -4.0, 0.0, 47.0)
-
 [node name="SouthCell17" parent="Props" instance=ExtResource("19_r")]
 transform = Transform3D(-0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, -0.0, -0.0, 8.0, 0.0, 47.0)
 
 [node name="SouthProp17" parent="Props" instance=ExtResource("17_r")]
-transform = Transform3D(0.95714, -0.0, -0.28964, 0.0, 1.0, -0.0, 0.28964, 0.0, 0.95714, 8.0, 0.0, 47.0)
+transform = Transform3D(-0.57684, -0.0, -0.81686, 0.0, 1.0, -0.0, 0.81686, -0.0, -0.57684, 8.0, 0.0, 47.0)
 
 [node name="SouthCell18" parent="Props" instance=ExtResource("19_r")]
 transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, 0.0, 0.0, 43.0)
@@ -467,11 +464,11 @@ light_color = Color(0.82, 0.9, 1.0, 1.0)
 light_energy = 0.9
 omni_range = 6.5
 
+[node name="SouthProp18" parent="Props" instance=ExtResource("17_r")]
+transform = Transform3D(0.95714, -0.0, -0.28964, 0.0, 1.0, -0.0, 0.28964, 0.0, 0.95714, 0.0, 0.0, 43.0)
+
 [node name="SouthCell19" parent="Props" instance=ExtResource("19_r")]
 transform = Transform3D(-0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, -0.0, -0.0, 12.0, 0.0, 43.0)
-
-[node name="SouthProp19" parent="Props" instance=ExtResource("17_r")]
-transform = Transform3D(0.98782, -0.0, -0.15558, 0.0, 1.0, -0.0, 0.15558, 0.0, 0.98782, 12.0, 0.0, 43.0)
 
 [node name="Player" type="Marker3D" parent="SpawnPoints"]
 transform = Transform3D(0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, 0.0, 0.0, -4.0, 0.0, 51.0)
@@ -587,14 +584,11 @@ light_color = Color(0.82, 0.9, 1.0, 1.0)
 light_energy = 0.9
 omni_range = 6.5
 
-[node name="NorthProp14" parent="Props" instance=ExtResource("17_r")]
-transform = Transform3D(0.66369, -0.0, -0.74801, 0.0, 1.0, -0.0, 0.74801, 0.0, 0.66369, -8.0, 0.0, -47.5)
-
 [node name="NorthCell15" parent="Props" instance=ExtResource("19_r")]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.0, -35.5)
 
 [node name="NorthProp15" parent="Props" instance=ExtResource("17_r")]
-transform = Transform3D(0.99986, -0.0, -0.0166, 0.0, 1.0, -0.0, 0.0166, 0.0, 0.99986, 0.0, 0.0, -35.5)
+transform = Transform3D(0.66369, -0.0, -0.74801, 0.0, 1.0, -0.0, 0.74801, 0.0, 0.66369, 0.0, 0.0, -35.5)
 
 [node name="NorthCell16" parent="Props" instance=ExtResource("19_r")]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 4.0, 0.0, -35.5)
@@ -608,8 +602,11 @@ light_color = Color(0.82, 0.9, 1.0, 1.0)
 light_energy = 0.9
 omni_range = 6.5
 
+[node name="NorthProp16" parent="Props" instance=ExtResource("17_r")]
+transform = Transform3D(0.99986, -0.0, -0.0166, 0.0, 1.0, -0.0, 0.0166, 0.0, 0.99986, 4.0, 0.0, -35.5)
+
 [node name="ExitDoor" parent="." instance=ExtResource("21_r")]
-transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, 0.0, 0.0, -53.0)
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.0, -53.0)
 
 [node name="KeyMaster" type="StaticBody3D" parent="."]
 transform = Transform3D(0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, 0.0, 0.0, -7.0, 0.0, 0.0)

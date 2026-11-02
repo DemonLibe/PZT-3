@@ -5,6 +5,7 @@ func _ready() -> void:
 	await frames(1)
 	Encyclopedia.reset()
 	var level := await load_level("res://levels/section_30_threshold.tscn", 0)
+	local_member().body.global_position = Vector3(0, 0, 5)
 	await wait(0.5)
 	check(Encyclopedia.article_level(&"threshold") == 1, "Порог: секция отмечена, опасности нет")
 	level.queue_free()

@@ -197,6 +197,7 @@ def gigadom_maze(sc, gm, prefix, origin, forward, length, seed, end="exit", ligh
             break
     ox, oz = origin
     k = 0
+    keep_clear = {path[0], path[-1]}
     for (cx, cz), opens in cells.items():
         name, yaw = _pick_module(opens)
         if name is None:
@@ -214,6 +215,8 @@ def gigadom_maze(sc, gm, prefix, origin, forward, length, seed, end="exit", ligh
         if lights and k % 2 == 0:
             model(sc, f"{prefix}Tube{k}", "gigadom/fluorescent_lamp.glb", (x, 3.0, z), yaw)
             lamp(sc, f"{prefix}Light{k}", (x, 2.7, z), color=(0.82, 0.9, 1.0), energy=0.9, rng=6.5)
+        if (cx, cz) in keep_clear:
+            continue
         if name == "straight" and rng.random() < 0.7:
             # хлам вдоль стены — проход остаётся
             item = rng.choice(["bunk_bed", "metal_cabinet", "barrel_rusty", "junk_pile", "barrel_rusty"])
@@ -227,9 +230,11 @@ def gigadom_maze(sc, gm, prefix, origin, forward, length, seed, end="exit", ligh
     # куда смотрит «конец»: в сторону, откуда пришли
     prev = path[-2] if len(path) > 1 else (0, 0)
     face_dir = (prev[0] - ex, prev[1] - ez)
-    yaw_to_prev = {(0, 1): 180, (0, -1): 0, (1, 0): -90, (-1, 0): 90}.get(face_dir, 0)
+    # Лицо двери — локальная +Z, взгляд игрока — локальная −Z: повороты разные.
+    door_yaw = {(0, 1): 0, (0, -1): 180, (1, 0): 90, (-1, 0): -90}.get(face_dir, 0)
+    look_yaw = {(0, 1): 180, (0, -1): 0, (1, 0): -90, (-1, 0): 90}.get(face_dir, 0)
     if end == "exit":
-        exit_door(sc, (end_pos[0] - face_dir[0] * 1.5, 0, end_pos[1] - face_dir[1] * 1.5), yaw_to_prev)
+        exit_door(sc, (end_pos[0] - face_dir[0] * 1.5, 0, end_pos[1] - face_dir[1] * 1.5), door_yaw)
     else:
-        spawn(sc, "Player", (end_pos[0], 0, end_pos[1]), yaw_to_prev)
+        spawn(sc, "Player", (end_pos[0], 0, end_pos[1]), look_yaw)
     return end_pos

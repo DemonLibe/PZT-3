@@ -7,6 +7,7 @@ func _ready() -> void:
 	level.loss_delay = 9999.0  # тест сам решает, когда закончить
 	var m := local_member()
 	var npcs := npcs_of(level)
+	m.body.global_position = Vector3(0, 0, 10)  # маршрут длинный — сразу в район «Сна»
 	for x in npcs + [m]:
 		x.sleeping_changed.connect(func(v): if v: slept[x] = true)
 	await wait(1.0)

@@ -8,6 +8,7 @@ func _ready() -> void:
 	var m := local_member()
 	zone.data.params["lost_chance"] = 0.0
 	m.body.global_position = Vector3(0, 0, 0)
+	await wait(0.3)
 	await press(&"speak")
 	await wait(2.0)
 	check(zone._echoes.size() == 1, "сказал вслух — эхо повторяет")

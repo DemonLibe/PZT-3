@@ -161,7 +161,7 @@ sc.save(ROOT + "/ui/pause_menu.tscn")
 sc = Scene()
 sc.node("HUD", "CanvasLayer", None, layer=20, script=sc.ext_res("Script", "res://ui/hud.gd"))
 sc.node("ObjectivePanel", "PanelContainer", ".", unique_name_in_owner=True, offset_left=20.0, offset_top=20.0,
-        offset_right=340.0, offset_bottom=120.0, mouse_filter=2)
+        offset_right=420.0, offset_bottom=120.0, mouse_filter=2)
 hbox(sc, "Row", "ObjectivePanel", 14)
 sc.node("Arrow", "Control", "ObjectivePanel/Row", unique_name_in_owner=True, custom_minimum_size=V2(48, 48), layout_mode=2,
         size_flags_vertical=4, script=sc.ext_res("Script", "res://ui/compass_arrow.gd"))
@@ -174,11 +174,11 @@ sc.node("Progress", "ProgressBar", "ObjectivePanel/Row/Text", unique_name_in_own
 sc.node("Crosshair", "ColorRect", ".", anchors_preset=8, anchor_left=0.5, anchor_top=0.5, anchor_right=0.5, anchor_bottom=0.5,
         offset_left=-2.0, offset_top=-2.0, offset_right=2.0, offset_bottom=2.0, mouse_filter=2, color=C(0.9, 0.86, 0.75, 0.7))
 sc.node("PromptPanel", "PanelContainer", ".", unique_name_in_owner=True, visible=False, anchors_preset=7, anchor_left=0.5,
-        anchor_top=1.0, anchor_right=0.5, anchor_bottom=1.0, offset_left=-220.0, offset_top=-180.0, offset_right=220.0,
-        offset_bottom=-130.0, grow_horizontal=2, grow_vertical=0, mouse_filter=2)
+        anchor_top=1.0, anchor_right=0.5, anchor_bottom=1.0, offset_left=-220.0, offset_top=-190.0, offset_right=220.0,
+        offset_bottom=-140.0, grow_horizontal=2, grow_vertical=0, mouse_filter=2)
 label(sc, "Prompt", "PromptPanel", "", 18, TEXT, unique=True, align=1)
 sc.node("ToastPanel", "PanelContainer", ".", unique_name_in_owner=True, visible=False, anchors_preset=5, anchor_left=0.5,
-        anchor_right=0.5, offset_left=-330.0, offset_top=130.0, offset_right=330.0, offset_bottom=180.0, grow_horizontal=2,
+        anchor_right=0.5, offset_left=-330.0, offset_top=24.0, offset_right=330.0, offset_bottom=74.0, grow_horizontal=2,
         mouse_filter=2)
 label(sc, "Toast", "ToastPanel", "", 18, ACCENT, unique=True, align=1, autowrap_mode=2)
 label(sc, "Help", ".", "Esc — пауза и управление", 13, DIM, anchors_preset=3, anchor_left=1.0, anchor_top=1.0, anchor_right=1.0,

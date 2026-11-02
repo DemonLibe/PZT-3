@@ -16,8 +16,12 @@ def section_32():
     pipe = material(sc, (0.7, 0.7, 0.7), tex="metal_rust", scale=1.0)
     box(sc, "Floor", (0, -0.25, 0), (40, 0.5, 40), floor_mat)
     box(sc, "Ceiling", (0, 6.25, 0), (40, 0.5, 40), dark)
-    for i, (x, z, sx, sz) in enumerate(((0, -20.25, 40, 0.5), (0, 20.25, 40, 0.5), (-20.25, 0, 0.5, 40), (20.25, 0, 0.5, 40))):
+    # Стены зала с проходами по центру юга и севера (туда примыкают лабиринты)
+    for i, (x, z, sx, sz) in enumerate(((-11.0, -20.25, 18, 0.5), (11.0, -20.25, 18, 0.5), (-11.0, 20.25, 18, 0.5),
+                                        (11.0, 20.25, 18, 0.5), (-20.25, 0, 0.5, 40), (20.25, 0, 0.5, 40))):
         box(sc, f"Wall{i+1}", (x, 3, z), (sx, 6, sz), concrete)
+    for i, z in enumerate((-20.25, 20.25)):
+        box(sc, f"Lintel{i+1}", (0, 4.75, z), (4, 2.5, 0.5), concrete)
     k = 0
     for x in (-12, -4, 4, 12):
         for z in (-12, -4, 4, 12):
@@ -32,10 +36,10 @@ def section_32():
         sc.node(f"Food{i+1}", None, ".", instance=food, transform=T(7 + dx, 0.8, 15))
     for i, (x, z) in enumerate(((-8, 8), (8, 0), (-8, -8), (8, -14), (0, 16))):
         lamp(sc, f"Fluorescent{i+1}", (x, 5.6, z), color=COLD, energy=0.9, rng=11.0)
-    spawn(sc, "Player", (0, 0, 17), 0)
-    exit_door(sc, (0, 0, 19.7), 180)
-    for i in range(6):
-        spawn(sc, f"Npc{i+1}", (3 + 1.5 * (i % 3), 0, 16 - 1.5 * (i // 3)), 0)
+    from route import gigadom_maze, props_root
+    props_root(sc)
+    gigadom_maze(sc, None, "South", (0, 22.5), "S", 15, 3201, end="spawn")
+    gigadom_maze(sc, None, "North", (0, -22.5), "N", 13, 3202, end="exit")
     survey(sc, 1, (-12.0, 0, -8.0))
     survey(sc, 2, (12.0, 0, -8.0))
     survey(sc, 3, (0.0, 0, -18.0))
@@ -54,7 +58,7 @@ def section_36():
     sc.node("Structure", "CSGCombiner3D", G, use_collision=True)
     S = f"{G}/Structure"
     sc.node("Outer", "CSGBox3D", S, transform=T(0, 2, -3.25), size=V3(34, 4, 10.5), material=concrete)
-    sc.node("Corridor", "CSGBox3D", S, operation=2, transform=T(0, 1.8, 0), size=V3(33, 3.6, 3), material=concrete)
+    sc.node("Corridor", "CSGBox3D", S, operation=2, transform=T(0, 1.8, 0), size=V3(35, 3.6, 3), material=concrete)
     rooms_x = (-12, -4, 4, 12)
     for i, x in enumerate(rooms_x):
         sc.node(f"RoomHole{i+1}", "CSGBox3D", S, operation=2, transform=T(x, 1.8, -5), size=V3(7, 3.6, 6), material=room_floor)
@@ -78,10 +82,10 @@ def section_36():
         survey(sc, i + 1, (x - 2.5, 0, -6.8))
     sc.node("Warden", None, ".", instance=sc.ext_res("PackedScene", "res://creatures/warden/warden.tscn"),
             transform=T(-15.5, 0, 0.6), path=NP("../WardenPath"), rooms_root=NP("../Rooms"))
-    spawn(sc, "Player", (12, 0, -5), 180)
-    exit_door(sc, (16.3, 0, 0), -90)
-    for i in range(6):
-        spawn(sc, f"Npc{i+1}", (10.0 + 1.5 * (i % 3), 0, -6.0 - 1.4 * (i // 3)), 180)
+    from route import gigadom_maze, props_root
+    props_root(sc)
+    gigadom_maze(sc, None, "West", (-19.0, 0), "W", 14, 3601, end="spawn")
+    gigadom_maze(sc, None, "East", (19.0, 0), "E", 12, 3602, end="exit")
     ui(sc)
     sc.save(ROOT + "/levels/section_36_warden.tscn")
 

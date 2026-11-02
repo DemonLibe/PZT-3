@@ -84,7 +84,7 @@ def tree(sc, m, name, x, z, h=5.0):
 
 def courtyard(sc, m, width=16.0, length=40.0, playground=True, garages=True):
     """Земля, тротуары, площадка, гаражи, фонари, деревья, баки."""
-    box(sc, "Ground", (0, -0.25, 0), (60, 0.5, 60), m.asphalt)
+    box(sc, "Ground", (0, -0.25, 0), (70, 0.5, 200), m.asphalt)
     for side in (-1, 1):
         box(sc, f"Walk{side}", (side * (width / 2 - 0.8), 0.05, 0), (1.6, 0.1, 30), m.walk)
     if playground:
@@ -95,7 +95,7 @@ def courtyard(sc, m, width=16.0, length=40.0, playground=True, garages=True):
         box(sc, "SwingBar", (2.5, 2.4, -4.0), (2.0, 0.1, 0.1), m.paint)
         box(sc, "SwingSeat", (2.5, 0.6, -4.0), (0.6, 0.06, 0.3), m.wood, collision=False)
     if garages:
-        for i in range(5):
+        for i in range(4):  # справа оставлен проход на север
             box(sc, f"Garage{i+1}", (-6.0 + i * 3.0, 1.2, -19.5), (2.9, 2.4, 5.0), m.garage)
     for i, (x, z) in enumerate(((-5.5, -12), (5.5, 0), (-5.5, 12))):
         cylinder(sc, f"LampPost{i+1}", (x, 2.5, z), 0.07, 5.0, m.metal)
@@ -126,15 +126,16 @@ def spawns(sc):
 
 
 def standard_yard(sc, name, title, beige=False, room=None, fog=0.045, entrances_left=(-10.5, 1.5, 10.5), garages=True,
-                  exit=True):
+                  exit=True, north=True, seed=0):
     """Двор с двумя пятиэтажками по сторонам. Возвращает (материалы, фронт_слева, фронт_справа)."""
     base_level(sc, name, title=title, fog=fog)
     m = Mats(sc, beige)
     courtyard(sc, m, garages=garages)
     left = panel_block(sc, m, "BlockWest", -14, 0, facing=1, room=room, entrances=entrances_left)
     right = panel_block(sc, m, "BlockEast", 14, 0, facing=-1)
-    south_gate(sc, m, exit=exit)
-    spawns(sc)
+    import zlib
+    from route import district_route
+    district_route(sc, m, seed or zlib.crc32(name.encode()) % 10000, north=north and garages, exit=exit)
     return m, left, right
 
 

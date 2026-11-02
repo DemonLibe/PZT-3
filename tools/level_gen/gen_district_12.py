@@ -5,7 +5,7 @@ from level_common import *
 from moscow import *
 
 sc = Scene()
-m, left, right = standard_yard(sc, "District12Reflection", "Район 12", fog=0.022, garages=False)
+m, left, right = standard_yard(sc, "District12Reflection", "Район 12", fog=0.022, garages=False, north=False)
 lit_windows(sc, m, "GlowWest", left, 1, -15, 15, 121)
 lit_windows(sc, m, "GlowEast", right, -1, -15, 15, 122)
 # Пустырь на север: там видно «отражение»

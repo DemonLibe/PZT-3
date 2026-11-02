@@ -5,7 +5,7 @@ from level_common import *
 from gigadom import *
 
 sc = Scene()
-m = section_base(sc, "Section50Threshold", "Гигадом, секция 50", corridor_length=46.0)
+m = section_base(sc, "Section50Threshold", "Гигадом, секция 50", north_maze=False)
 food = sc.ext_res("PackedScene", "res://world/food_item.tscn")
 sc.node("Food1", None, ".", instance=food, transform=T(-6.0, 0, 0.0))
 sc.node("Threshold", "Area3D", ".", transform=T(0, 1.5, -24.0))

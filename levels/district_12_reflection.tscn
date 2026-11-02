@@ -14,15 +14,20 @@
 [ext_resource type="Texture2D" path="res://world/textures/wood_fence.png" id="12_r"]
 [ext_resource type="Texture2D" path="res://world/textures/wood_door.png" id="13_r"]
 [ext_resource type="Texture2D" path="res://world/textures/block_wall.png" id="14_r"]
-[ext_resource type="PackedScene" path="res://world/exit_door.tscn" id="15_r"]
-[ext_resource type="Script" path="res://anomalies/districts/reflection/reflection_zone.gd" id="16_r"]
-[ext_resource type="Resource" path="res://data/reflection.tres" id="17_r"]
-[ext_resource type="PackedScene" path="res://world/survey_point.tscn" id="18_r"]
-[ext_resource type="PackedScene" path="res://ui/hud.tscn" id="19_r"]
-[ext_resource type="PackedScene" path="res://ui/pause_menu.tscn" id="20_r"]
-[ext_resource type="PackedScene" path="res://ui/fate_overlay.tscn" id="21_r"]
-[ext_resource type="PackedScene" path="res://ui/sleep_overlay.tscn" id="22_r"]
-[ext_resource type="PackedScene" path="res://debug/debug_hud.tscn" id="23_r"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/panel_building_section.glb" id="15_r"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/street_lamp_sodium.glb" id="16_r"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/swing_set.glb" id="17_r"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/bench_yard.glb" id="18_r"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/tree_lowpoly.glb" id="19_r"]
+[ext_resource type="PackedScene" path="res://world/exit_door.tscn" id="20_r"]
+[ext_resource type="Script" path="res://anomalies/districts/reflection/reflection_zone.gd" id="21_r"]
+[ext_resource type="Resource" path="res://data/reflection.tres" id="22_r"]
+[ext_resource type="PackedScene" path="res://world/survey_point.tscn" id="23_r"]
+[ext_resource type="PackedScene" path="res://ui/hud.tscn" id="24_r"]
+[ext_resource type="PackedScene" path="res://ui/pause_menu.tscn" id="25_r"]
+[ext_resource type="PackedScene" path="res://ui/fate_overlay.tscn" id="26_r"]
+[ext_resource type="PackedScene" path="res://ui/sleep_overlay.tscn" id="27_r"]
+[ext_resource type="PackedScene" path="res://debug/debug_hud.tscn" id="28_r"]
 
 [sub_resource type="Environment" id="Environment_1"]
 background_mode = 1
@@ -173,6 +178,441 @@ material = SubResource("StandardMaterial3D_17")
 size = Vector2(1.55, 1.25)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_19"]
+albedo_color = Color(0.6, 0.55, 0.2, 1.0)
+roughness = 1.0
+albedo_texture = ExtResource("11_r")
+texture_filter = 0
+uv1_scale = Vector3(1.0, 1.0, 1.0)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_20"]
+albedo_color = Color(0.08, 0.09, 0.11, 1.0)
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_22"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_23"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_25"]
+albedo_color = Color(0.55, 0.15, 0.12, 1.0)
+roughness = 1.0
+albedo_texture = ExtResource("11_r")
+texture_filter = 0
+uv1_scale = Vector3(1.0, 1.0, 1.0)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_26"]
+albedo_color = Color(0.08, 0.09, 0.11, 1.0)
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_27"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_28"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_29"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_30"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_31"]
+albedo_color = Color(0.55, 0.15, 0.12, 1.0)
+roughness = 1.0
+albedo_texture = ExtResource("11_r")
+texture_filter = 0
+uv1_scale = Vector3(1.0, 1.0, 1.0)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_32"]
+albedo_color = Color(0.08, 0.09, 0.11, 1.0)
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_33"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_34"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_35"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_36"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37"]
+albedo_color = Color(0.2, 0.3, 0.45, 1.0)
+roughness = 1.0
+albedo_texture = ExtResource("11_r")
+texture_filter = 0
+uv1_scale = Vector3(1.0, 1.0, 1.0)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_38"]
+albedo_color = Color(0.08, 0.09, 0.11, 1.0)
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_39"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_40"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_41"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_43"]
+albedo_color = Color(0.6, 0.55, 0.2, 1.0)
+roughness = 1.0
+albedo_texture = ExtResource("11_r")
+texture_filter = 0
+uv1_scale = Vector3(1.0, 1.0, 1.0)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_44"]
+albedo_color = Color(0.08, 0.09, 0.11, 1.0)
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_45"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_46"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_47"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_48"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_49"]
+albedo_color = Color(0.25, 0.35, 0.25, 1.0)
+roughness = 1.0
+albedo_texture = ExtResource("11_r")
+texture_filter = 0
+uv1_scale = Vector3(1.0, 1.0, 1.0)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_50"]
+albedo_color = Color(0.08, 0.09, 0.11, 1.0)
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_51"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_52"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_53"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_54"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_55"]
+albedo_color = Color(0.75, 0.72, 0.6, 1.0)
+roughness = 1.0
+albedo_texture = ExtResource("11_r")
+texture_filter = 0
+uv1_scale = Vector3(1.0, 1.0, 1.0)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_56"]
+albedo_color = Color(0.08, 0.09, 0.11, 1.0)
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_57"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_58"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_59"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_60"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_61"]
+albedo_color = Color(0.55, 0.15, 0.12, 1.0)
+roughness = 1.0
+albedo_texture = ExtResource("11_r")
+texture_filter = 0
+uv1_scale = Vector3(1.0, 1.0, 1.0)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62"]
+albedo_color = Color(0.08, 0.09, 0.11, 1.0)
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_63"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_64"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_65"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_66"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_67"]
+albedo_color = Color(0.6, 0.55, 0.2, 1.0)
+roughness = 1.0
+albedo_texture = ExtResource("11_r")
+texture_filter = 0
+uv1_scale = Vector3(1.0, 1.0, 1.0)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_68"]
+albedo_color = Color(0.08, 0.09, 0.11, 1.0)
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_69"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_71"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_72"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_73"]
+albedo_color = Color(0.2, 0.3, 0.45, 1.0)
+roughness = 1.0
+albedo_texture = ExtResource("11_r")
+texture_filter = 0
+uv1_scale = Vector3(1.0, 1.0, 1.0)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_74"]
+albedo_color = Color(0.08, 0.09, 0.11, 1.0)
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_75"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_76"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_77"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_78"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_79"]
+albedo_color = Color(0.6, 0.55, 0.2, 1.0)
+roughness = 1.0
+albedo_texture = ExtResource("11_r")
+texture_filter = 0
+uv1_scale = Vector3(1.0, 1.0, 1.0)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_80"]
+albedo_color = Color(0.08, 0.09, 0.11, 1.0)
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_81"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_83"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_84"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_85"]
+albedo_color = Color(0.75, 0.72, 0.6, 1.0)
+roughness = 1.0
+albedo_texture = ExtResource("11_r")
+texture_filter = 0
+uv1_scale = Vector3(1.0, 1.0, 1.0)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_86"]
+albedo_color = Color(0.08, 0.09, 0.11, 1.0)
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_87"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_88"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_89"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_90"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_91"]
+albedo_color = Color(0.6, 0.55, 0.2, 1.0)
+roughness = 1.0
+albedo_texture = ExtResource("11_r")
+texture_filter = 0
+uv1_scale = Vector3(1.0, 1.0, 1.0)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_92"]
+albedo_color = Color(0.08, 0.09, 0.11, 1.0)
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_93"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_94"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_95"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_96"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_97"]
+albedo_color = Color(0.2, 0.3, 0.45, 1.0)
+roughness = 1.0
+albedo_texture = ExtResource("11_r")
+texture_filter = 0
+uv1_scale = Vector3(1.0, 1.0, 1.0)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_98"]
+albedo_color = Color(0.08, 0.09, 0.11, 1.0)
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_99"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_100"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_101"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_102"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_103"]
+albedo_color = Color(0.2, 0.3, 0.45, 1.0)
+roughness = 1.0
+albedo_texture = ExtResource("11_r")
+texture_filter = 0
+uv1_scale = Vector3(1.0, 1.0, 1.0)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_104"]
+albedo_color = Color(0.08, 0.09, 0.11, 1.0)
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_105"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_106"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_107"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_108"]
+albedo_color = Color(0.08, 0.08, 0.08, 1.0)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_109"]
 albedo_color = Color(0.55, 0.5, 0.42, 1.0)
 roughness = 1.0
 albedo_texture = ExtResource("7_r")
@@ -181,7 +621,7 @@ uv1_scale = Vector3(0.25, 0.25, 0.25)
 uv1_triplanar = true
 uv1_world_triplanar = true
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_20"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_110"]
 size = Vector3(18.0, 6.0, 44.0)
 
 [node name="District12Reflection" type="Node3D"]
@@ -215,7 +655,7 @@ members_root = NodePath("../Members")
 [node name="Ground" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, -0.25, 0.0)
 use_collision = true
-size = Vector3(60.0, 0.5, 60.0)
+size = Vector3(70.0, 0.5, 200.0)
 material = SubResource("StandardMaterial3D_6")
 
 [node name="Walk-1" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
@@ -581,41 +1021,889 @@ use_collision = true
 size = Vector3(0.5, 0.5, 1.6)
 material = SubResource("StandardMaterial3D_11")
 
-[node name="GateFence-1" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
-transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -4.4, 1.0, 20.0)
+[node name="Props" type="Node3D" parent="."]
+
+[node name="Tower1" parent="Props" instance=ExtResource("15_r")]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -27.0, 0.0, 32.0)
+
+[node name="Tower2" parent="Props" instance=ExtResource("15_r")]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -27.0, 0.0, 44.0)
+
+[node name="Tower3" parent="Props" instance=ExtResource("15_r")]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -27.0, 0.0, 56.0)
+
+[node name="Tower4" parent="Props" instance=ExtResource("15_r")]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -27.0, 0.0, 68.0)
+
+[node name="Tower5" parent="Props" instance=ExtResource("15_r")]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -27.0, 0.0, 80.0)
+
+[node name="Tower6" parent="Props" instance=ExtResource("15_r")]
+transform = Transform3D(0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, 0.0, 0.0, 27.0, 0.0, 32.0)
+
+[node name="Tower7" parent="Props" instance=ExtResource("15_r")]
+transform = Transform3D(0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, 0.0, 0.0, 27.0, 0.0, 44.0)
+
+[node name="Tower8" parent="Props" instance=ExtResource("15_r")]
+transform = Transform3D(0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, 0.0, 0.0, 27.0, 0.0, 56.0)
+
+[node name="Tower9" parent="Props" instance=ExtResource("15_r")]
+transform = Transform3D(0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, 0.0, 0.0, 27.0, 0.0, 68.0)
+
+[node name="Tower10" parent="Props" instance=ExtResource("15_r")]
+transform = Transform3D(0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, 0.0, 0.0, 27.0, 0.0, 80.0)
+
+[node name="Perimeter-1" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -21.2, 1.6, 35.0)
 use_collision = true
-size = Vector3(7.2, 2.0, 0.2)
+size = Vector3(0.4, 3.2, 114.0)
 material = SubResource("StandardMaterial3D_16")
 
-[node name="GateFence1" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
-transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 4.4, 1.0, 20.0)
+[node name="Perimeter1" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 21.2, 1.6, 35.0)
 use_collision = true
-size = Vector3(7.2, 2.0, 0.2)
+size = Vector3(0.4, 3.2, 114.0)
 material = SubResource("StandardMaterial3D_16")
 
-[node name="ExitDoor" parent="." instance=ExtResource("15_r")]
-transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, 0.0, 0.0, 19.8)
+[node name="PerimeterSouth" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 1.6, 92.0)
+use_collision = true
+size = Vector3(43.0, 3.2, 0.4)
+material = SubResource("StandardMaterial3D_16")
 
 [node name="Player" type="Marker3D" parent="SpawnPoints"]
-transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.0, 16.5)
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.0, 87.0)
 
-[node name="Npc1" type="Marker3D" parent="SpawnPoints"]
-transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -4.0, 0.0, 15.0)
+[node name="Snake0" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 4.5, 1.1, 70.0)
+use_collision = true
+size = Vector3(33.0, 2.2, 0.25)
+material = SubResource("StandardMaterial3D_16")
 
-[node name="Npc2" type="Marker3D" parent="SpawnPoints"]
-transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -2.5, 0.0, 14.0)
+[node name="Snake1" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -4.5, 1.1, 60.0)
+use_collision = true
+size = Vector3(33.0, 2.2, 0.25)
+material = SubResource("StandardMaterial3D_16")
 
-[node name="Npc3" type="Marker3D" parent="SpawnPoints"]
-transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 2.5, 0.0, 14.0)
+[node name="Snake2" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 4.5, 1.1, 50.0)
+use_collision = true
+size = Vector3(33.0, 2.2, 0.25)
+material = SubResource("StandardMaterial3D_16")
 
-[node name="Npc4" type="Marker3D" parent="SpawnPoints"]
-transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 4.0, 0.0, 15.0)
+[node name="Snake3" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -4.5, 1.1, 40.0)
+use_collision = true
+size = Vector3(33.0, 2.2, 0.25)
+material = SubResource("StandardMaterial3D_16")
 
-[node name="Npc5" type="Marker3D" parent="SpawnPoints"]
-transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -4.0, 0.0, 12.5)
+[node name="Snake4a" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -12.0, 1.1, 30.0)
+use_collision = true
+size = Vector3(18.0, 2.2, 0.25)
+material = SubResource("StandardMaterial3D_16")
 
-[node name="Npc6" type="Marker3D" parent="SpawnPoints"]
-transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 4.0, 0.0, 12.5)
+[node name="Snake4b" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 12.0, 1.1, 30.0)
+use_collision = true
+size = Vector3(18.0, 2.2, 0.25)
+material = SubResource("StandardMaterial3D_16")
+
+[node name="Lamp100" parent="Props" instance=ExtResource("16_r")]
+transform = Transform3D(0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, 0.0, 0.0, 18.5, 0.0, 84.0)
+
+[node name="LampLight100" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 18.5, 5.6, 84.0)
+light_color = Color(1.0, 0.72, 0.38, 1.0)
+light_energy = 1.6
+omni_range = 13.0
+
+[node name="Car0_0" type="Node3D" parent="Props"]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, 1.816145014405386, 0.0, 85.8)
+
+[node name="Body" type="CSGBox3D" parent="Props/Car0_0"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.55, 0.0)
+size = Vector3(1.7, 0.7, 4.0)
+material = SubResource("StandardMaterial3D_19")
+use_collision = true
+
+[node name="Cabin" type="CSGBox3D" parent="Props/Car0_0"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 1.15, -0.2)
+size = Vector3(1.55, 0.55, 2.1)
+material = SubResource("StandardMaterial3D_20")
+use_collision = true
+
+[node name="Wheel0" type="CSGCylinder3D" parent="Props/Car0_0"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_21")
+
+[node name="Wheel1" type="CSGCylinder3D" parent="Props/Car0_0"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_22")
+
+[node name="Wheel2" type="CSGCylinder3D" parent="Props/Car0_0"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_23")
+
+[node name="Wheel3" type="CSGCylinder3D" parent="Props/Car0_0"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_24")
+
+[node name="Car0_1" type="Node3D" parent="Props"]
+transform = Transform3D(-0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, -0.0, -0.0, -2.2876498455138154, 0.0, 82.2)
+
+[node name="Body" type="CSGBox3D" parent="Props/Car0_1"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.55, 0.0)
+size = Vector3(1.7, 0.7, 4.0)
+material = SubResource("StandardMaterial3D_25")
+use_collision = true
+
+[node name="Cabin" type="CSGBox3D" parent="Props/Car0_1"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 1.15, -0.2)
+size = Vector3(1.55, 0.55, 2.1)
+material = SubResource("StandardMaterial3D_26")
+use_collision = true
+
+[node name="Wheel0" type="CSGCylinder3D" parent="Props/Car0_1"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_27")
+
+[node name="Wheel1" type="CSGCylinder3D" parent="Props/Car0_1"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_28")
+
+[node name="Wheel2" type="CSGCylinder3D" parent="Props/Car0_1"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_29")
+
+[node name="Wheel3" type="CSGCylinder3D" parent="Props/Car0_1"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_30")
+
+[node name="Car0_2" type="Node3D" parent="Props"]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -13.874459518859965, 0.0, 85.8)
+
+[node name="Body" type="CSGBox3D" parent="Props/Car0_2"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.55, 0.0)
+size = Vector3(1.7, 0.7, 4.0)
+material = SubResource("StandardMaterial3D_31")
+use_collision = true
+
+[node name="Cabin" type="CSGBox3D" parent="Props/Car0_2"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 1.15, -0.2)
+size = Vector3(1.55, 0.55, 2.1)
+material = SubResource("StandardMaterial3D_32")
+use_collision = true
+
+[node name="Wheel0" type="CSGCylinder3D" parent="Props/Car0_2"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_33")
+
+[node name="Wheel1" type="CSGCylinder3D" parent="Props/Car0_2"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_34")
+
+[node name="Wheel2" type="CSGCylinder3D" parent="Props/Car0_2"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_35")
+
+[node name="Wheel3" type="CSGCylinder3D" parent="Props/Car0_2"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_36")
+
+[node name="Swing0" parent="Props" instance=ExtResource("17_r")]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -5.102909910344277, 0.0, 84.0)
+
+[node name="BenchA0" parent="Props" instance=ExtResource("18_r")]
+transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, -13.208543644541109, 0.0, 86.5)
+
+[node name="Lamp101" parent="Props" instance=ExtResource("16_r")]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -18.5, 0.0, 75.0)
+
+[node name="LampLight101" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -18.5, 5.6, 75.0)
+light_color = Color(1.0, 0.72, 0.38, 1.0)
+light_energy = 1.6
+omni_range = 13.0
+
+[node name="Car1_0" type="Node3D" parent="Props"]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, 13.052538220279065, 0.0, 77.8)
+
+[node name="Body" type="CSGBox3D" parent="Props/Car1_0"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.55, 0.0)
+size = Vector3(1.7, 0.7, 4.0)
+material = SubResource("StandardMaterial3D_37")
+use_collision = true
+
+[node name="Cabin" type="CSGBox3D" parent="Props/Car1_0"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 1.15, -0.2)
+size = Vector3(1.55, 0.55, 2.1)
+material = SubResource("StandardMaterial3D_38")
+use_collision = true
+
+[node name="Wheel0" type="CSGCylinder3D" parent="Props/Car1_0"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_39")
+
+[node name="Wheel1" type="CSGCylinder3D" parent="Props/Car1_0"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_40")
+
+[node name="Wheel2" type="CSGCylinder3D" parent="Props/Car1_0"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_41")
+
+[node name="Wheel3" type="CSGCylinder3D" parent="Props/Car1_0"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_42")
+
+[node name="Car1_1" type="Node3D" parent="Props"]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, 6.553883996750457, 0.0, 72.2)
+
+[node name="Body" type="CSGBox3D" parent="Props/Car1_1"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.55, 0.0)
+size = Vector3(1.7, 0.7, 4.0)
+material = SubResource("StandardMaterial3D_43")
+use_collision = true
+
+[node name="Cabin" type="CSGBox3D" parent="Props/Car1_1"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 1.15, -0.2)
+size = Vector3(1.55, 0.55, 2.1)
+material = SubResource("StandardMaterial3D_44")
+use_collision = true
+
+[node name="Wheel0" type="CSGCylinder3D" parent="Props/Car1_1"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_45")
+
+[node name="Wheel1" type="CSGCylinder3D" parent="Props/Car1_1"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_46")
+
+[node name="Wheel2" type="CSGCylinder3D" parent="Props/Car1_1"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_47")
+
+[node name="Wheel3" type="CSGCylinder3D" parent="Props/Car1_1"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_48")
+
+[node name="Garage1_0" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -19.0, 1.2, 71.7)
+use_collision = true
+size = Vector3(3.4, 2.4, 2.9)
+material = SubResource("StandardMaterial3D_10")
+
+[node name="Garage1_1" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -19.0, 1.2, 74.7)
+use_collision = true
+size = Vector3(3.4, 2.4, 2.9)
+material = SubResource("StandardMaterial3D_10")
+
+[node name="Garage1_2" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -19.0, 1.2, 77.7)
+use_collision = true
+size = Vector3(3.4, 2.4, 2.9)
+material = SubResource("StandardMaterial3D_10")
+
+[node name="Tree1" parent="Props" instance=ExtResource("19_r")]
+transform = Transform3D(0.40809, -0.0, -0.91294, 0.0, 1.0, -0.0, 0.91294, 0.0, 0.40809, 5.713284476522354, 0.0, 75.0)
+
+[node name="Lamp102" parent="Props" instance=ExtResource("16_r")]
+transform = Transform3D(0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, 0.0, 0.0, 18.5, 0.0, 65.0)
+
+[node name="LampLight102" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 18.5, 5.6, 65.0)
+light_color = Color(1.0, 0.72, 0.38, 1.0)
+light_energy = 1.6
+omni_range = 13.0
+
+[node name="Car2_0" type="Node3D" parent="Props"]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -1.9608601544349487, 0.0, 67.8)
+
+[node name="Body" type="CSGBox3D" parent="Props/Car2_0"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.55, 0.0)
+size = Vector3(1.7, 0.7, 4.0)
+material = SubResource("StandardMaterial3D_49")
+use_collision = true
+
+[node name="Cabin" type="CSGBox3D" parent="Props/Car2_0"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 1.15, -0.2)
+size = Vector3(1.55, 0.55, 2.1)
+material = SubResource("StandardMaterial3D_50")
+use_collision = true
+
+[node name="Wheel0" type="CSGCylinder3D" parent="Props/Car2_0"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_51")
+
+[node name="Wheel1" type="CSGCylinder3D" parent="Props/Car2_0"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_52")
+
+[node name="Wheel2" type="CSGCylinder3D" parent="Props/Car2_0"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_53")
+
+[node name="Wheel3" type="CSGCylinder3D" parent="Props/Car2_0"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_54")
+
+[node name="TreeA2" parent="Props" instance=ExtResource("19_r")]
+transform = Transform3D(-0.5324, -0.0, -0.8465, 0.0, 1.0, -0.0, 0.8465, -0.0, -0.5324, -12.584448751233586, 0.0, 65.0)
+
+[node name="TreeB2" parent="Props" instance=ExtResource("19_r")]
+transform = Transform3D(-0.01884, -0.0, -0.99982, 0.0, 1.0, -0.0, 0.99982, -0.0, -0.01884, 8.015555813287403, 0.0, 63.0)
+
+[node name="BenchB2" parent="Props" instance=ExtResource("18_r")]
+transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, 2.4048623604997283, 0.0, 69.0)
+
+[node name="Lamp103" parent="Props" instance=ExtResource("16_r")]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -18.5, 0.0, 55.0)
+
+[node name="LampLight103" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -18.5, 5.6, 55.0)
+light_color = Color(1.0, 0.72, 0.38, 1.0)
+light_energy = 1.6
+omni_range = 13.0
+
+[node name="Car3_0" type="Node3D" parent="Props"]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -5.340130201458553, 0.0, 57.8)
+
+[node name="Body" type="CSGBox3D" parent="Props/Car3_0"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.55, 0.0)
+size = Vector3(1.7, 0.7, 4.0)
+material = SubResource("StandardMaterial3D_55")
+use_collision = true
+
+[node name="Cabin" type="CSGBox3D" parent="Props/Car3_0"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 1.15, -0.2)
+size = Vector3(1.55, 0.55, 2.1)
+material = SubResource("StandardMaterial3D_56")
+use_collision = true
+
+[node name="Wheel0" type="CSGCylinder3D" parent="Props/Car3_0"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_57")
+
+[node name="Wheel1" type="CSGCylinder3D" parent="Props/Car3_0"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_58")
+
+[node name="Wheel2" type="CSGCylinder3D" parent="Props/Car3_0"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_59")
+
+[node name="Wheel3" type="CSGCylinder3D" parent="Props/Car3_0"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_60")
+
+[node name="Car3_1" type="Node3D" parent="Props"]
+transform = Transform3D(-0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, -0.0, -0.0, -7.274134828988372, 0.0, 52.2)
+
+[node name="Body" type="CSGBox3D" parent="Props/Car3_1"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.55, 0.0)
+size = Vector3(1.7, 0.7, 4.0)
+material = SubResource("StandardMaterial3D_61")
+use_collision = true
+
+[node name="Cabin" type="CSGBox3D" parent="Props/Car3_1"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 1.15, -0.2)
+size = Vector3(1.55, 0.55, 2.1)
+material = SubResource("StandardMaterial3D_62")
+use_collision = true
+
+[node name="Wheel0" type="CSGCylinder3D" parent="Props/Car3_1"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_63")
+
+[node name="Wheel1" type="CSGCylinder3D" parent="Props/Car3_1"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_64")
+
+[node name="Wheel2" type="CSGCylinder3D" parent="Props/Car3_1"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_65")
+
+[node name="Wheel3" type="CSGCylinder3D" parent="Props/Car3_1"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_66")
+
+[node name="Bins3" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 10.961109966878645, 0.6, 55.0)
+use_collision = true
+size = Vector3(2.4, 1.2, 1.1)
+material = SubResource("StandardMaterial3D_12")
+
+[node name="Sandbox3" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -9.1828465827519, 0.15, 55.0)
+use_collision = true
+size = Vector3(2.5, 0.3, 2.5)
+material = SubResource("StandardMaterial3D_11")
+
+[node name="Lamp104" parent="Props" instance=ExtResource("16_r")]
+transform = Transform3D(0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, 0.0, 0.0, 18.5, 0.0, 45.0)
+
+[node name="LampLight104" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 18.5, 5.6, 45.0)
+light_color = Color(1.0, 0.72, 0.38, 1.0)
+light_energy = 1.6
+omni_range = 13.0
+
+[node name="Car4_0" type="Node3D" parent="Props"]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -6.387078264591711, 0.0, 47.8)
+
+[node name="Body" type="CSGBox3D" parent="Props/Car4_0"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.55, 0.0)
+size = Vector3(1.7, 0.7, 4.0)
+material = SubResource("StandardMaterial3D_67")
+use_collision = true
+
+[node name="Cabin" type="CSGBox3D" parent="Props/Car4_0"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 1.15, -0.2)
+size = Vector3(1.55, 0.55, 2.1)
+material = SubResource("StandardMaterial3D_68")
+use_collision = true
+
+[node name="Wheel0" type="CSGCylinder3D" parent="Props/Car4_0"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_69")
+
+[node name="Wheel1" type="CSGCylinder3D" parent="Props/Car4_0"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_70")
+
+[node name="Wheel2" type="CSGCylinder3D" parent="Props/Car4_0"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_71")
+
+[node name="Wheel3" type="CSGCylinder3D" parent="Props/Car4_0"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_72")
+
+[node name="Car4_1" type="Node3D" parent="Props"]
+transform = Transform3D(-0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, -0.0, -0.0, 12.777852077122635, 0.0, 42.2)
+
+[node name="Body" type="CSGBox3D" parent="Props/Car4_1"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.55, 0.0)
+size = Vector3(1.7, 0.7, 4.0)
+material = SubResource("StandardMaterial3D_73")
+use_collision = true
+
+[node name="Cabin" type="CSGBox3D" parent="Props/Car4_1"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 1.15, -0.2)
+size = Vector3(1.55, 0.55, 2.1)
+material = SubResource("StandardMaterial3D_74")
+use_collision = true
+
+[node name="Wheel0" type="CSGCylinder3D" parent="Props/Car4_1"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_75")
+
+[node name="Wheel1" type="CSGCylinder3D" parent="Props/Car4_1"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_76")
+
+[node name="Wheel2" type="CSGCylinder3D" parent="Props/Car4_1"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_77")
+
+[node name="Wheel3" type="CSGCylinder3D" parent="Props/Car4_1"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_78")
+
+[node name="Car4_2" type="Node3D" parent="Props"]
+transform = Transform3D(-0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, -0.0, -0.0, 6.7332822779090655, 0.0, 47.8)
+
+[node name="Body" type="CSGBox3D" parent="Props/Car4_2"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.55, 0.0)
+size = Vector3(1.7, 0.7, 4.0)
+material = SubResource("StandardMaterial3D_79")
+use_collision = true
+
+[node name="Cabin" type="CSGBox3D" parent="Props/Car4_2"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 1.15, -0.2)
+size = Vector3(1.55, 0.55, 2.1)
+material = SubResource("StandardMaterial3D_80")
+use_collision = true
+
+[node name="Wheel0" type="CSGCylinder3D" parent="Props/Car4_2"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_81")
+
+[node name="Wheel1" type="CSGCylinder3D" parent="Props/Car4_2"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_82")
+
+[node name="Wheel2" type="CSGCylinder3D" parent="Props/Car4_2"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_83")
+
+[node name="Wheel3" type="CSGCylinder3D" parent="Props/Car4_2"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_84")
+
+[node name="Swing4" parent="Props" instance=ExtResource("17_r")]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -5.826201633862398, 0.0, 45.0)
+
+[node name="BenchA4" parent="Props" instance=ExtResource("18_r")]
+transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, -12.67113685684074, 0.0, 47.5)
+
+[node name="Lamp105" parent="Props" instance=ExtResource("16_r")]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -18.5, 0.0, 35.0)
+
+[node name="LampLight105" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -18.5, 5.6, 35.0)
+light_color = Color(1.0, 0.72, 0.38, 1.0)
+light_energy = 1.6
+omni_range = 13.0
+
+[node name="Car5_0" type="Node3D" parent="Props"]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -13.614157047393135, 0.0, 37.8)
+
+[node name="Body" type="CSGBox3D" parent="Props/Car5_0"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.55, 0.0)
+size = Vector3(1.7, 0.7, 4.0)
+material = SubResource("StandardMaterial3D_85")
+use_collision = true
+
+[node name="Cabin" type="CSGBox3D" parent="Props/Car5_0"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 1.15, -0.2)
+size = Vector3(1.55, 0.55, 2.1)
+material = SubResource("StandardMaterial3D_86")
+use_collision = true
+
+[node name="Wheel0" type="CSGCylinder3D" parent="Props/Car5_0"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_87")
+
+[node name="Wheel1" type="CSGCylinder3D" parent="Props/Car5_0"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_88")
+
+[node name="Wheel2" type="CSGCylinder3D" parent="Props/Car5_0"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_89")
+
+[node name="Wheel3" type="CSGCylinder3D" parent="Props/Car5_0"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_90")
+
+[node name="Car5_1" type="Node3D" parent="Props"]
+transform = Transform3D(-0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, -0.0, -0.0, 9.102383287399476, 0.0, 32.2)
+
+[node name="Body" type="CSGBox3D" parent="Props/Car5_1"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.55, 0.0)
+size = Vector3(1.7, 0.7, 4.0)
+material = SubResource("StandardMaterial3D_91")
+use_collision = true
+
+[node name="Cabin" type="CSGBox3D" parent="Props/Car5_1"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 1.15, -0.2)
+size = Vector3(1.55, 0.55, 2.1)
+material = SubResource("StandardMaterial3D_92")
+use_collision = true
+
+[node name="Wheel0" type="CSGCylinder3D" parent="Props/Car5_1"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_93")
+
+[node name="Wheel1" type="CSGCylinder3D" parent="Props/Car5_1"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_94")
+
+[node name="Wheel2" type="CSGCylinder3D" parent="Props/Car5_1"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_95")
+
+[node name="Wheel3" type="CSGCylinder3D" parent="Props/Car5_1"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_96")
+
+[node name="Garage5_0" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -19.0, 1.2, 31.7)
+use_collision = true
+size = Vector3(3.4, 2.4, 2.9)
+material = SubResource("StandardMaterial3D_10")
+
+[node name="Garage5_1" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -19.0, 1.2, 34.7)
+use_collision = true
+size = Vector3(3.4, 2.4, 2.9)
+material = SubResource("StandardMaterial3D_10")
+
+[node name="Garage5_2" type="CSGBox3D" parent="NavigationRegion3D/Geometry"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -19.0, 1.2, 37.7)
+use_collision = true
+size = Vector3(3.4, 2.4, 2.9)
+material = SubResource("StandardMaterial3D_10")
+
+[node name="Tree5" parent="Props" instance=ExtResource("19_r")]
+transform = Transform3D(-0.924, -0.0, -0.3824, 0.0, 1.0, -0.0, 0.3824, -0.0, -0.924, 7.665788530122246, 0.0, 35.0)
+
+[node name="Lamp106" parent="Props" instance=ExtResource("16_r")]
+transform = Transform3D(0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, 0.0, 0.0, 18.5, 0.0, 26.0)
+
+[node name="LampLight106" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 18.5, 5.6, 26.0)
+light_color = Color(1.0, 0.72, 0.38, 1.0)
+light_energy = 1.6
+omni_range = 13.0
+
+[node name="Car6_0" type="Node3D" parent="Props"]
+transform = Transform3D(-0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, -0.0, -0.0, 9.411064010699395, 0.0, 27.8)
+
+[node name="Body" type="CSGBox3D" parent="Props/Car6_0"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.55, 0.0)
+size = Vector3(1.7, 0.7, 4.0)
+material = SubResource("StandardMaterial3D_97")
+use_collision = true
+
+[node name="Cabin" type="CSGBox3D" parent="Props/Car6_0"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 1.15, -0.2)
+size = Vector3(1.55, 0.55, 2.1)
+material = SubResource("StandardMaterial3D_98")
+use_collision = true
+
+[node name="Wheel0" type="CSGCylinder3D" parent="Props/Car6_0"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_99")
+
+[node name="Wheel1" type="CSGCylinder3D" parent="Props/Car6_0"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_100")
+
+[node name="Wheel2" type="CSGCylinder3D" parent="Props/Car6_0"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_101")
+
+[node name="Wheel3" type="CSGCylinder3D" parent="Props/Car6_0"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_102")
+
+[node name="Car6_1" type="Node3D" parent="Props"]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -11.816396376972595, 0.0, 24.2)
+
+[node name="Body" type="CSGBox3D" parent="Props/Car6_1"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.55, 0.0)
+size = Vector3(1.7, 0.7, 4.0)
+material = SubResource("StandardMaterial3D_103")
+use_collision = true
+
+[node name="Cabin" type="CSGBox3D" parent="Props/Car6_1"]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 1.15, -0.2)
+size = Vector3(1.55, 0.55, 2.1)
+material = SubResource("StandardMaterial3D_104")
+use_collision = true
+
+[node name="Wheel0" type="CSGCylinder3D" parent="Props/Car6_1"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_105")
+
+[node name="Wheel1" type="CSGCylinder3D" parent="Props/Car6_1"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, 1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_106")
+
+[node name="Wheel2" type="CSGCylinder3D" parent="Props/Car6_1"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, -0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_107")
+
+[node name="Wheel3" type="CSGCylinder3D" parent="Props/Car6_1"]
+transform = Transform3D(0.0, 1.0, 0.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.8, 0.3, -1.3)
+radius = 0.3
+height = 0.2
+sides = 8
+material = SubResource("StandardMaterial3D_108")
+
+[node name="TreeA6" parent="Props" instance=ExtResource("19_r")]
+transform = Transform3D(-0.10668, -0.0, -0.99429, 0.0, 1.0, -0.0, 0.99429, -0.0, -0.10668, -5.599172534633755, 0.0, 26.0)
+
+[node name="TreeB6" parent="Props" instance=ExtResource("19_r")]
+transform = Transform3D(0.90066, 0.0, 0.43452, 0.0, 1.0, -0.0, -0.43452, 0.0, 0.90066, 12.922137483878153, 0.0, 24.0)
+
+[node name="BenchB6" parent="Props" instance=ExtResource("18_r")]
+transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, -0.32991714182549536, 0.0, 29.0)
+
+[node name="ExitDoor" parent="." instance=ExtResource("20_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.0, -21.6)
 
 [node name="GlowWest" type="Node3D" parent="."]
 
@@ -705,7 +1993,7 @@ mesh = SubResource("QuadMesh_18")
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, -0.25, -55.0)
 use_collision = true
 size = Vector3(60.0, 0.5, 50.0)
-material = SubResource("StandardMaterial3D_19")
+material = SubResource("StandardMaterial3D_109")
 
 [node name="LotLamp1" type="OmniLight3D" parent="."]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 5.0, -40.0)
@@ -720,30 +2008,30 @@ light_energy = 1.5
 omni_range = 18.0
 
 [node name="ReflectionZone" type="Area3D" parent="."]
-script = ExtResource("16_r")
-data = ExtResource("17_r")
+script = ExtResource("21_r")
+data = ExtResource("22_r")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ReflectionZone"]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 3.0, 0.0)
-shape = SubResource("BoxShape3D_20")
+shape = SubResource("BoxShape3D_110")
 
 [node name="SurveyPoints" type="Node3D" parent="."]
 
-[node name="SurveyPoint1" parent="SurveyPoints" instance=ExtResource("18_r")]
+[node name="SurveyPoint1" parent="SurveyPoints" instance=ExtResource("23_r")]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -6.0, 0.1, -4.0)
 
-[node name="SurveyPoint2" parent="SurveyPoints" instance=ExtResource("18_r")]
+[node name="SurveyPoint2" parent="SurveyPoints" instance=ExtResource("23_r")]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 6.0, 0.1, 4.0)
 
-[node name="SurveyPoint3" parent="SurveyPoints" instance=ExtResource("18_r")]
+[node name="SurveyPoint3" parent="SurveyPoints" instance=ExtResource("23_r")]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.0, -17.0)
 
-[node name="HUD" parent="." instance=ExtResource("19_r")]
+[node name="HUD" parent="." instance=ExtResource("24_r")]
 
-[node name="PauseMenu" parent="." instance=ExtResource("20_r")]
+[node name="PauseMenu" parent="." instance=ExtResource("25_r")]
 
-[node name="FateOverlay" parent="." instance=ExtResource("21_r")]
+[node name="FateOverlay" parent="." instance=ExtResource("26_r")]
 
-[node name="SleepOverlay" parent="." instance=ExtResource("22_r")]
+[node name="SleepOverlay" parent="." instance=ExtResource("27_r")]
 
-[node name="DebugHUD" parent="." instance=ExtResource("23_r")]
+[node name="DebugHUD" parent="." instance=ExtResource("28_r")]

@@ -77,7 +77,8 @@ func _convert(source: Material) -> Material:
 				material.set_shader_parameter(&"use_triplanar", true)
 				material.set_shader_parameter(&"triplanar_scale", standard.uv1_scale.x)
 		if standard.emission_enabled:
-			material.set_shader_parameter(&"emission", standard.emission)
-			material.set_shader_parameter(&"emission_energy", standard.emission_energy_multiplier)
+			# Свечение окон и ламп приглушаем, чтобы не уходило в белый пересвет.
+			material.set_shader_parameter(&"emission", standard.emission * Color(1.0, 0.88, 0.7))
+			material.set_shader_parameter(&"emission_energy", minf(standard.emission_energy_multiplier, 0.45))
 		_cache[standard] = material
 	return _cache[standard]

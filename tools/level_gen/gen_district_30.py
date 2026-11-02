@@ -5,7 +5,7 @@ from level_common import *
 from moscow import *
 
 sc = Scene()
-m, left, right = standard_yard(sc, "District30Nothing", "Район 30", garages=False, exit=False, fog=0.04)
+m, left, right = standard_yard(sc, "District30Nothing", "Район 30", garages=False, exit=False, north=False, fog=0.04)
 sc.nodes[0][5]["radio_silent"] = True
 lit_windows(sc, m, "GlowWest", left, 1, -15, 15, 301, count=12)
 lit_windows(sc, m, "GlowEast", right, -1, -15, 15, 302, count=12)

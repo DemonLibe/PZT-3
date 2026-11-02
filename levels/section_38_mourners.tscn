@@ -9,17 +9,28 @@
 [ext_resource type="Texture2D" path="res://world/textures/concrete_floor.png" id="7_r"]
 [ext_resource type="Texture2D" path="res://world/textures/metal_rust.png" id="8_r"]
 [ext_resource type="Texture2D" path="res://world/textures/metal_clean.png" id="9_r"]
-[ext_resource type="PackedScene" path="res://world/exit_door.tscn" id="10_r"]
-[ext_resource type="AudioStream" path="res://audio/sfx/lullaby.wav" id="11_r"]
-[ext_resource type="Script" path="res://anomalies/districts/radio/radio_source.gd" id="12_r"]
-[ext_resource type="Script" path="res://anomalies/gigadom/mourners/mourners_zone.gd" id="13_r"]
-[ext_resource type="Resource" path="res://data/mourners.tres" id="14_r"]
-[ext_resource type="PackedScene" path="res://world/survey_point.tscn" id="15_r"]
-[ext_resource type="PackedScene" path="res://ui/hud.tscn" id="16_r"]
-[ext_resource type="PackedScene" path="res://ui/pause_menu.tscn" id="17_r"]
-[ext_resource type="PackedScene" path="res://ui/fate_overlay.tscn" id="18_r"]
-[ext_resource type="PackedScene" path="res://ui/sleep_overlay.tscn" id="19_r"]
-[ext_resource type="PackedScene" path="res://debug/debug_hud.tscn" id="20_r"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/corridor_straight.glb" id="10_r"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/fluorescent_lamp.glb" id="11_r"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/corridor_t_junction.glb" id="12_r"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/corridor_corner.glb" id="13_r"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/junk_pile.glb" id="14_r"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/bunk_bed.glb" id="15_r"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/corridor_door_side.glb" id="16_r"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/steel_door.glb" id="17_r"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/barrel_rusty.glb" id="18_r"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/corridor_dead_end.glb" id="19_r"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/metal_cabinet.glb" id="20_r"]
+[ext_resource type="PackedScene" path="res://world/exit_door.tscn" id="21_r"]
+[ext_resource type="AudioStream" path="res://audio/sfx/lullaby.wav" id="22_r"]
+[ext_resource type="Script" path="res://anomalies/districts/radio/radio_source.gd" id="23_r"]
+[ext_resource type="Script" path="res://anomalies/gigadom/mourners/mourners_zone.gd" id="24_r"]
+[ext_resource type="Resource" path="res://data/mourners.tres" id="25_r"]
+[ext_resource type="PackedScene" path="res://world/survey_point.tscn" id="26_r"]
+[ext_resource type="PackedScene" path="res://ui/hud.tscn" id="27_r"]
+[ext_resource type="PackedScene" path="res://ui/pause_menu.tscn" id="28_r"]
+[ext_resource type="PackedScene" path="res://ui/fate_overlay.tscn" id="29_r"]
+[ext_resource type="PackedScene" path="res://ui/sleep_overlay.tscn" id="30_r"]
+[ext_resource type="PackedScene" path="res://debug/debug_hud.tscn" id="31_r"]
 
 [sub_resource type="Environment" id="Environment_1"]
 background_mode = 1
@@ -141,7 +152,7 @@ material = SubResource("StandardMaterial3D_3")
 [node name="Corridor" type="CSGBox3D" parent="NavigationRegion3D/Geometry/Structure"]
 operation = 2
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 1.75, -2.0)
-size = Vector3(4.0, 3.5, 44.0)
+size = Vector3(4.0, 3.5, 47.0)
 material = SubResource("StandardMaterial3D_3")
 
 [node name="Room1" type="CSGBox3D" parent="NavigationRegion3D/Geometry/Structure"]
@@ -290,29 +301,316 @@ height = 44.0
 sides = 8
 material = SubResource("StandardMaterial3D_6")
 
-[node name="ExitDoor" parent="." instance=ExtResource("10_r")]
-transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, 0.0, 0.0, 19.7)
+[node name="Props" type="Node3D" parent="."]
+
+[node name="SouthCell1" parent="Props" instance=ExtResource("10_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.0, 23.0)
+
+[node name="SouthCell2" parent="Props" instance=ExtResource("10_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.0, 27.0)
+
+[node name="SouthTube2" parent="Props" instance=ExtResource("11_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 3.0, 27.0)
+
+[node name="SouthLight2" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 2.7, 27.0)
+light_color = Color(0.82, 0.9, 1.0, 1.0)
+light_energy = 0.9
+omni_range = 6.5
+
+[node name="SouthCell3" parent="Props" instance=ExtResource("12_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.0, 31.0)
+
+[node name="SouthCell4" parent="Props" instance=ExtResource("12_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.0, 35.0)
+
+[node name="SouthTube4" parent="Props" instance=ExtResource("11_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 3.0, 35.0)
+
+[node name="SouthLight4" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 2.7, 35.0)
+light_color = Color(0.82, 0.9, 1.0, 1.0)
+light_energy = 0.9
+omni_range = 6.5
+
+[node name="SouthCell5" parent="Props" instance=ExtResource("13_r")]
+transform = Transform3D(-0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, -0.0, -0.0, 0.0, 0.0, 39.0)
+
+[node name="SouthCell6" parent="Props" instance=ExtResource("13_r")]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -4.0, 0.0, 39.0)
+
+[node name="SouthTube6" parent="Props" instance=ExtResource("11_r")]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -4.0, 3.0, 39.0)
+
+[node name="SouthLight6" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -4.0, 2.7, 39.0)
+light_color = Color(0.82, 0.9, 1.0, 1.0)
+light_energy = 0.9
+omni_range = 6.5
+
+[node name="SouthCell7" parent="Props" instance=ExtResource("10_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -4.0, 0.0, 43.0)
+
+[node name="SouthProp7" parent="Props" instance=ExtResource("14_r")]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -5.3, 0.0, 43.0)
+
+[node name="SouthCell8" parent="Props" instance=ExtResource("12_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -4.0, 0.0, 47.0)
+
+[node name="SouthTube8" parent="Props" instance=ExtResource("11_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -4.0, 3.0, 47.0)
+
+[node name="SouthLight8" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -4.0, 2.7, 47.0)
+light_color = Color(0.82, 0.9, 1.0, 1.0)
+light_energy = 0.9
+omni_range = 6.5
+
+[node name="SouthCell9" parent="Props" instance=ExtResource("13_r")]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -8.0, 0.0, 47.0)
+
+[node name="SouthCell10" parent="Props" instance=ExtResource("10_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.0, 0.0, 51.0)
+
+[node name="SouthTube10" parent="Props" instance=ExtResource("11_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.0, 3.0, 51.0)
+
+[node name="SouthLight10" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.0, 2.7, 51.0)
+light_color = Color(0.82, 0.9, 1.0, 1.0)
+light_energy = 0.9
+omni_range = 6.5
+
+[node name="SouthProp10" parent="Props" instance=ExtResource("15_r")]
+transform = Transform3D(-0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, -0.0, -0.0, -6.7, 0.0, 51.0)
+
+[node name="SouthCell11" parent="Props" instance=ExtResource("16_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.0, 0.0, 55.0)
+
+[node name="SouthDoor11" parent="Props" instance=ExtResource("17_r")]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -5.95, 0.0, 55.0)
+
+[node name="SouthProp11" parent="Props" instance=ExtResource("18_r")]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -9.3, 0.0, 55.0)
+
+[node name="SouthCell12" parent="Props" instance=ExtResource("12_r")]
+transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, -8.0, 0.0, 59.0)
+
+[node name="SouthTube12" parent="Props" instance=ExtResource("11_r")]
+transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, -8.0, 3.0, 59.0)
+
+[node name="SouthLight12" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.0, 2.7, 59.0)
+light_color = Color(0.82, 0.9, 1.0, 1.0)
+light_energy = 0.9
+omni_range = 6.5
+
+[node name="SouthCell13" parent="Props" instance=ExtResource("10_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.0, 0.0, 63.0)
+
+[node name="SouthProp13" parent="Props" instance=ExtResource("18_r")]
+transform = Transform3D(-0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, -0.0, -0.0, -6.7, 0.0, 63.0)
+
+[node name="SouthCell14" parent="Props" instance=ExtResource("10_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.0, 0.0, 67.0)
+
+[node name="SouthTube14" parent="Props" instance=ExtResource("11_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.0, 3.0, 67.0)
+
+[node name="SouthLight14" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.0, 2.7, 67.0)
+light_color = Color(0.82, 0.9, 1.0, 1.0)
+light_energy = 0.9
+omni_range = 6.5
+
+[node name="SouthCell15" parent="Props" instance=ExtResource("19_r")]
+transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, -8.0, 0.0, 71.0)
+
+[node name="SouthCell16" parent="Props" instance=ExtResource("19_r")]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -4.0, 0.0, 31.0)
+
+[node name="SouthTube16" parent="Props" instance=ExtResource("11_r")]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -4.0, 3.0, 31.0)
+
+[node name="SouthLight16" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -4.0, 2.7, 31.0)
+light_color = Color(0.82, 0.9, 1.0, 1.0)
+light_energy = 0.9
+omni_range = 6.5
+
+[node name="SouthProp16" parent="Props" instance=ExtResource("14_r")]
+transform = Transform3D(0.98652, 0.0, 0.16363, 0.0, 1.0, -0.0, -0.16363, 0.0, 0.98652, -4.0, 0.0, 31.0)
+
+[node name="SouthCell17" parent="Props" instance=ExtResource("19_r")]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -4.0, 0.0, 35.0)
+
+[node name="SouthProp17" parent="Props" instance=ExtResource("14_r")]
+transform = Transform3D(-0.99449, 0.0, 0.10483, 0.0, 1.0, -0.0, -0.10483, -0.0, -0.99449, -4.0, 0.0, 35.0)
+
+[node name="SouthCell18" parent="Props" instance=ExtResource("19_r")]
+transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, -4.0, 0.0, 51.0)
+
+[node name="SouthTube18" parent="Props" instance=ExtResource("11_r")]
+transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, -4.0, 3.0, 51.0)
+
+[node name="SouthLight18" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -4.0, 2.7, 51.0)
+light_color = Color(0.82, 0.9, 1.0, 1.0)
+light_energy = 0.9
+omni_range = 6.5
+
+[node name="SouthCell19" parent="Props" instance=ExtResource("19_r")]
+transform = Transform3D(-0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, -0.0, -0.0, -4.0, 0.0, 59.0)
+
+[node name="SouthProp19" parent="Props" instance=ExtResource("14_r")]
+transform = Transform3D(0.05261, -0.0, -0.99862, 0.0, 1.0, -0.0, 0.99862, 0.0, 0.05261, -4.0, 0.0, 59.0)
 
 [node name="Player" type="Marker3D" parent="SpawnPoints"]
-transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.0, 17.0)
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.0, 0.0, 71.0)
 
-[node name="Npc1" type="Marker3D" parent="SpawnPoints"]
-transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -1.2, 0.0, 15.0)
+[node name="NorthCell1" parent="Props" instance=ExtResource("10_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.0, -27.5)
 
-[node name="Npc2" type="Marker3D" parent="SpawnPoints"]
-transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 1.2, 0.0, 15.0)
+[node name="NorthProp1" parent="Props" instance=ExtResource("15_r")]
+transform = Transform3D(-0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, -0.0, -0.0, 1.3, 0.0, -27.5)
 
-[node name="Npc3" type="Marker3D" parent="SpawnPoints"]
-transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -1.2, 0.0, 13.5)
+[node name="NorthCell2" parent="Props" instance=ExtResource("10_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.0, -31.5)
 
-[node name="Npc4" type="Marker3D" parent="SpawnPoints"]
-transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 1.2, 0.0, 13.5)
+[node name="NorthTube2" parent="Props" instance=ExtResource("11_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 3.0, -31.5)
 
-[node name="Npc5" type="Marker3D" parent="SpawnPoints"]
-transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -1.2, 0.0, 12.0)
+[node name="NorthLight2" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 2.7, -31.5)
+light_color = Color(0.82, 0.9, 1.0, 1.0)
+light_energy = 0.9
+omni_range = 6.5
 
-[node name="Npc6" type="Marker3D" parent="SpawnPoints"]
-transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 1.2, 0.0, 12.0)
+[node name="NorthCell3" parent="Props" instance=ExtResource("13_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.0, -35.5)
+
+[node name="NorthCell4" parent="Props" instance=ExtResource("12_r")]
+transform = Transform3D(-0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, -0.0, -0.0, -4.0, 0.0, -35.5)
+
+[node name="NorthTube4" parent="Props" instance=ExtResource("11_r")]
+transform = Transform3D(-0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, -0.0, -0.0, -4.0, 3.0, -35.5)
+
+[node name="NorthLight4" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -4.0, 2.7, -35.5)
+light_color = Color(0.82, 0.9, 1.0, 1.0)
+light_energy = 0.9
+omni_range = 6.5
+
+[node name="NorthCell5" parent="Props" instance=ExtResource("13_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -4.0, 0.0, -39.5)
+
+[node name="NorthCell6" parent="Props" instance=ExtResource("10_r")]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -8.0, 0.0, -39.5)
+
+[node name="NorthTube6" parent="Props" instance=ExtResource("11_r")]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -8.0, 3.0, -39.5)
+
+[node name="NorthLight6" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.0, 2.7, -39.5)
+light_color = Color(0.82, 0.9, 1.0, 1.0)
+light_energy = 0.9
+omni_range = 6.5
+
+[node name="NorthCell7" parent="Props" instance=ExtResource("12_r")]
+transform = Transform3D(-0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, -0.0, -0.0, -12.0, 0.0, -39.5)
+
+[node name="NorthCell8" parent="Props" instance=ExtResource("10_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -12.0, 0.0, -43.5)
+
+[node name="NorthTube8" parent="Props" instance=ExtResource("11_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -12.0, 3.0, -43.5)
+
+[node name="NorthLight8" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -12.0, 2.7, -43.5)
+light_color = Color(0.82, 0.9, 1.0, 1.0)
+light_energy = 0.9
+omni_range = 6.5
+
+[node name="NorthProp8" parent="Props" instance=ExtResource("18_r")]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -13.3, 0.0, -43.5)
+
+[node name="NorthCell9" parent="Props" instance=ExtResource("12_r")]
+transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, -12.0, 0.0, -47.5)
+
+[node name="NorthCell10" parent="Props" instance=ExtResource("10_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -12.0, 0.0, -51.5)
+
+[node name="NorthTube10" parent="Props" instance=ExtResource("11_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -12.0, 3.0, -51.5)
+
+[node name="NorthLight10" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -12.0, 2.7, -51.5)
+light_color = Color(0.82, 0.9, 1.0, 1.0)
+light_energy = 0.9
+omni_range = 6.5
+
+[node name="NorthCell11" parent="Props" instance=ExtResource("10_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -12.0, 0.0, -55.5)
+
+[node name="NorthProp11" parent="Props" instance=ExtResource("15_r")]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -13.3, 0.0, -55.5)
+
+[node name="NorthCell12" parent="Props" instance=ExtResource("10_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -12.0, 0.0, -59.5)
+
+[node name="NorthTube12" parent="Props" instance=ExtResource("11_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -12.0, 3.0, -59.5)
+
+[node name="NorthLight12" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -12.0, 2.7, -59.5)
+light_color = Color(0.82, 0.9, 1.0, 1.0)
+light_energy = 0.9
+omni_range = 6.5
+
+[node name="NorthProp12" parent="Props" instance=ExtResource("20_r")]
+transform = Transform3D(-0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, -0.0, -0.0, -10.7, 0.0, -59.5)
+
+[node name="NorthCell13" parent="Props" instance=ExtResource("19_r")]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -12.0, 0.0, -63.5)
+
+[node name="NorthProp13" parent="Props" instance=ExtResource("14_r")]
+transform = Transform3D(0.45154, -0.0, -0.89225, 0.0, 1.0, -0.0, 0.89225, 0.0, 0.45154, -12.0, 0.0, -63.5)
+
+[node name="NorthCell14" parent="Props" instance=ExtResource("19_r")]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -16.0, 0.0, -39.5)
+
+[node name="NorthTube14" parent="Props" instance=ExtResource("11_r")]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -16.0, 3.0, -39.5)
+
+[node name="NorthLight14" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -16.0, 2.7, -39.5)
+light_color = Color(0.82, 0.9, 1.0, 1.0)
+light_energy = 0.9
+omni_range = 6.5
+
+[node name="NorthCell15" parent="Props" instance=ExtResource("19_r")]
+transform = Transform3D(-0.0, -0.0, -1.0, 0.0, 1.0, -0.0, 1.0, -0.0, -0.0, -8.0, 0.0, -47.5)
+
+[node name="NorthProp15" parent="Props" instance=ExtResource("14_r")]
+transform = Transform3D(0.00011, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.00011, -8.0, 0.0, -47.5)
+
+[node name="NorthCell16" parent="Props" instance=ExtResource("19_r")]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -8.0, 0.0, -35.5)
+
+[node name="NorthTube16" parent="Props" instance=ExtResource("11_r")]
+transform = Transform3D(0.0, 0.0, 1.0, 0.0, 1.0, -0.0, -1.0, 0.0, 0.0, -8.0, 3.0, -35.5)
+
+[node name="NorthLight16" type="OmniLight3D" parent="."]
+transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -8.0, 2.7, -35.5)
+light_color = Color(0.82, 0.9, 1.0, 1.0)
+light_energy = 0.9
+omni_range = 6.5
+
+[node name="NorthProp16" parent="Props" instance=ExtResource("14_r")]
+transform = Transform3D(0.98516, -0.0, -0.17164, 0.0, 1.0, -0.0, 0.17164, 0.0, 0.98516, -8.0, 0.0, -35.5)
+
+[node name="ExitDoor" parent="." instance=ExtResource("21_r")]
+transform = Transform3D(-1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, -0.0, -1.0, -12.0, 0.0, -65.0)
 
 [node name="Mourners" type="Node3D" parent="."]
 
@@ -342,12 +640,12 @@ transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 1.5,
 unit_size = 6.0
 volume_db = -10.0
 pitch_scale = 0.7
-stream = ExtResource("11_r")
-script = ExtResource("12_r")
+stream = ExtResource("22_r")
+script = ExtResource("23_r")
 
 [node name="MournersZone" type="Area3D" parent="." node_paths=PackedStringArray("mourners_root")]
-script = ExtResource("13_r")
-data = ExtResource("14_r")
+script = ExtResource("24_r")
+data = ExtResource("25_r")
 mourners_root = NodePath("../Mourners")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MournersZone"]
@@ -356,21 +654,21 @@ shape = SubResource("BoxShape3D_10")
 
 [node name="SurveyPoints" type="Node3D" parent="."]
 
-[node name="SurveyPoint1" parent="SurveyPoints" instance=ExtResource("15_r")]
+[node name="SurveyPoint1" parent="SurveyPoints" instance=ExtResource("26_r")]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 6.5, 0.0, 10.0)
 
-[node name="SurveyPoint2" parent="SurveyPoints" instance=ExtResource("15_r")]
+[node name="SurveyPoint2" parent="SurveyPoints" instance=ExtResource("26_r")]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, -6.5, 0.0, -10.0)
 
-[node name="SurveyPoint3" parent="SurveyPoints" instance=ExtResource("15_r")]
+[node name="SurveyPoint3" parent="SurveyPoints" instance=ExtResource("26_r")]
 transform = Transform3D(1.0, 0.0, 0.0, 0.0, 1.0, -0.0, -0.0, 0.0, 1.0, 0.0, 0.0, -21.0)
 
-[node name="HUD" parent="." instance=ExtResource("16_r")]
+[node name="HUD" parent="." instance=ExtResource("27_r")]
 
-[node name="PauseMenu" parent="." instance=ExtResource("17_r")]
+[node name="PauseMenu" parent="." instance=ExtResource("28_r")]
 
-[node name="FateOverlay" parent="." instance=ExtResource("18_r")]
+[node name="FateOverlay" parent="." instance=ExtResource("29_r")]
 
-[node name="SleepOverlay" parent="." instance=ExtResource("19_r")]
+[node name="SleepOverlay" parent="." instance=ExtResource("30_r")]
 
-[node name="DebugHUD" parent="." instance=ExtResource("20_r")]
+[node name="DebugHUD" parent="." instance=ExtResource("31_r")]

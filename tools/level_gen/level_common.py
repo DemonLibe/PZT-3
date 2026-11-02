@@ -23,7 +23,7 @@ def material(sc, color, rough=1.0, emission=None, energy=1.0, tex=None, scale=0.
     props = dict(albedo_color=C(*color), roughness=rough)
     if tex:
         props.update(albedo_texture=sc.ext_res("Texture2D", f"res://world/textures/{tex}.png"),
-                     texture_filter=0, uv1_scale=V3(scale, scale, scale), uv1_triplanar=True, uv1_world_triplanar=True)
+                     texture_filter=2, uv1_scale=V3(scale, scale, scale), uv1_triplanar=True, uv1_world_triplanar=True)
     if emission:
         props.update(emission_enabled=True, emission=C(*emission), emission_energy_multiplier=energy)
     return sc.sub_res("StandardMaterial3D", **props)

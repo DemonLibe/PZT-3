@@ -127,6 +127,7 @@ slider("Master", "Общая громкость", 0.0, 1.0, 0.01)
 slider("Ambient", "Фон", 0.0, 1.0, 0.01)
 slider("Sfx", "Звуки", 0.0, 1.0, 0.01)
 sc.node("Ps1", "CheckBox", ".", unique_name_in_owner=True, layout_mode=2, text="PS1-графика (крупные пиксели)")
+sc.node("Jitter", "CheckBox", ".", unique_name_in_owner=True, layout_mode=2, text="Дрожание вершин (PS1)")
 sc.node("Fullscreen", "CheckBox", ".", unique_name_in_owner=True, layout_mode=2, text="Полный экран")
 sc.save(ROOT + "/ui/settings_panel.tscn")
 

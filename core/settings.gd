@@ -10,6 +10,8 @@ var master_volume: float = 0.8
 var ambient_volume: float = 0.8
 var sfx_volume: float = 1.0
 var ps1_enabled: bool = true
+## Дрожание вершин в духе PS1 (по умолчанию выключено: свет на стенах «плавает»).
+var vertex_jitter: bool = false
 ## Яркость картинки (1 — как задумано в уровне).
 var brightness: float = 1.6
 var fullscreen: bool = false
@@ -26,6 +28,7 @@ func apply() -> void:
 	_set_bus_volume(&"Ambient", ambient_volume)
 	_set_bus_volume(&"SFX", sfx_volume)
 	RetroRender.set_enabled(ps1_enabled)
+	RetroRender.set_vertex_jitter(vertex_jitter)
 	for node in get_tree().root.find_children("*", "WorldEnvironment", true, false):
 		_apply_brightness(node)
 	if DisplayServer.get_name() != "headless":
@@ -37,7 +40,7 @@ func apply() -> void:
 
 func save_settings() -> void:
 	var config: ConfigFile = ConfigFile.new()
-	for key in ["mouse_sensitivity", "master_volume", "ambient_volume", "sfx_volume", "ps1_enabled", "fullscreen", "brightness"]:
+	for key in ["mouse_sensitivity", "master_volume", "ambient_volume", "sfx_volume", "ps1_enabled", "fullscreen", "brightness", "vertex_jitter"]:
 		config.set_value("settings", key, get(key))
 	config.save(PATH)
 

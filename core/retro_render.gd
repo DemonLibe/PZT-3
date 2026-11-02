@@ -8,6 +8,7 @@ const POST_SHADER: Shader = preload("res://core/render/ps1_post.gdshader")
 const POST_LAYER: int = 5
 
 var enabled: bool = true
+var vertex_jitter: bool = false
 
 var _cache: Dictionary = {}
 var _post: CanvasLayer
@@ -34,6 +35,12 @@ func _process(_delta: float) -> void:
 
 func set_enabled(value: bool) -> void:
 	enabled = value
+
+
+func set_vertex_jitter(value: bool) -> void:
+	vertex_jitter = value
+	for material in _cache.values():
+		(material as ShaderMaterial).set_shader_parameter(&"snap_enabled", value)
 
 
 func _on_node_added(node: Node) -> void:
@@ -69,6 +76,7 @@ func _convert(source: Material) -> Material:
 	if not _cache.has(standard):
 		var material: ShaderMaterial = ShaderMaterial.new()
 		material.shader = SURFACE_SHADER
+		material.set_shader_parameter(&"snap_enabled", vertex_jitter)
 		material.set_shader_parameter(&"albedo", standard.albedo_color)
 		if standard.albedo_texture:
 			material.set_shader_parameter(&"albedo_texture", standard.albedo_texture)

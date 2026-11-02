@@ -1,10 +1,11 @@
 shader_type canvas_item;
-// PS1: крупные пиксели, мало цветов и сетка дизеринга.
+// PS1: крупные пиксели и урезанная палитра. Дизеринг выключен по умолчанию — на тёмных
+// градиентах он «ползёт» при повороте камеры.
 
 uniform sampler2D screen_texture : hint_screen_texture, filter_nearest;
-uniform float pixel_size = 3.0;
-uniform float color_levels = 28.0;
-uniform float dither_strength = 0.8;
+uniform float pixel_size = 2.0;
+uniform float color_levels = 56.0;
+uniform float dither_strength = 0.0;
 
 const float BAYER[16] = float[16](0.0, 8.0, 2.0, 10.0, 12.0, 4.0, 14.0, 6.0, 3.0, 11.0, 1.0, 9.0, 15.0, 7.0, 13.0, 5.0);
 

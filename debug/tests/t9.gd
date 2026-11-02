@@ -29,7 +29,6 @@ func _ready() -> void:
 	var j: ExpeditionJournal = GameState.last_journal
 	check(j.outcome == "отряд потерян", "итог: отряд потерян")
 	check(j.fates.get("Орлов") == "пропал", "судьба игрока: пропал")
-	check(j.fates.get("Мельников") == "не вернулся", "NPC не вернулись")
 	check("\n".join(j.entries).contains("Орлов: связь потеряна. Зеркало."), "запись о пропаже в журнале")
 	check(Encyclopedia.article_level(&"mirror") == 2, "статья «Зеркало» открыта полностью")
 	var recs: Array = Encyclopedia.incidents.get("mirror", [])
@@ -49,7 +48,7 @@ func _ready() -> void:
 	await wait(0.5)
 	j = GameState.last_journal
 	check(j.number == 2 and j.outcome.begins_with("возвращение на базу"), "экспедиция №2 вернулась через выход: " + j.outcome)
-	check(j.fates.get("Орлов") == "вернулся" and j.fates.get("Мельников") == "вернулся", "все вернулись")
+	check(j.fates.get("Орлов") == "вернулся", "Орлов вернулся")
 	check(Encyclopedia.article_level(&"dinner") == 0, "в дом с ужином не заходили — статья закрыта")
 	# 3. Потеря цели: выход не открывается
 	await go("Район 1")
@@ -63,7 +62,7 @@ func _ready() -> void:
 	await press(&"interact")
 	await wait(0.5)
 	check(GameState.is_expedition_active() and level().name == "District01Dinner", "потерявший цель не может выйти")
-	check(level().get_node("HUD/Objective").text == "", "метки цели в HUD пропали")
+	check(not level().get_node("HUD").find_child("ObjectivePanel", true, false).visible, "метки цели в HUD пропали")
 	# 4. Тень: отчёт обрывается
 	var jj := ExpeditionJournal.new(99, "тест")
 	jj.record_loss("Огава", true, Encyclopedia.get_data(&"shadow"))

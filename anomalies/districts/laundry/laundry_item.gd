@@ -27,3 +27,7 @@ func get_temptation(member: ExpeditionMember) -> float:
 func set_present(value: bool) -> void:
 	visible = value
 	set_collision_layer_value(1, value)
+
+
+func get_prompt() -> String:
+	return "Надеть"

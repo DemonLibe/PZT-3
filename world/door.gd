@@ -83,3 +83,7 @@ func _on_trigger_exited(body: Node3D) -> void:
 		return  # забыл закрыть
 	_opened_by_auto = false
 	set_open.rpc(false)
+
+
+func get_prompt() -> String:
+	return "Закрыть дверь" if is_open else "Открыть дверь"

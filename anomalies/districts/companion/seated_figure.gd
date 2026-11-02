@@ -8,3 +8,7 @@ var zone: CompanionZone
 func interact(member: ExpeditionMember) -> void:
 	if zone:
 		zone.call_out(member)
+
+
+func get_prompt() -> String:
+	return "Окликнуть"

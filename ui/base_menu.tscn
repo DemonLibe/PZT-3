@@ -1,6 +1,10 @@
 [gd_scene format=3]
 
 [ext_resource type="Script" path="res://ui/base_menu.gd" id="1_r"]
+[ext_resource type="Shader" path="res://ui/grain.gdshader" id="2_r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1"]
+shader = ExtResource("2_r")
 
 [node name="BaseMenu" type="Control"]
 script = ExtResource("1_r")
@@ -12,7 +16,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Background" type="ColorRect" parent="."]
-color = Color(0.035, 0.035, 0.04, 1.0)
+color = Color(0.03, 0.032, 0.036, 1.0)
 mouse_filter = 2
 layout_mode = 1
 anchors_preset = 15
@@ -20,75 +24,140 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+material = SubResource("ShaderMaterial_1")
 
-[node name="Center" type="CenterContainer" parent="."]
+[node name="Margin" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
 
-[node name="Box" type="VBoxContainer" parent="Center"]
-custom_minimum_size = Vector2(380.0, 0.0)
+[node name="Root" type="VBoxContainer" parent="Margin"]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 18
 
-[node name="Title" type="Label" parent="Center/Box"]
+[node name="Header" type="HBoxContainer" parent="Margin/Root"]
 layout_mode = 2
-text = "ПЗМ-3"
-horizontal_alignment = 1
-theme_override_colors/font_color = Color(0.78, 0.75, 0.68, 1.0)
-theme_override_font_sizes/font_size = 40
+theme_override_constants/separation = 18
 
-[node name="Subtitle" type="Label" parent="Center/Box"]
-unique_name_in_owner = true
+[node name="Title" type="Label" parent="Margin/Root/Header"]
 layout_mode = 2
 text = "Пункт сбора у периметра"
-horizontal_alignment = 1
-theme_override_colors/font_color = Color(0.5, 0.48, 0.43, 1.0)
-theme_override_font_sizes/font_size = 16
+horizontal_alignment = 0
+theme_override_colors/font_color = Color(0.9, 0.88, 0.82, 1.0)
+theme_override_font_sizes/font_size = 30
+size_flags_horizontal = 3
 
-[node name="Gap" type="Control" parent="Center/Box"]
-custom_minimum_size = Vector2(0.0, 16.0)
-layout_mode = 2
-
-[node name="Destination" type="OptionButton" parent="Center/Box"]
+[node name="Subtitle" type="Label" parent="Margin/Root/Header"]
 unique_name_in_owner = true
 layout_mode = 2
+text = ""
+horizontal_alignment = 2
+theme_override_colors/font_color = Color(0.55, 0.54, 0.5, 1.0)
+theme_override_font_sizes/font_size = 17
+size_flags_vertical = 8
 
-[node name="StartButton" type="Button" parent="Center/Box"]
+[node name="Body" type="HBoxContainer" parent="Margin/Root"]
+layout_mode = 2
+theme_override_constants/separation = 20
+size_flags_vertical = 3
+
+[node name="Left" type="VBoxContainer" parent="Margin/Root/Body"]
+layout_mode = 2
+theme_override_constants/separation = 10
+custom_minimum_size = Vector2(380.0, 0.0)
+
+[node name="ListTitle" type="Label" parent="Margin/Root/Body/Left"]
+layout_mode = 2
+text = "Маршрут экспедиций"
+horizontal_alignment = 0
+theme_override_colors/font_color = Color(0.55, 0.54, 0.5, 1.0)
+theme_override_font_sizes/font_size = 16
+
+[node name="Destinations" type="ItemList" parent="Margin/Root/Body/Left"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 18
+
+[node name="Card" type="PanelContainer" parent="Margin/Root/Body"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CardBox" type="VBoxContainer" parent="Margin/Root/Body/Card"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="DestTitle" type="Label" parent="Margin/Root/Body/Card/CardBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = ""
+horizontal_alignment = 0
+theme_override_colors/font_color = Color(0.92, 0.9, 0.84, 1.0)
+theme_override_font_sizes/font_size = 34
+
+[node name="DestState" type="Label" parent="Margin/Root/Body/Card/CardBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = ""
+horizontal_alignment = 0
+theme_override_colors/font_color = Color(0.86, 0.62, 0.3, 1.0)
+theme_override_font_sizes/font_size = 17
+
+[node name="Info" type="RichTextLabel" parent="Margin/Root/Body/Card/CardBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 17
+
+[node name="StartButton" type="Button" parent="Margin/Root/Body/Card/CardBox"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Выйти в экспедицию"
-theme_override_font_sizes/font_size = 17
+alignment = 0
+theme_override_font_sizes/font_size = 22
 
-[node name="EncyclopediaButton" type="Button" parent="Center/Box"]
+[node name="Footer" type="HBoxContainer" parent="Margin/Root"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="EncyclopediaButton" type="Button" parent="Margin/Root/Footer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Энциклопедия"
+alignment = 0
 theme_override_font_sizes/font_size = 17
 
-[node name="JournalButton" type="Button" parent="Center/Box"]
+[node name="JournalButton" type="Button" parent="Margin/Root/Footer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Журнал последней экспедиции"
+alignment = 0
 theme_override_font_sizes/font_size = 17
 
-[node name="SettingsButton" type="Button" parent="Center/Box"]
+[node name="SettingsButton" type="Button" parent="Margin/Root/Footer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Настройки"
+alignment = 0
 theme_override_font_sizes/font_size = 17
 
-[node name="NetButton" type="Button" parent="Center/Box"]
+[node name="NetButton" type="Button" parent="Margin/Root/Footer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Отладка сети"
+alignment = 0
 theme_override_font_sizes/font_size = 17
 
-[node name="QuitButton" type="Button" parent="Center/Box"]
+[node name="BackButton" type="Button" parent="Margin/Root/Footer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Выход"
+text = "Главное меню"
+alignment = 0
 theme_override_font_sizes/font_size = 17

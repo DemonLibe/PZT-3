@@ -1,0 +1,1824 @@
+[
+ {
+  "name": "panel_building_section",
+  "category": "districts",
+  "file": "districts/panel_building_section.glb",
+  "description": "Секция панельного дома 9 этажей: окна с рамами, балконы, водосток, кондиционеры, антенны.",
+  "size_m": [
+   12.3,
+   27.8,
+   13.27
+  ],
+  "triangles": 7346,
+  "materials": [
+   "concrete_dark",
+   "panel_wall",
+   "asphalt",
+   "rust",
+   "metal_dark",
+   "black",
+   "window_dark",
+   "whitewash",
+   "metal",
+   "cloth_gray",
+   "window_lit",
+   "cloth_check",
+   "concrete",
+   "wood_old",
+   "enamel",
+   "cloth_white"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "panel_entrance",
+  "category": "districts",
+  "file": "districts/panel_entrance.glb",
+  "description": "Подъезд: козырёк, металлическая дверь с домофоном, ступени, перила, урна, лампа.",
+  "size_m": [
+   3.39,
+   3.21,
+   2.43
+  ],
+  "triangles": 1780,
+  "materials": [
+   "concrete",
+   "concrete_dark",
+   "paint_blue",
+   "metal",
+   "metal_dark",
+   "led_red",
+   "lamp_glow",
+   "black",
+   "paper",
+   "paper_old",
+   "whitewash"
+  ],
+  "colliders": 2
+ },
+ {
+  "name": "dinner_table_10",
+  "category": "districts",
+  "file": "districts/dinner_table_10.glb",
+  "description": "Ужин (р-н 01): стол на десятерых, горячая еда на всех местах, стулья. Десятое место — торец у зрителя.",
+  "size_m": [
+   4.7,
+   1.06,
+   2.12
+  ],
+  "triangles": 5580,
+  "materials": [
+   "wood",
+   "wood_dark",
+   "tablecloth",
+   "porcelain",
+   "food",
+   "soup",
+   "wood_light",
+   "glass_green",
+   "greens",
+   "rice",
+   "meat",
+   "enamel",
+   "metal",
+   "black"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "chair_wooden",
+  "category": "districts",
+  "file": "districts/chair_wooden.glb",
+  "description": "",
+  "size_m": [
+   0.44,
+   0.97,
+   0.42
+  ],
+  "triangles": 184,
+  "materials": [
+   "wood",
+   "wood_dark"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "pendant_lamp_red",
+  "category": "districts",
+  "file": "districts/pendant_lamp_red.glb",
+  "description": "Абажур над столом. Опора — крепление к потолку (Z=0, висит вниз).",
+  "size_m": [
+   0.76,
+   1.36,
+   0.76
+  ],
+  "triangles": 466,
+  "materials": [
+   "porcelain",
+   "black",
+   "metal_dark",
+   "lamp_red",
+   "lamp_glow",
+   "paint_yellow"
+  ],
+  "colliders": 0
+ },
+ {
+  "name": "plate_food",
+  "category": "districts",
+  "file": "districts/plate_food.glb",
+  "description": "",
+  "size_m": [
+   0.26,
+   0.08,
+   0.26
+  ],
+  "triangles": 128,
+  "materials": [
+   "porcelain",
+   "food",
+   "greens"
+  ],
+  "colliders": 0
+ },
+ {
+  "name": "radio_vintage",
+  "category": "districts",
+  "file": "districts/radio_vintage.glb",
+  "description": "Радио (р-н 03): ламповый приёмник «Рига»: решётка, шкала, ручки, ножки, антенна.",
+  "size_m": [
+   0.86,
+   0.76,
+   0.41
+  ],
+  "triangles": 1966,
+  "materials": [
+   "wood",
+   "black",
+   "cloth_gray",
+   "wood_light",
+   "radio_screen",
+   "led_red",
+   "whitewash",
+   "porcelain",
+   "metal"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "tear_calendar",
+  "category": "districts",
+  "file": "districts/tear_calendar.glb",
+  "description": "Отрывной календарь «МАРТ 23 / ЗАВТРА» с пачкой листов и гвоздём.",
+  "size_m": [
+   0.18,
+   0.25,
+   0.05
+  ],
+  "triangles": 1718,
+  "materials": [
+   "calendar_red",
+   "metal",
+   "paper",
+   "paper_old",
+   "black"
+  ],
+  "colliders": 0
+ },
+ {
+  "name": "clothesline",
+  "category": "districts",
+  "file": "districts/clothesline.glb",
+  "description": "Стирка (р-н 04): Т-образные столбы, две провисающие верёвки, прищепки, бельё, таз. Модуль 8 м.",
+  "size_m": [
+   8.24,
+   2.4,
+   1.67
+  ],
+  "triangles": 964,
+  "materials": [
+   "metal_dark",
+   "concrete",
+   "metal",
+   "cloth_white",
+   "wood_light",
+   "cloth_blue",
+   "cloth_check",
+   "cloth_gray",
+   "enamel"
+  ],
+  "colliders": 2
+ },
+ {
+  "name": "clothes_shirt",
+  "category": "districts",
+  "file": "districts/clothes_shirt.glb",
+  "description": "Отдельная рубашка — тот самый «по размеру смотрящего» предмет, с воротником и пуговицами.",
+  "size_m": [
+   1.1,
+   0.6,
+   0.03
+  ],
+  "triangles": 176,
+  "materials": [
+   "cloth_white",
+   "porcelain",
+   "cloth_gray"
+  ],
+  "colliders": 0
+ },
+ {
+  "name": "window_frame",
+  "category": "districts",
+  "file": "districts/window_frame.glb",
+  "description": "Окно-«зеркало» (р-н 05): двойная деревянная рама, форточка, подоконник, отлив, шпингалеты.",
+  "size_m": [
+   1.55,
+   1.6,
+   0.41
+  ],
+  "triangles": 476,
+  "materials": [
+   "wood_light",
+   "window_dark",
+   "metal",
+   "whitewash",
+   "brick_roof",
+   "foliage"
+  ],
+  "colliders": 0
+ },
+ {
+  "name": "street_lamp_sodium",
+  "category": "districts",
+  "file": "districts/street_lamp_sodium.glb",
+  "description": "Тень (р-н 06): уличный фонарь с натриевой лампой, ревизионным лючком, проводом и объявлениями.",
+  "size_m": [
+   6.01,
+   6.14,
+   0.39
+  ],
+  "triangles": 412,
+  "materials": [
+   "concrete",
+   "metal_dark",
+   "paper",
+   "paper_old",
+   "sodium",
+   "black"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "apartment_door",
+  "category": "districts",
+  "file": "districts/apartment_door.glb",
+  "description": "Гости (р-н 07): обитая дерматином квартирная дверь, приоткрыта на 60°, глазок, номер, звонок, коврик.",
+  "size_m": [
+   1.22,
+   2.22,
+   1.54
+  ],
+  "triangles": 1008,
+  "materials": [
+   "wood_dark",
+   "velvet",
+   "gold",
+   "metal",
+   "porcelain",
+   "cloth_check",
+   "black"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "photo_frame",
+  "category": "districts",
+  "file": "districts/photo_frame.glb",
+  "description": "Улыбка (р-н 09) / Фотографии (р-н 18): рамка с профилем, паспарту, стекло; фото — под свою текстуру.",
+  "size_m": [
+   0.42,
+   0.56,
+   0.04
+  ],
+  "triangles": 164,
+  "materials": [
+   "wood_dark",
+   "paper",
+   "porcelain",
+   "black"
+  ],
+  "colliders": 0
+ },
+ {
+  "name": "photo_frame_large",
+  "category": "districts",
+  "file": "districts/photo_frame_large.glb",
+  "description": "",
+  "size_m": [
+   1.6,
+   1.1,
+   0.05
+  ],
+  "triangles": 68,
+  "materials": [
+   "wood_dark",
+   "gold",
+   "porcelain"
+  ],
+  "colliders": 0
+ },
+ {
+  "name": "fridge_open",
+  "category": "districts",
+  "file": "districts/fridge_open.glb",
+  "description": "Кухня (р-н 10): советский холодильник «ЗИЛ»: скруглённый корпус, морозилка, мясо на полках, дверь с полками.",
+  "size_m": [
+   0.71,
+   1.66,
+   1.24
+  ],
+  "triangles": 1392,
+  "materials": [
+   "enamel",
+   "metal_dark",
+   "metal",
+   "tile_white",
+   "lamp_glow",
+   "meat",
+   "paper_old",
+   "cloth_white",
+   "glass_green"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "meat_chunk",
+  "category": "districts",
+  "file": "districts/meat_chunk.glb",
+  "description": "Кусок «свинины» — подбираемый ресурс (р-н 10), с жиром, костью и бумагой.",
+  "size_m": [
+   0.43,
+   0.12,
+   0.32
+  ],
+  "triangles": 108,
+  "materials": [
+   "paper_old",
+   "meat",
+   "porcelain"
+  ],
+  "colliders": 0
+ },
+ {
+  "name": "wall_clock",
+  "category": "districts",
+  "file": "districts/wall_clock.glb",
+  "description": "Часы (р-н 13): круглые настенные с ободом, цифрами, маятником под ними.",
+  "size_m": [
+   0.38,
+   0.38,
+   0.08
+  ],
+  "triangles": 476,
+  "materials": [
+   "wood",
+   "porcelain",
+   "black",
+   "calendar_red"
+  ],
+  "colliders": 0
+ },
+ {
+  "name": "alarm_clock_digital",
+  "category": "districts",
+  "file": "districts/alarm_clock_digital.glb",
+  "description": "",
+  "size_m": [
+   0.2,
+   0.12,
+   0.31
+  ],
+  "triangles": 364,
+  "materials": [
+   "plastic_red",
+   "black",
+   "led_red"
+  ],
+  "colliders": 0
+ },
+ {
+  "name": "mailbox_block",
+  "category": "districts",
+  "file": "districts/mailbox_block.glb",
+  "description": "Почта (р-н 14): блок почтовых ящиков 6×4 с номерами, замками, торчащими газетами. Опора — низ, задняя грань Y=0.",
+  "size_m": [
+   1.98,
+   1.21,
+   0.3
+  ],
+  "triangles": 4894,
+  "materials": [
+   "paint_army",
+   "mailbox_green",
+   "black",
+   "metal",
+   "whitewash",
+   "paper"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "envelope",
+  "category": "districts",
+  "file": "districts/envelope.glb",
+  "description": "Письмо «Лично. Тебе.» без марки — клапан, надпись.",
+  "size_m": [
+   0.22,
+   0.01,
+   0.11
+  ],
+  "triangles": 862,
+  "materials": [
+   "paper_old",
+   "paper",
+   "black"
+  ],
+  "colliders": 0
+ },
+ {
+  "name": "lullaby_window_block",
+  "category": "districts",
+  "file": "districts/lullaby_window_block.glb",
+  "description": "Колыбельная (р-н 16): тёмный 3-этажный блок с единственным светящимся окном (люстра и кроватка за стеклом).",
+  "size_m": [
+   9.3,
+   9.35,
+   6.35
+  ],
+  "triangles": 1010,
+  "materials": [
+   "concrete_dark",
+   "panel_wall",
+   "window_dark",
+   "whitewash",
+   "metal",
+   "window_lit",
+   "cloth_check",
+   "wallpaper",
+   "wood_light",
+   "lamp_glow",
+   "rust"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "interior_door_ajar",
+  "category": "districts",
+  "file": "districts/interior_door_ajar.glb",
+  "description": "Дверь (р-н 21): филёнчатая дверь со стеклом, приоткрыта щелью; за ней — чёрный объём, который не пробивает фонарь.",
+  "size_m": [
+   1.32,
+   2.26,
+   0.83
+  ],
+  "triangles": 368,
+  "materials": [
+   "wood_dark",
+   "wood_light",
+   "wood",
+   "window_dark",
+   "gold",
+   "metal",
+   "black"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "walkie_talkie",
+  "category": "districts",
+  "file": "districts/walkie_talkie.glb",
+  "description": "Голоса в рации (р-н 24): армейская рация с антенной, клипсой, ручками и решёткой динамика.",
+  "size_m": [
+   0.08,
+   0.35,
+   0.05
+  ],
+  "triangles": 288,
+  "materials": [
+   "paint_army",
+   "black",
+   "screen_green",
+   "led_red",
+   "metal_dark"
+  ],
+  "colliders": 0
+ },
+ {
+  "name": "ceiling_stain",
+  "category": "districts",
+  "file": "districts/ceiling_stain.glb",
+  "description": "Потолок (р-н 25): тёмное пятно с разводами и каплями. Крепится к потолку (Z=0, вниз).",
+  "size_m": [
+   1.26,
+   0.34,
+   1.17
+  ],
+  "triangles": 282,
+  "materials": [
+   "sinew_old",
+   "crimson"
+  ],
+  "colliders": 0
+ },
+ {
+  "name": "bench_yard",
+  "category": "districts",
+  "file": "districts/bench_yard.glb",
+  "description": "Скамейка у подъезда: чугунные боковины, рейки, урна рядом.",
+  "size_m": [
+   2.32,
+   0.95,
+   0.51
+  ],
+  "triangles": 452,
+  "materials": [
+   "wood_old",
+   "metal_dark",
+   "paper"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "swing_set",
+  "category": "districts",
+  "file": "districts/swing_set.glb",
+  "description": "Качели: А-образные стойки, перекладина, цепи, сиденья, песок под ними.",
+  "size_m": [
+   2.8,
+   2.25,
+   1.6
+  ],
+  "triangles": 568,
+  "materials": [
+   "paint_blue",
+   "concrete",
+   "metal",
+   "rubber_red",
+   "paint_yellow",
+   "sand_dark"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "tree_lowpoly",
+  "category": "districts",
+  "file": "districts/tree_lowpoly.glb",
+  "description": "Дерево двора: изогнутый ствол, ветви, несколько неровных крон, побелка снизу.",
+  "size_m": [
+   2.83,
+   3.91,
+   2.28
+  ],
+  "triangles": 188,
+  "materials": [
+   "bark",
+   "whitewash",
+   "foliage"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "expedition_clipboard",
+  "category": "districts",
+  "file": "districts/expedition_clipboard.glb",
+  "description": "Журнал экспедиции на планшете (р-н 30): зажим, листы, карандаш, строка «19:42 — вход в р-н 30».",
+  "size_m": [
+   0.25,
+   0.02,
+   0.33
+  ],
+  "triangles": 1652,
+  "materials": [
+   "wood_light",
+   "paper_old",
+   "paper",
+   "metal",
+   "black",
+   "paint_yellow"
+  ],
+  "colliders": 0
+ },
+ {
+  "name": "kitchen_stove",
+  "category": "districts",
+  "file": "districts/kitchen_stove.glb",
+  "description": "Кухня (р-н 10): газовая плита «Electra» с четырьмя конфорками, кастрюлей и чайником.",
+  "size_m": [
+   0.61,
+   1.11,
+   0.66
+  ],
+  "triangles": 780,
+  "materials": [
+   "enamel",
+   "black",
+   "metal",
+   "metal_dark"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "crt_tv",
+  "category": "districts",
+  "file": "districts/crt_tv.glb",
+  "description": "Телевизор на тумбе — экран «снег»; для квартир районов.",
+  "size_m": [
+   0.8,
+   1.4,
+   0.53
+  ],
+  "triangles": 256,
+  "materials": [
+   "wood_dark",
+   "wood",
+   "tv_static",
+   "black",
+   "metal_dark",
+   "metal",
+   "cloth_white"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "stairwell_flight",
+  "category": "districts",
+  "file": "districts/stairwell_flight.glb",
+  "description": "Лестничный марш подъезда: 9 ступеней, перила с деревянным поручнем. Подъём 1.4 м на 2.7 м по Y.",
+  "size_m": [
+   1.25,
+   2.48,
+   2.73
+  ],
+  "triangles": 298,
+  "materials": [
+   "tile_floor",
+   "concrete",
+   "metal_dark",
+   "wood_dark",
+   "paint_green"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "corridor_straight",
+  "category": "gigadom",
+  "file": "gigadom/corridor_straight.glb",
+  "description": "Прямой модуль коридора: окрашенные стены, трубы, лоток с кабелями, лампа, трап, лужи.",
+  "size_m": [
+   4.5,
+   3.5,
+   4.05
+  ],
+  "triangles": 858,
+  "materials": [
+   "concrete_dark",
+   "tile_floor",
+   "concrete",
+   "paint_green",
+   "metal_dark",
+   "rust",
+   "metal",
+   "black",
+   "fluorescent",
+   "water_dark",
+   "whitewash",
+   "paint_yellow"
+  ],
+  "colliders": 4
+ },
+ {
+  "name": "corridor_dead_end",
+  "category": "gigadom",
+  "file": "gigadom/corridor_dead_end.glb",
+  "description": "Тупик: торцевая стена с замурованным проёмом и стрелкой назад.",
+  "size_m": [
+   4.5,
+   3.5,
+   4.05
+  ],
+  "triangles": 712,
+  "materials": [
+   "concrete_dark",
+   "tile_floor",
+   "concrete",
+   "paint_green",
+   "metal_dark",
+   "rust",
+   "metal",
+   "black",
+   "fluorescent",
+   "water_dark",
+   "brick",
+   "chalk"
+  ],
+  "colliders": 5
+ },
+ {
+  "name": "corridor_door_side",
+  "category": "gigadom",
+  "file": "gigadom/corridor_door_side.glb",
+  "description": "Модуль с дверным проёмом в правой стене (под Смотрителя, сек. 36).",
+  "size_m": [
+   4.52,
+   3.5,
+   4.05
+  ],
+  "triangles": 1168,
+  "materials": [
+   "concrete_dark",
+   "tile_floor",
+   "concrete",
+   "paint_green",
+   "metal_dark",
+   "rust",
+   "metal",
+   "black",
+   "fluorescent",
+   "water_dark",
+   "paper",
+   "led_red"
+  ],
+  "colliders": 5
+ },
+ {
+  "name": "corridor_t_junction",
+  "category": "gigadom",
+  "file": "gigadom/corridor_t_junction.glb",
+  "description": "",
+  "size_m": [
+   4.5,
+   3.5,
+   4.05
+  ],
+  "triangles": 1082,
+  "materials": [
+   "concrete_dark",
+   "tile_floor",
+   "concrete",
+   "paint_green",
+   "metal_dark",
+   "rust",
+   "metal",
+   "black",
+   "fluorescent",
+   "water_dark",
+   "whitewash"
+  ],
+  "colliders": 5
+ },
+ {
+  "name": "corridor_corner",
+  "category": "gigadom",
+  "file": "gigadom/corridor_corner.glb",
+  "description": "",
+  "size_m": [
+   4.5,
+   3.5,
+   4.05
+  ],
+  "triangles": 628,
+  "materials": [
+   "concrete_dark",
+   "tile_floor",
+   "concrete",
+   "paint_green",
+   "metal_dark",
+   "rust",
+   "metal",
+   "black",
+   "fluorescent",
+   "water_dark"
+  ],
+  "colliders": 4
+ },
+ {
+  "name": "threshold_seam",
+  "category": "gigadom",
+  "file": "gigadom/threshold_seam.glb",
+  "description": "Порог (сек. 30): фасад панельки со светом в окнах перетекает в гладкий бетон Гигадома без шва.",
+  "size_m": [
+   4.5,
+   3.5,
+   4.0
+  ],
+  "triangles": 510,
+  "materials": [
+   "concrete_dark",
+   "tile_floor",
+   "concrete",
+   "paint_green",
+   "metal_dark",
+   "metal",
+   "fluorescent",
+   "water_dark",
+   "black",
+   "panel_wall",
+   "window_lit",
+   "whitewash",
+   "paper_old"
+  ],
+  "colliders": 4
+ },
+ {
+  "name": "fluorescent_lamp",
+  "category": "gigadom",
+  "file": "gigadom/fluorescent_lamp.glb",
+  "description": "Потолочная люминесцентная лампа на подвесах с решёткой. Опора — потолок.",
+  "size_m": [
+   1.25,
+   0.36,
+   0.32
+  ],
+  "triangles": 140,
+  "materials": [
+   "metal_dark",
+   "metal",
+   "fluorescent"
+  ],
+  "colliders": 0
+ },
+ {
+  "name": "steel_door",
+  "category": "gigadom",
+  "file": "gigadom/steel_door.glb",
+  "description": "Глухая металлическая дверь Гигадома: рёбра жёсткости, ржавчина, засов, номер.",
+  "size_m": [
+   1.26,
+   2.22,
+   0.26
+  ],
+  "triangles": 472,
+  "materials": [
+   "metal_dark",
+   "rust",
+   "metal",
+   "paper",
+   "black"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "bunk_bed",
+  "category": "gigadom",
+  "file": "gigadom/bunk_bed.glb",
+  "description": "Казармы (сек. 33): двухъярусная армейская койка, матрасы, скатки, лестница, тумбочка.",
+  "size_m": [
+   2.51,
+   1.75,
+   1.1
+  ],
+  "triangles": 692,
+  "materials": [
+   "metal_dark",
+   "metal",
+   "cloth_blue",
+   "cloth_white",
+   "paint_army",
+   "wood_old",
+   "wood",
+   "enamel"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "loudspeaker_horn",
+  "category": "gigadom",
+  "file": "gigadom/loudspeaker_horn.glb",
+  "description": "Радиоузел: рупорный громкоговоритель на кронштейне, с проводом. Опора — стена (Y=0).",
+  "size_m": [
+   0.65,
+   1.34,
+   0.98
+  ],
+  "triangles": 254,
+  "materials": [
+   "metal_dark",
+   "paint_army",
+   "black"
+  ],
+  "colliders": 0
+ },
+ {
+  "name": "meat_hook_rail",
+  "category": "gigadom",
+  "file": "gigadom/meat_hook_rail.glb",
+  "description": "Мясник (сек. 37): подвесной рельс с роликами, крюками и неровными тушами. Модуль 4 м, опора — потолок.",
+  "size_m": [
+   4.0,
+   1.72,
+   0.4
+  ],
+  "triangles": 1240,
+  "materials": [
+   "metal_dark",
+   "rust",
+   "metal",
+   "meat",
+   "porcelain",
+   "sinew"
+  ],
+  "colliders": 0
+ },
+ {
+  "name": "butcher_table",
+  "category": "gigadom",
+  "file": "gigadom/butcher_table.glb",
+  "description": "Разделочный стол: толстая колода с выщерблинами, тесак, крюки, ведро.",
+  "size_m": [
+   1.87,
+   0.98,
+   1.07
+  ],
+  "triangles": 368,
+  "materials": [
+   "wood_old",
+   "crimson",
+   "metal_dark",
+   "metal",
+   "wood_dark",
+   "meat"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "sign_weapon_sheath",
+  "category": "gigadom",
+  "file": "gigadom/sign_weapon_sheath.glb",
+  "description": "Табличка «ОРУЖИЕ В ЧЕХОЛ» (сек. 37): эмалированная, со сколами и шурупами. Крепление к стене.",
+  "size_m": [
+   0.9,
+   0.42,
+   0.05
+  ],
+  "triangles": 1746,
+  "materials": [
+   "calendar_red",
+   "enamel",
+   "metal",
+   "black"
+  ],
+  "colliders": 0
+ },
+ {
+  "name": "sinew_ceiling",
+  "category": "gigadom",
+  "file": "gigadom/sinew_ceiling.glb",
+  "description": "Ткач (сек. 34): паутина сухожилий под потолком 4×4 м — свежие (блестят), старые (тёмные), узлы. Опора — потолок.",
+  "size_m": [
+   3.58,
+   1.79,
+   3.92
+  ],
+  "triangles": 2860,
+  "materials": [
+   "sinew",
+   "sinew_old"
+  ],
+  "colliders": 0
+ },
+ {
+  "name": "cocoon",
+  "category": "gigadom",
+  "file": "gigadom/cocoon.glb",
+  "description": "Свёрток Ткача на нити: под оплёткой угадывается силуэт. Опора — потолок.",
+  "size_m": [
+   0.61,
+   2.03,
+   0.61
+  ],
+  "triangles": 830,
+  "materials": [
+   "sinew",
+   "sinew_old",
+   "skin"
+  ],
+  "colliders": 0
+ },
+ {
+  "name": "vent_duct",
+  "category": "gigadom",
+  "file": "gigadom/vent_duct.glb",
+  "description": "Точильщик (сек. 39): вентиляционный короб с фланцами, заклёпками, решётками и подвесами. Модуль 4 м.",
+  "size_m": [
+   1.4,
+   1.64,
+   4.12
+  ],
+  "triangles": 960,
+  "materials": [
+   "metal",
+   "black",
+   "metal_dark",
+   "paper_old"
+  ],
+  "colliders": 0
+ },
+ {
+  "name": "grate_walkway",
+  "category": "gigadom",
+  "file": "gigadom/grate_walkway.glb",
+  "description": "Решётчатый металлический настил 2×4 м с поручнем (по нему — только шагом).",
+  "size_m": [
+   2.04,
+   1.12,
+   4.0
+  ],
+  "triangles": 716,
+  "materials": [
+   "metal",
+   "metal_dark",
+   "rust"
+  ],
+  "colliders": 3
+ },
+ {
+  "name": "elevator_shaft",
+  "category": "gigadom",
+  "file": "gigadom/elevator_shaft.glb",
+  "description": "Смотрящий из шахты (сек. 49): открытая лифтовая шахта, тросы, направляющие, сорванные двери, на дне — глаз.",
+  "size_m": [
+   3.0,
+   9.09,
+   3.52
+  ],
+  "triangles": 1096,
+  "materials": [
+   "concrete",
+   "rust",
+   "concrete_dark",
+   "paint_yellow",
+   "black",
+   "crimson",
+   "eye_white",
+   "eye_iris",
+   "metal_dark",
+   "metal"
+  ],
+  "colliders": 4
+ },
+ {
+  "name": "key_wall",
+  "category": "gigadom",
+  "file": "gigadom/key_wall.glb",
+  "description": "Хозяин ключей (сек. 40): доска с сотнями ключей на гвоздях и бирках. 4×2 м, к стене.",
+  "size_m": [
+   4.1,
+   2.32,
+   0.1
+  ],
+  "triangles": 5136,
+  "materials": [
+   "wood_dark",
+   "wood",
+   "metal",
+   "gold",
+   "paper_old"
+  ],
+  "colliders": 0
+ },
+ {
+  "name": "key_counter",
+  "category": "gigadom",
+  "file": "gigadom/key_counter.glb",
+  "description": "Стойка Хозяина: деревянная конторка с журналом, лампой и звонком.",
+  "size_m": [
+   2.5,
+   1.51,
+   0.9
+  ],
+  "triangles": 262,
+  "materials": [
+   "wood",
+   "wood_dark",
+   "paper_old",
+   "paper",
+   "metal_dark",
+   "paint_green",
+   "gold"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "golden_key",
+  "category": "gigadom",
+  "file": "gigadom/golden_key.glb",
+  "description": "Ключ, «не подходящий ни к чему полезному»: витая головка, бородка, бирка на кольце.",
+  "size_m": [
+   0.31,
+   0.05,
+   0.08
+  ],
+  "triangles": 304,
+  "materials": [
+   "gold",
+   "metal",
+   "paper_old"
+  ],
+  "colliders": 0
+ },
+ {
+  "name": "junk_pile",
+  "category": "gigadom",
+  "file": "gigadom/junk_pile.glb",
+  "description": "Сборщик (сек. 44): куча обронённого снаряжения: рюкзаки, ящики, фонари, каски, ботинки.",
+  "size_m": [
+   2.27,
+   1.66,
+   2.65
+  ],
+  "triangles": 976,
+  "materials": [
+   "concrete_dark",
+   "paint_army",
+   "wood_old",
+   "black",
+   "wood",
+   "cloth_gray"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "chalk_mark",
+  "category": "gigadom",
+  "file": "gigadom/chalk_mark.glb",
+  "description": "Эхо (сек. 43): метка мелом — стрелка, галочка, крестик и число. Плоская, на стену.",
+  "size_m": [
+   0.51,
+   0.4,
+   0.04
+  ],
+  "triangles": 224,
+  "materials": [
+   "chalk"
+  ],
+  "colliders": 0
+ },
+ {
+  "name": "flashlight",
+  "category": "gigadom",
+  "file": "gigadom/flashlight.glb",
+  "description": "Холодный свет (сек. 41): армейский угловой фонарь с ребристым корпусом, линзой, ремешком.",
+  "size_m": [
+   0.08,
+   0.15,
+   0.08
+  ],
+  "triangles": 200,
+  "materials": [
+   "paint_army",
+   "black",
+   "floodlight"
+  ],
+  "colliders": 0
+ },
+ {
+  "name": "threshold_two_end",
+  "category": "gigadom",
+  "file": "gigadom/threshold_two_end.glb",
+  "description": "Порог второй (сек. 50): коридор обрывается во тьму и стоячую воду, ступени вниз, табличка «→ 51».",
+  "size_m": [
+   4.5,
+   3.61,
+   4.06
+  ],
+  "triangles": 964,
+  "materials": [
+   "concrete_dark",
+   "tile_floor",
+   "concrete",
+   "paint_green",
+   "metal_dark",
+   "rust",
+   "metal",
+   "black",
+   "water_dark",
+   "enamel",
+   "window_dark"
+  ],
+  "colliders": 4
+ },
+ {
+  "name": "concrete_stairs",
+  "category": "gigadom",
+  "file": "gigadom/concrete_stairs.glb",
+  "description": "Бетонная лестница между уровнями секций: 12 ступеней, площадка, трубчатые перила. Подъём 2 м.",
+  "size_m": [
+   1.6,
+   2.97,
+   4.63
+  ],
+  "triangles": 468,
+  "materials": [
+   "concrete",
+   "metal_dark",
+   "paint_yellow"
+  ],
+  "colliders": 2
+ },
+ {
+  "name": "barrel_rusty",
+  "category": "gigadom",
+  "file": "gigadom/barrel_rusty.glb",
+  "description": "Ржавая бочка с потёками: для захламления коридоров.",
+  "size_m": [
+   0.85,
+   0.95,
+   0.84
+  ],
+  "triangles": 268,
+  "materials": [
+   "rust",
+   "metal_dark",
+   "water_dark"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "metal_cabinet",
+  "category": "gigadom",
+  "file": "gigadom/metal_cabinet.glb",
+  "description": "Металлический шкаф-локер на 3 секции с вентиляционными прорезями, одна дверца приоткрыта.",
+  "size_m": [
+   1.25,
+   1.9,
+   0.74
+  ],
+  "triangles": 320,
+  "materials": [
+   "paint_army",
+   "black",
+   "metal",
+   "paper"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "raft",
+  "category": "lake",
+  "file": "lake/raft.glb",
+  "description": "Плот экспедиции: брёвна, связанные верёвкой, настил, шесты, ящик и фонарь на шесте.",
+  "size_m": [
+   2.7,
+   2.33,
+   3.42
+  ],
+  "triangles": 1396,
+  "materials": [
+   "wood_old",
+   "wood_light",
+   "wood_dark",
+   "cloth_gray",
+   "wood",
+   "paint_army",
+   "metal_dark",
+   "lamp_glow"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "pier",
+  "category": "lake",
+  "file": "lake/pier.glb",
+  "description": "Пирс 2×8 м на сваях: доски с щелями, поперечины, швартовые тумбы, фонарь на конце.",
+  "size_m": [
+   2.57,
+   4.51,
+   8.81
+  ],
+  "triangles": 724,
+  "materials": [
+   "wood_old",
+   "wood_dark",
+   "metal_dark",
+   "sodium",
+   "cloth_gray"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "island_base",
+  "category": "lake",
+  "file": "lake/island_base.glb",
+  "description": "Основа острова: неровный холм ~16×10 м с камнями и травой, поверхность ~Z 1.2.",
+  "size_m": [
+   15.11,
+   4.24,
+   12.24
+  ],
+  "triangles": 1172,
+  "materials": [
+   "sand_dark",
+   "rock",
+   "grass"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "island_rock",
+  "category": "lake",
+  "file": "lake/island_rock.glb",
+  "description": "Валун с наростом и мелкими камнями вокруг.",
+  "size_m": [
+   2.13,
+   1.48,
+   1.86
+  ],
+  "triangles": 140,
+  "materials": [
+   "rock",
+   "grass"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "palm_tree",
+  "category": "lake",
+  "file": "lake/palm_tree.glb",
+  "description": "Остров плоти (51): пальма с кольчатым стволом, разлапистыми листьями и плодами.",
+  "size_m": [
+   3.98,
+   4.0,
+   3.98
+  ],
+  "triangles": 1328,
+  "materials": [
+   "bark",
+   "wood_dark",
+   "palm_leaf",
+   "skin"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "outdoor_bed",
+  "category": "lake",
+  "file": "lake/outdoor_bed.glb",
+  "description": "Остров сна (52): мягкая кованая кровать под открытым небом, подушки, смятое одеяло.",
+  "size_m": [
+   2.12,
+   1.14,
+   1.35
+  ],
+  "triangles": 448,
+  "materials": [
+   "metal_dark",
+   "cloth_white",
+   "cloth_blue"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "statue_pedestal",
+  "category": "lake",
+  "file": "lake/statue_pedestal.glb",
+  "description": "Остров славы (53): золотая статуя с поднятой рукой на ступенчатом постаменте с венками и табличкой.",
+  "size_m": [
+   2.4,
+   5.06,
+   2.4
+  ],
+  "triangles": 1064,
+  "materials": [
+   "marble",
+   "gold",
+   "black",
+   "foliage",
+   "crimson"
+  ],
+  "colliders": 2
+ },
+ {
+  "name": "kneeling_figure",
+  "category": "lake",
+  "file": "lake/kneeling_figure.glb",
+  "description": "Остров мести (54) / Покоя (59): коленопреклонённая фигура-силуэт без лица.",
+  "size_m": [
+   0.55,
+   1.35,
+   0.75
+  ],
+  "triangles": 216,
+  "materials": [
+   "black"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "knife",
+  "category": "lake",
+  "file": "lake/knife.glb",
+  "description": "Нож с гардой, клёпками на рукояти и тусклым лезвием.",
+  "size_m": [
+   0.34,
+   0.02,
+   0.05
+  ],
+  "triangles": 108,
+  "materials": [
+   "metal",
+   "metal_dark",
+   "wood_dark"
+  ],
+  "colliders": 0
+ },
+ {
+  "name": "gold_pile",
+  "category": "lake",
+  "file": "lake/gold_pile.glb",
+  "description": "Остров богатства (55): гора монет, слитков, кубков и сундук.",
+  "size_m": [
+   3.26,
+   1.56,
+   2.7
+  ],
+  "triangles": 1144,
+  "materials": [
+   "gold",
+   "wood_dark"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "childhood_house",
+  "category": "lake",
+  "file": "lake/childhood_house.glb",
+  "description": "Остров дома (56): деревянный дом детства: сруб, резные наличники, крыльцо, труба с дымом, свет в окнах.",
+  "size_m": [
+   7.13,
+   7.97,
+   6.85
+  ],
+  "triangles": 1208,
+  "materials": [
+   "brick",
+   "wood",
+   "wood_dark",
+   "brick_roof",
+   "wood_light",
+   "window_lit",
+   "concrete_dark",
+   "cloth_gray",
+   "cloth_white",
+   "paint_blue",
+   "wood_old"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "fence_wooden",
+  "category": "lake",
+  "file": "lake/fence_wooden.glb",
+  "description": "Деревянный штакетник, модуль 3 м: заострённые доски, две прожилины, столбы.",
+  "size_m": [
+   3.12,
+   1.15,
+   0.12
+  ],
+  "triangles": 272,
+  "materials": [
+   "wood_dark",
+   "wood_old"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "throne",
+  "category": "lake",
+  "file": "lake/throne.glb",
+  "description": "Остров власти (57): трон с высокой спинкой, навершиями, бархатом на трёхступенчатом подиуме с ковром.",
+  "size_m": [
+   4.08,
+   3.66,
+   4.45
+  ],
+  "triangles": 1096,
+  "materials": [
+   "marble",
+   "velvet",
+   "gold",
+   "crimson",
+   "metal_dark",
+   "sodium"
+  ],
+  "colliders": 2
+ },
+ {
+  "name": "dead_tree",
+  "category": "lake",
+  "file": "lake/dead_tree.glb",
+  "description": "Остров прощения (58): сухое корявое дерево с корнями и висящей верёвкой.",
+  "size_m": [
+   2.62,
+   4.49,
+   1.67
+  ],
+  "triangles": 484,
+  "materials": [
+   "bark",
+   "cloth_gray"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "birch_tree",
+  "category": "lake",
+  "file": "lake/birch_tree.glb",
+  "description": "Остров скорби (60): тонкая берёза с ветвями-плетями и редкой кроной.",
+  "size_m": [
+   2.23,
+   5.01,
+   2.22
+  ],
+  "triangles": 816,
+  "materials": [
+   "birch",
+   "bark",
+   "foliage"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "greek_temple",
+  "category": "lake",
+  "file": "lake/greek_temple.glb",
+  "description": "Остров тела (61): светлый портик с каннелюрами колонн, капителями, ступенями и чашей.",
+  "size_m": [
+   5.8,
+   4.86,
+   4.3
+  ],
+  "triangles": 1680,
+  "materials": [
+   "marble",
+   "gold",
+   "plaster",
+   "water_dark"
+  ],
+  "colliders": 9
+ },
+ {
+  "name": "library_tower",
+  "category": "lake",
+  "file": "lake/library_tower.glb",
+  "description": "Остров знания (62): сужающаяся башня-библиотека с полками книг, карнизами, лестницей и раскрытой книгой.",
+  "size_m": [
+   4.6,
+   10.23,
+   5.24
+  ],
+  "triangles": 5760,
+  "materials": [
+   "wood_dark",
+   "wood",
+   "paper_old",
+   "book_c",
+   "book_a",
+   "book_b",
+   "brick_roof",
+   "wood_old",
+   "paper"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "elder_scholar",
+  "category": "lake",
+  "file": "lake/elder_scholar.glb",
+  "description": "Старец-учёный: фигура в балахоне с капюшоном, бородой, посохом и книгой.",
+  "size_m": [
+   0.89,
+   2.23,
+   0.8
+  ],
+  "triangles": 276,
+  "materials": [
+   "black",
+   "skin",
+   "cloth_white",
+   "wood_dark",
+   "book_a"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "lonely_chair",
+  "category": "lake",
+  "file": "lake/lonely_chair.glb",
+  "description": "Остров одиночества (63): единственный стул на голом камне; на спинке — пиджак.",
+  "size_m": [
+   3.12,
+   1.82,
+   3.16
+  ],
+  "triangles": 332,
+  "materials": [
+   "rock",
+   "wood_dark",
+   "cloth_gray"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "garland",
+  "category": "lake",
+  "file": "lake/garland.glb",
+  "description": "Остров вседозволенности (64): гирлянда с цветными лампочками и флажками, пролёт 8 м.",
+  "size_m": [
+   8.12,
+   3.31,
+   0.14
+  ],
+  "triangles": 1348,
+  "materials": [
+   "wood_dark",
+   "metal_dark",
+   "black",
+   "bulb_yellow",
+   "bulb_pink",
+   "bulb_green",
+   "led_red",
+   "cloth_white",
+   "crimson",
+   "paint_yellow",
+   "slide_blue",
+   "pink_flower"
+  ],
+  "colliders": 2
+ },
+ {
+  "name": "radiant_figure",
+  "category": "lake",
+  "file": "lake/radiant_figure.glb",
+  "description": "Остров веры (65): сияющая фигура в одеянии с раскрытыми руками, нимбом и лучами.",
+  "size_m": [
+   5.63,
+   5.72,
+   1.4
+  ],
+  "triangles": 694,
+  "materials": [
+   "halo",
+   "marble",
+   "lamp_glow"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "kneeling_worshipper",
+  "category": "lake",
+  "file": "lake/kneeling_worshipper.glb",
+  "description": "Поклоняющийся (65) — коленопреклонённый силуэт, ставить рядами.",
+  "size_m": [
+   0.52,
+   1.27,
+   0.71
+  ],
+  "triangles": 216,
+  "materials": [
+   "black"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "playground_tower",
+  "category": "lake",
+  "file": "lake/playground_tower.glb",
+  "description": "Остров юности (66): деревянная горка-башенка с лестницей, перилами, красной крышей и окошками.",
+  "size_m": [
+   4.53,
+   4.11,
+   1.55
+  ],
+  "triangles": 320,
+  "materials": [
+   "wood_dark",
+   "wood",
+   "wood_light",
+   "lamp_glow",
+   "brick_roof",
+   "slide_blue",
+   "sand_dark"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "ball",
+  "category": "lake",
+  "file": "lake/ball.glb",
+  "description": "Мяч с полосой.",
+  "size_m": [
+   0.29,
+   0.3,
+   0.3
+  ],
+  "triangles": 156,
+  "materials": [
+   "rubber_red",
+   "enamel"
+  ],
+  "colliders": 0
+ },
+ {
+  "name": "flower_arch",
+  "category": "lake",
+  "file": "lake/flower_arch.glb",
+  "description": "Остров любви (67): арка, оплетённая лозой и цветами, со скамейкой для двоих.",
+  "size_m": [
+   2.77,
+   3.56,
+   1.45
+  ],
+  "triangles": 1896,
+  "materials": [
+   "whitewash",
+   "foliage",
+   "pink_flower",
+   "wood_light"
+  ],
+  "colliders": 2
+ },
+ {
+  "name": "rage_dummy",
+  "category": "lake",
+  "file": "lake/rage_dummy.glb",
+  "description": "Остров гнева (68): манекен «неотличимый от живого» с трещинами и сколами на стойке; кувалда и обломки.",
+  "size_m": [
+   1.46,
+   2.1,
+   0.8
+  ],
+  "triangles": 392,
+  "materials": [
+   "metal_dark",
+   "metal",
+   "skin",
+   "black",
+   "wood"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "envy_window",
+  "category": "lake",
+  "file": "lake/envy_window.glb",
+  "description": "Остров зависти (69): резная рама-«окно» в лучшую жизнь: за стеклом — дом, сад, солнце и семья.",
+  "size_m": [
+   3.6,
+   4.0,
+   0.18
+  ],
+  "triangles": 352,
+  "materials": [
+   "gold",
+   "slide_blue",
+   "grass",
+   "bulb_yellow",
+   "whitewash",
+   "brick_roof",
+   "window_lit",
+   "wood",
+   "black",
+   "bark",
+   "foliage"
+  ],
+  "colliders": 1
+ },
+ {
+  "name": "checkpoint_gate",
+  "category": "lake",
+  "file": "lake/checkpoint_gate.glb",
+  "description": "Остров возвращения (70): КПП · ВЫХОД — рабица, колючая проволока, шлагбаум, будка, прожекторы.",
+  "size_m": [
+   13.7,
+   6.32,
+   3.77
+  ],
+  "triangles": 3326,
+  "materials": [
+   "metal_dark",
+   "chain_link",
+   "metal",
+   "floodlight",
+   "black",
+   "paint_yellow",
+   "enamel",
+   "concrete",
+   "calendar_red",
+   "paint_green",
+   "window_lit",
+   "wood"
+  ],
+  "colliders": 3
+ }
+]

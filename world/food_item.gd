@@ -19,3 +19,7 @@ func interact(member: ExpeditionMember) -> void:
 func _set_present(value: bool) -> void:
 	visible = value
 	set_collision_layer_value(1, value)
+
+
+func get_prompt() -> String:
+	return "Поесть"

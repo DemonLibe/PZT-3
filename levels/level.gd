@@ -6,6 +6,7 @@ extends Node3D
 const PLAYER_SCENE: PackedScene = preload("res://expedition/player.tscn")
 const RADIO_PANEL: PackedScene = preload("res://ui/radio_panel.tscn")
 const HALLUCINATION: PackedScene = preload("res://ui/hallucination_overlay.tscn")
+const STATUS_OVERLAY: PackedScene = preload("res://ui/status_overlay.tscn")
 const NPC_SCENE: PackedScene = preload("res://expedition/npc.tscn")
 ## Игрок — Максим Орлов. Напарники: сержант Мельников и пятеро заключённых из группы.
 const HOST_NAME: String = "Орлов"
@@ -16,7 +17,7 @@ const NPC_NAMES: PackedStringArray = ["Мельников", "Черных", "В�
 ## Дорохов молчит (Район 30 «Ничего»).
 @export var radio_silent: bool = false
 ## Сколько напарников-NPC выходит в экспедицию.
-@export var npc_count: int = 6
+@export var npc_count: int = 0
 ## Через сколько секунд после потери всех игроков вылазка заканчивается.
 @export var loss_delay: float = 4.0
 
@@ -32,6 +33,7 @@ func _ready() -> void:
 	_spawner.spawn_function = _spawn_member
 	add_child(RADIO_PANEL.instantiate())
 	add_child(HALLUCINATION.instantiate())
+	add_child(STATUS_OVERLAY.instantiate())
 	if not radio_silent:
 		var radio: RadioOperator = RadioOperator.new()
 		radio.name = "RadioOperator"
@@ -40,6 +42,7 @@ func _ready() -> void:
 		# CSG собирает геометрию отложенно — строим навигацию после этого.
 		_bake_navigation.call_deferred()
 	NetAuthority.session_failed.connect(_on_session_failed)
+	_order_survey_points.call_deferred()
 	NetAuthority.begin_session()
 	# Смена сетевого пира сбрасывает спавнер — заново указываем, куда выпускать.
 	_spawner.spawn_path = NodePath()
@@ -98,6 +101,14 @@ func _bake_navigation() -> void:
 			source.add_faces(shape.get_faces(), csg.global_transform)
 	NavigationServer3D.bake_from_source_geometry_data(_navigation.navigation_mesh, source)
 	_navigation.navigation_mesh = _navigation.navigation_mesh
+
+
+## Фиксации идут по порядку маршрута: от входа (юг, большая Z) к выходу.
+func _order_survey_points() -> void:
+	var points: Array[Node] = get_tree().get_nodes_in_group(&"survey_point")
+	points.sort_custom(func(a: Node, b: Node) -> bool: return a.global_position.z > b.global_position.z)
+	for i in points.size():
+		points[i].order = i + 1
 
 
 func _spawn_transform(marker_name: String) -> Transform3D:

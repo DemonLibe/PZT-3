@@ -17,3 +17,7 @@ func interact(member: ExpeditionMember) -> void:
 
 func get_temptation(member: ExpeditionMember) -> float:
 	return 0.6 if member == owner_member else 0.0
+
+
+func get_prompt() -> String:
+	return "Поднять"

@@ -1,0 +1,43 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ui/status_overlay.gd" id="1_status"]
+[ext_resource type="Shader" path="res://ui/status_effects.gdshader" id="2_shader"]
+[ext_resource type="Texture2D" path="res://world/textures/uniform.png" id="3_cloth"]
+
+[sub_resource type="ShaderMaterial" id="Material_effects"]
+shader = ExtResource("2_shader")
+shader_parameter/overlay_texture = ExtResource("3_cloth")
+
+[node name="StatusOverlay" type="CanvasLayer"]
+layer = 7
+script = ExtResource("1_status")
+
+[node name="Effect" type="ColorRect" parent="."]
+visible = false
+material = SubResource("Material_effects")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="StatusPanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -160.0
+offset_right = 480.0
+offset_bottom = -20.0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="StatusList" type="Label" parent="StatusPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.75, 0.6, 1)
+theme_override_font_sizes/font_size = 16
+autowrap_mode = 2

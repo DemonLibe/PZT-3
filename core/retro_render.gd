@@ -27,9 +27,13 @@ func _ready() -> void:
 	get_tree().node_added.connect(_on_node_added)
 
 
+func _process(_delta: float) -> void:
+	# Пиксели — только поверх 3D-мира; меню остаются чёткими.
+	_post.visible = enabled and get_tree().current_scene is Node3D
+
+
 func set_enabled(value: bool) -> void:
 	enabled = value
-	_post.visible = value
 
 
 func _on_node_added(node: Node) -> void:

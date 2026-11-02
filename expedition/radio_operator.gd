@@ -59,9 +59,12 @@ func _on_anomaly_observed(member: Node, anomaly_id: StringName) -> void:
 		return
 	_hinted[anomaly_id] = true
 	var data: AnomalyData = Encyclopedia.get_data(anomaly_id)
-	if data == null or data.guide_hint == "" or not _guide_alive():
+	if data == null or data.guide_hint == "":
 		return
-	say(GUIDE_NAME, data.guide_hint)
+	if _guide_alive():
+		say(GUIDE_NAME, data.guide_hint)
+	else:
+		say(DOROKHOV, "Протокол района: %s" % data.guide_hint)
 
 
 ## Дорохов до третьей экспедиции зовёт заключённых по номерам.

@@ -32,6 +32,10 @@ NetAuthority="*res://core/net_authority.gd"
 RetroRender="*res://core/retro_render.gd"
 Settings="*res://core/settings.gd"
 
+[gui]
+
+theme/custom="res://ui/theme.tres"
+
 [input]
 
 move_forward={

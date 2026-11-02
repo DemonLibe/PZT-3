@@ -30,3 +30,7 @@ func set_present(value: bool) -> void:
 	set_collision_layer_value(1, value)
 	if not value:
 		is_eaten = true
+
+
+func get_prompt() -> String:
+	return "Взять еду"

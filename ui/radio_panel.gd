@@ -6,7 +6,8 @@ extends CanvasLayer
 
 var _lines: Array[Dictionary] = []
 
-@onready var _label: Label = $Label
+@onready var _label: Label = $Panel/Label
+@onready var _panel: Control = $Panel
 
 
 func _ready() -> void:
@@ -21,6 +22,7 @@ func _process(delta: float) -> void:
 	for line in _lines:
 		texts.append("%s: %s" % [line["speaker"], line["text"]])
 	_label.text = "\n".join(texts)
+	_panel.visible = not texts.is_empty()
 
 
 func _on_radio_message(speaker: String, text: String) -> void:

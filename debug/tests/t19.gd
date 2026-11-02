@@ -15,7 +15,7 @@ func _ready() -> void:
 	check(m.has_status(&"own_clock"), "у игрока свои часы")
 	check(absf(m.watch_offset_min - n.watch_offset_min) > 1.0, "часы игрока и NPC расходятся (%+.0f и %+.0f)" % [m.watch_offset_min, n.watch_offset_min])
 	var first: float = m.watch_offset_min
-	check(level.get_node("HUD/Objective").text.begins_with("Ваши часы"), "HUD показывает личные часы")
+	check(level.get_node("HUD").find_child("Location", true, false).text.contains("Ваши часы"), "HUD показывает личные часы")
 	zone.data.params["sync_time"] = 6.0
 	await wait(2.0)
 	check(absf(m.watch_offset_min) < absf(first), "показания сходятся")

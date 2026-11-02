@@ -16,3 +16,7 @@ func interact(member: ExpeditionMember) -> void:
 @rpc("authority", "call_local", "reliable")
 func set_gap(angle_deg: float) -> void:
 	create_tween().tween_property(leaf, "rotation:y", deg_to_rad(angle_deg), 0.6)
+
+
+func get_prompt() -> String:
+	return "Закрыть дверь"

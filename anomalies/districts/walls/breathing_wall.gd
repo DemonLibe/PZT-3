@@ -8,3 +8,7 @@ var zone: BreathingWallsZone
 func interact(member: ExpeditionMember) -> void:
 	if zone:
 		zone.touch(member, self)
+
+
+func get_prompt() -> String:
+	return "Приложить ладонь"

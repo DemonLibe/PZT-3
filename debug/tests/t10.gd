@@ -25,7 +25,14 @@ func _ready() -> void:
 	for i in Destinations.LIST.size():
 		var dest: Dictionary = Destinations.LIST[i]
 		var base: Node = scene()
-		base.get_node("%Destination").select(i)
+		if i > 0:
+			Encyclopedia.mark_completed(Destinations.LIST[i - 1]["title"])  # открыть следующее по порядку
+			base.queue_free()
+			get_tree().change_scene_to_file(GameState.BASE_SCENE)
+			await wait(0.6)
+			base = scene()
+		base.get_node("%Destinations").select(i)
+		base._select(i)
 		base.get_node("%StartButton").pressed.emit()
 		await wait(2.5)
 		var lvl: Node = scene()

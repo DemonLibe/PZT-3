@@ -4,15 +4,15 @@
 
 [node name="SettingsPanel" type="VBoxContainer"]
 script = ExtResource("1_r")
-custom_minimum_size = Vector2(420.0, 0.0)
+custom_minimum_size = Vector2(460.0, 0.0)
 theme_override_constants/separation = 8
 
 [node name="SensitivityLabel" type="Label" parent="."]
 layout_mode = 2
 text = "Чувствительность мыши"
 horizontal_alignment = 0
-theme_override_colors/font_color = Color(0.5, 0.48, 0.43, 1.0)
-theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.55, 0.54, 0.5, 1.0)
+theme_override_font_sizes/font_size = 16
 
 [node name="Sensitivity" type="HSlider" parent="."]
 unique_name_in_owner = true
@@ -25,8 +25,8 @@ step = 0.05
 layout_mode = 2
 text = "Яркость"
 horizontal_alignment = 0
-theme_override_colors/font_color = Color(0.5, 0.48, 0.43, 1.0)
-theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.55, 0.54, 0.5, 1.0)
+theme_override_font_sizes/font_size = 16
 
 [node name="Brightness" type="HSlider" parent="."]
 unique_name_in_owner = true
@@ -39,8 +39,8 @@ step = 0.05
 layout_mode = 2
 text = "Общая громкость"
 horizontal_alignment = 0
-theme_override_colors/font_color = Color(0.5, 0.48, 0.43, 1.0)
-theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.55, 0.54, 0.5, 1.0)
+theme_override_font_sizes/font_size = 16
 
 [node name="Master" type="HSlider" parent="."]
 unique_name_in_owner = true
@@ -53,8 +53,8 @@ step = 0.01
 layout_mode = 2
 text = "Фон"
 horizontal_alignment = 0
-theme_override_colors/font_color = Color(0.5, 0.48, 0.43, 1.0)
-theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.55, 0.54, 0.5, 1.0)
+theme_override_font_sizes/font_size = 16
 
 [node name="Ambient" type="HSlider" parent="."]
 unique_name_in_owner = true
@@ -67,8 +67,8 @@ step = 0.01
 layout_mode = 2
 text = "Звуки"
 horizontal_alignment = 0
-theme_override_colors/font_color = Color(0.5, 0.48, 0.43, 1.0)
-theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.55, 0.54, 0.5, 1.0)
+theme_override_font_sizes/font_size = 16
 
 [node name="Sfx" type="HSlider" parent="."]
 unique_name_in_owner = true
@@ -80,7 +80,7 @@ step = 0.01
 [node name="Ps1" type="CheckBox" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
-text = "PS1-графика"
+text = "PS1-графика (крупные пиксели)"
 
 [node name="Fullscreen" type="CheckBox" parent="."]
 unique_name_in_owner = true

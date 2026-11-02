@@ -8,3 +8,7 @@ var zone: KeyMasterZone
 func interact(member: ExpeditionMember) -> void:
 	if zone:
 		zone.talk(member)
+
+
+func get_prompt() -> String:
+	return "Говорить"

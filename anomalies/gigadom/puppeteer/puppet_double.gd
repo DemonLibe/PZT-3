@@ -9,3 +9,7 @@ var zone: PuppeteerZone
 func interact(member: ExpeditionMember) -> void:
 	if zone and member.weapon_out:
 		zone.attack(member, self)
+
+
+func get_prompt() -> String:
+	return "Ударить"

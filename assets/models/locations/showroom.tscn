@@ -1,0 +1,739 @@
+[gd_scene load_steps=91 format=3]
+
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/panel_building_section.glb" id="1"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/panel_entrance.glb" id="2"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/dinner_table_10.glb" id="3"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/chair_wooden.glb" id="4"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/pendant_lamp_red.glb" id="5"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/plate_food.glb" id="6"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/radio_vintage.glb" id="7"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/tear_calendar.glb" id="8"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/clothesline.glb" id="9"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/clothes_shirt.glb" id="10"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/window_frame.glb" id="11"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/street_lamp_sodium.glb" id="12"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/apartment_door.glb" id="13"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/photo_frame.glb" id="14"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/photo_frame_large.glb" id="15"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/fridge_open.glb" id="16"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/meat_chunk.glb" id="17"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/wall_clock.glb" id="18"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/alarm_clock_digital.glb" id="19"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/mailbox_block.glb" id="20"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/envelope.glb" id="21"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/lullaby_window_block.glb" id="22"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/interior_door_ajar.glb" id="23"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/walkie_talkie.glb" id="24"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/ceiling_stain.glb" id="25"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/bench_yard.glb" id="26"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/swing_set.glb" id="27"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/tree_lowpoly.glb" id="28"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/expedition_clipboard.glb" id="29"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/kitchen_stove.glb" id="30"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/crt_tv.glb" id="31"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/districts/stairwell_flight.glb" id="32"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/corridor_straight.glb" id="33"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/corridor_dead_end.glb" id="34"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/corridor_door_side.glb" id="35"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/corridor_t_junction.glb" id="36"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/corridor_corner.glb" id="37"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/threshold_seam.glb" id="38"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/fluorescent_lamp.glb" id="39"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/steel_door.glb" id="40"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/bunk_bed.glb" id="41"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/loudspeaker_horn.glb" id="42"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/meat_hook_rail.glb" id="43"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/butcher_table.glb" id="44"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/sign_weapon_sheath.glb" id="45"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/sinew_ceiling.glb" id="46"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/cocoon.glb" id="47"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/vent_duct.glb" id="48"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/grate_walkway.glb" id="49"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/elevator_shaft.glb" id="50"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/key_wall.glb" id="51"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/key_counter.glb" id="52"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/golden_key.glb" id="53"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/junk_pile.glb" id="54"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/chalk_mark.glb" id="55"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/flashlight.glb" id="56"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/threshold_two_end.glb" id="57"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/concrete_stairs.glb" id="58"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/barrel_rusty.glb" id="59"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/gigadom/metal_cabinet.glb" id="60"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/lake/raft.glb" id="61"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/lake/pier.glb" id="62"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/lake/island_base.glb" id="63"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/lake/island_rock.glb" id="64"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/lake/palm_tree.glb" id="65"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/lake/outdoor_bed.glb" id="66"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/lake/statue_pedestal.glb" id="67"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/lake/kneeling_figure.glb" id="68"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/lake/knife.glb" id="69"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/lake/gold_pile.glb" id="70"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/lake/childhood_house.glb" id="71"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/lake/fence_wooden.glb" id="72"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/lake/throne.glb" id="73"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/lake/dead_tree.glb" id="74"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/lake/birch_tree.glb" id="75"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/lake/greek_temple.glb" id="76"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/lake/library_tower.glb" id="77"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/lake/elder_scholar.glb" id="78"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/lake/lonely_chair.glb" id="79"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/lake/garland.glb" id="80"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/lake/radiant_figure.glb" id="81"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/lake/kneeling_worshipper.glb" id="82"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/lake/playground_tower.glb" id="83"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/lake/ball.glb" id="84"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/lake/flower_arch.glb" id="85"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/lake/rage_dummy.glb" id="86"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/lake/envy_window.glb" id="87"]
+[ext_resource type="PackedScene" path="res://assets/models/locations/lake/checkpoint_gate.glb" id="88"]
+
+[sub_resource type="Environment" id="env"]
+background_mode = 1
+background_color = Color(0.08, 0.08, 0.1, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.6, 0.6, 0.65, 1)
+ambient_light_energy = 0.8
+
+[sub_resource type="PlaneMesh" id="floor"]
+size = Vector2(200, 150)
+
+[node name="ModelShowroom" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("env")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866, -0.25, 0.433, 0, 0.866, 0.5, -0.5, -0.433, 0.75, 0, 20, 0)
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, -0.35, -40)
+mesh = SubResource("floor")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.819, 0.574, 0, -0.574, 0.819, 20, 14, 22)
+current = true
+
+[node name="districts" type="Node3D" parent="."]
+
+[node name="gigadom" type="Node3D" parent="."]
+
+[node name="lake" type="Node3D" parent="."]
+
+[node name="panel_building_section" parent="districts" instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0, 0, 0.0)
+[node name="panel_building_section_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0, -0.3, 3.0)
+billboard = 1
+font_size = 64
+text = "panel_building_section"
+[node name="panel_entrance" parent="districts" instance=ExtResource("2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0, 0, 0.0)
+[node name="panel_entrance_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0, -0.3, 3.0)
+billboard = 1
+font_size = 64
+text = "panel_entrance"
+[node name="dinner_table_10" parent="districts" instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0, 0, 0.0)
+[node name="dinner_table_10_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0, -0.3, 3.0)
+billboard = 1
+font_size = 64
+text = "dinner_table_10"
+[node name="chair_wooden" parent="districts" instance=ExtResource("4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.0, 0, 0.0)
+[node name="chair_wooden_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.0, -0.3, 3.0)
+billboard = 1
+font_size = 64
+text = "chair_wooden"
+[node name="pendant_lamp_red" parent="districts" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.0, 0, 0.0)
+[node name="pendant_lamp_red_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.0, -0.3, 3.0)
+billboard = 1
+font_size = 64
+text = "pendant_lamp_red"
+[node name="plate_food" parent="districts" instance=ExtResource("6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.0, 0, 0.0)
+[node name="plate_food_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.0, -0.3, 3.0)
+billboard = 1
+font_size = 64
+text = "plate_food"
+[node name="radio_vintage" parent="districts" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.0, 0, 0.0)
+[node name="radio_vintage_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.0, -0.3, 3.0)
+billboard = 1
+font_size = 64
+text = "radio_vintage"
+[node name="tear_calendar" parent="districts" instance=ExtResource("8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.0, 0, 0.0)
+[node name="tear_calendar_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.0, -0.3, 3.0)
+billboard = 1
+font_size = 64
+text = "tear_calendar"
+[node name="clothesline" parent="districts" instance=ExtResource("9")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.0, 0, 0.0)
+[node name="clothesline_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.0, -0.3, 3.0)
+billboard = 1
+font_size = 64
+text = "clothesline"
+[node name="clothes_shirt" parent="districts" instance=ExtResource("10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.0, 0, 0.0)
+[node name="clothes_shirt_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.0, -0.3, 3.0)
+billboard = 1
+font_size = 64
+text = "clothes_shirt"
+[node name="window_frame" parent="districts" instance=ExtResource("11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0, 0, -17.0)
+[node name="window_frame_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0, -0.3, -14.0)
+billboard = 1
+font_size = 64
+text = "window_frame"
+[node name="street_lamp_sodium" parent="districts" instance=ExtResource("12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0, 0, -17.0)
+[node name="street_lamp_sodium_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0, -0.3, -14.0)
+billboard = 1
+font_size = 64
+text = "street_lamp_sodium"
+[node name="apartment_door" parent="districts" instance=ExtResource("13")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0, 0, -17.0)
+[node name="apartment_door_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0, -0.3, -14.0)
+billboard = 1
+font_size = 64
+text = "apartment_door"
+[node name="photo_frame" parent="districts" instance=ExtResource("14")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.0, 0, -17.0)
+[node name="photo_frame_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.0, -0.3, -14.0)
+billboard = 1
+font_size = 64
+text = "photo_frame"
+[node name="photo_frame_large" parent="districts" instance=ExtResource("15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.0, 0, -17.0)
+[node name="photo_frame_large_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.0, -0.3, -14.0)
+billboard = 1
+font_size = 64
+text = "photo_frame_large"
+[node name="fridge_open" parent="districts" instance=ExtResource("16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.0, 0, -17.0)
+[node name="fridge_open_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.0, -0.3, -14.0)
+billboard = 1
+font_size = 64
+text = "fridge_open"
+[node name="meat_chunk" parent="districts" instance=ExtResource("17")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.0, 0, -17.0)
+[node name="meat_chunk_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.0, -0.3, -14.0)
+billboard = 1
+font_size = 64
+text = "meat_chunk"
+[node name="wall_clock" parent="districts" instance=ExtResource("18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.0, 0, -17.0)
+[node name="wall_clock_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.0, -0.3, -14.0)
+billboard = 1
+font_size = 64
+text = "wall_clock"
+[node name="alarm_clock_digital" parent="districts" instance=ExtResource("19")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.0, 0, -17.0)
+[node name="alarm_clock_digital_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.0, -0.3, -14.0)
+billboard = 1
+font_size = 64
+text = "alarm_clock_digital"
+[node name="mailbox_block" parent="districts" instance=ExtResource("20")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.0, 0, -17.0)
+[node name="mailbox_block_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.0, -0.3, -14.0)
+billboard = 1
+font_size = 64
+text = "mailbox_block"
+[node name="envelope" parent="districts" instance=ExtResource("21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0, 0, -34.0)
+[node name="envelope_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0, -0.3, -31.0)
+billboard = 1
+font_size = 64
+text = "envelope"
+[node name="lullaby_window_block" parent="districts" instance=ExtResource("22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0, 0, -34.0)
+[node name="lullaby_window_block_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0, -0.3, -31.0)
+billboard = 1
+font_size = 64
+text = "lullaby_window_block"
+[node name="interior_door_ajar" parent="districts" instance=ExtResource("23")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0, 0, -34.0)
+[node name="interior_door_ajar_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0, -0.3, -31.0)
+billboard = 1
+font_size = 64
+text = "interior_door_ajar"
+[node name="walkie_talkie" parent="districts" instance=ExtResource("24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.0, 0, -34.0)
+[node name="walkie_talkie_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.0, -0.3, -31.0)
+billboard = 1
+font_size = 64
+text = "walkie_talkie"
+[node name="ceiling_stain" parent="districts" instance=ExtResource("25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.0, 0, -34.0)
+[node name="ceiling_stain_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.0, -0.3, -31.0)
+billboard = 1
+font_size = 64
+text = "ceiling_stain"
+[node name="bench_yard" parent="districts" instance=ExtResource("26")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.0, 0, -34.0)
+[node name="bench_yard_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.0, -0.3, -31.0)
+billboard = 1
+font_size = 64
+text = "bench_yard"
+[node name="swing_set" parent="districts" instance=ExtResource("27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.0, 0, -34.0)
+[node name="swing_set_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.0, -0.3, -31.0)
+billboard = 1
+font_size = 64
+text = "swing_set"
+[node name="tree_lowpoly" parent="districts" instance=ExtResource("28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.0, 0, -34.0)
+[node name="tree_lowpoly_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.0, -0.3, -31.0)
+billboard = 1
+font_size = 64
+text = "tree_lowpoly"
+[node name="expedition_clipboard" parent="districts" instance=ExtResource("29")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.0, 0, -34.0)
+[node name="expedition_clipboard_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.0, -0.3, -31.0)
+billboard = 1
+font_size = 64
+text = "expedition_clipboard"
+[node name="kitchen_stove" parent="districts" instance=ExtResource("30")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.0, 0, -34.0)
+[node name="kitchen_stove_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.0, -0.3, -31.0)
+billboard = 1
+font_size = 64
+text = "kitchen_stove"
+[node name="crt_tv" parent="districts" instance=ExtResource("31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0, 0, -51.0)
+[node name="crt_tv_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0, -0.3, -48.0)
+billboard = 1
+font_size = 64
+text = "crt_tv"
+[node name="stairwell_flight" parent="districts" instance=ExtResource("32")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0, 0, -51.0)
+[node name="stairwell_flight_label" type="Label3D" parent="districts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0, -0.3, -48.0)
+billboard = 1
+font_size = 64
+text = "stairwell_flight"
+[node name="corridor_straight" parent="gigadom" instance=ExtResource("33")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0, 0, -34.0)
+[node name="corridor_straight_label" type="Label3D" parent="gigadom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0, -0.3, -31.0)
+billboard = 1
+font_size = 64
+text = "corridor_straight"
+[node name="corridor_dead_end" parent="gigadom" instance=ExtResource("34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0, 0, -34.0)
+[node name="corridor_dead_end_label" type="Label3D" parent="gigadom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0, -0.3, -31.0)
+billboard = 1
+font_size = 64
+text = "corridor_dead_end"
+[node name="corridor_door_side" parent="gigadom" instance=ExtResource("35")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0, 0, -34.0)
+[node name="corridor_door_side_label" type="Label3D" parent="gigadom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0, -0.3, -31.0)
+billboard = 1
+font_size = 64
+text = "corridor_door_side"
+[node name="corridor_t_junction" parent="gigadom" instance=ExtResource("36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.0, 0, -34.0)
+[node name="corridor_t_junction_label" type="Label3D" parent="gigadom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.0, -0.3, -31.0)
+billboard = 1
+font_size = 64
+text = "corridor_t_junction"
+[node name="corridor_corner" parent="gigadom" instance=ExtResource("37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.0, 0, -34.0)
+[node name="corridor_corner_label" type="Label3D" parent="gigadom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.0, -0.3, -31.0)
+billboard = 1
+font_size = 64
+text = "corridor_corner"
+[node name="threshold_seam" parent="gigadom" instance=ExtResource("38")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.0, 0, -34.0)
+[node name="threshold_seam_label" type="Label3D" parent="gigadom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.0, -0.3, -31.0)
+billboard = 1
+font_size = 64
+text = "threshold_seam"
+[node name="fluorescent_lamp" parent="gigadom" instance=ExtResource("39")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.0, 0, -34.0)
+[node name="fluorescent_lamp_label" type="Label3D" parent="gigadom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.0, -0.3, -31.0)
+billboard = 1
+font_size = 64
+text = "fluorescent_lamp"
+[node name="steel_door" parent="gigadom" instance=ExtResource("40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.0, 0, -34.0)
+[node name="steel_door_label" type="Label3D" parent="gigadom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.0, -0.3, -31.0)
+billboard = 1
+font_size = 64
+text = "steel_door"
+[node name="bunk_bed" parent="gigadom" instance=ExtResource("41")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.0, 0, -34.0)
+[node name="bunk_bed_label" type="Label3D" parent="gigadom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.0, -0.3, -31.0)
+billboard = 1
+font_size = 64
+text = "bunk_bed"
+[node name="loudspeaker_horn" parent="gigadom" instance=ExtResource("42")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.0, 0, -34.0)
+[node name="loudspeaker_horn_label" type="Label3D" parent="gigadom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.0, -0.3, -31.0)
+billboard = 1
+font_size = 64
+text = "loudspeaker_horn"
+[node name="meat_hook_rail" parent="gigadom" instance=ExtResource("43")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0, 0, -51.0)
+[node name="meat_hook_rail_label" type="Label3D" parent="gigadom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0, -0.3, -48.0)
+billboard = 1
+font_size = 64
+text = "meat_hook_rail"
+[node name="butcher_table" parent="gigadom" instance=ExtResource("44")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0, 0, -51.0)
+[node name="butcher_table_label" type="Label3D" parent="gigadom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0, -0.3, -48.0)
+billboard = 1
+font_size = 64
+text = "butcher_table"
+[node name="sign_weapon_sheath" parent="gigadom" instance=ExtResource("45")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0, 0, -51.0)
+[node name="sign_weapon_sheath_label" type="Label3D" parent="gigadom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0, -0.3, -48.0)
+billboard = 1
+font_size = 64
+text = "sign_weapon_sheath"
+[node name="sinew_ceiling" parent="gigadom" instance=ExtResource("46")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.0, 0, -51.0)
+[node name="sinew_ceiling_label" type="Label3D" parent="gigadom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.0, -0.3, -48.0)
+billboard = 1
+font_size = 64
+text = "sinew_ceiling"
+[node name="cocoon" parent="gigadom" instance=ExtResource("47")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.0, 0, -51.0)
+[node name="cocoon_label" type="Label3D" parent="gigadom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.0, -0.3, -48.0)
+billboard = 1
+font_size = 64
+text = "cocoon"
+[node name="vent_duct" parent="gigadom" instance=ExtResource("48")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.0, 0, -51.0)
+[node name="vent_duct_label" type="Label3D" parent="gigadom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.0, -0.3, -48.0)
+billboard = 1
+font_size = 64
+text = "vent_duct"
+[node name="grate_walkway" parent="gigadom" instance=ExtResource("49")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.0, 0, -51.0)
+[node name="grate_walkway_label" type="Label3D" parent="gigadom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.0, -0.3, -48.0)
+billboard = 1
+font_size = 64
+text = "grate_walkway"
+[node name="elevator_shaft" parent="gigadom" instance=ExtResource("50")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.0, 0, -51.0)
+[node name="elevator_shaft_label" type="Label3D" parent="gigadom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.0, -0.3, -48.0)
+billboard = 1
+font_size = 64
+text = "elevator_shaft"
+[node name="key_wall" parent="gigadom" instance=ExtResource("51")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.0, 0, -51.0)
+[node name="key_wall_label" type="Label3D" parent="gigadom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.0, -0.3, -48.0)
+billboard = 1
+font_size = 64
+text = "key_wall"
+[node name="key_counter" parent="gigadom" instance=ExtResource("52")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.0, 0, -51.0)
+[node name="key_counter_label" type="Label3D" parent="gigadom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.0, -0.3, -48.0)
+billboard = 1
+font_size = 64
+text = "key_counter"
+[node name="golden_key" parent="gigadom" instance=ExtResource("53")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0, 0, -68.0)
+[node name="golden_key_label" type="Label3D" parent="gigadom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0, -0.3, -65.0)
+billboard = 1
+font_size = 64
+text = "golden_key"
+[node name="junk_pile" parent="gigadom" instance=ExtResource("54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0, 0, -68.0)
+[node name="junk_pile_label" type="Label3D" parent="gigadom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0, -0.3, -65.0)
+billboard = 1
+font_size = 64
+text = "junk_pile"
+[node name="chalk_mark" parent="gigadom" instance=ExtResource("55")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0, 0, -68.0)
+[node name="chalk_mark_label" type="Label3D" parent="gigadom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0, -0.3, -65.0)
+billboard = 1
+font_size = 64
+text = "chalk_mark"
+[node name="flashlight" parent="gigadom" instance=ExtResource("56")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.0, 0, -68.0)
+[node name="flashlight_label" type="Label3D" parent="gigadom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.0, -0.3, -65.0)
+billboard = 1
+font_size = 64
+text = "flashlight"
+[node name="threshold_two_end" parent="gigadom" instance=ExtResource("57")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.0, 0, -68.0)
+[node name="threshold_two_end_label" type="Label3D" parent="gigadom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.0, -0.3, -65.0)
+billboard = 1
+font_size = 64
+text = "threshold_two_end"
+[node name="concrete_stairs" parent="gigadom" instance=ExtResource("58")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.0, 0, -68.0)
+[node name="concrete_stairs_label" type="Label3D" parent="gigadom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.0, -0.3, -65.0)
+billboard = 1
+font_size = 64
+text = "concrete_stairs"
+[node name="barrel_rusty" parent="gigadom" instance=ExtResource("59")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.0, 0, -68.0)
+[node name="barrel_rusty_label" type="Label3D" parent="gigadom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.0, -0.3, -65.0)
+billboard = 1
+font_size = 64
+text = "barrel_rusty"
+[node name="metal_cabinet" parent="gigadom" instance=ExtResource("60")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.0, 0, -68.0)
+[node name="metal_cabinet_label" type="Label3D" parent="gigadom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.0, -0.3, -65.0)
+billboard = 1
+font_size = 64
+text = "metal_cabinet"
+[node name="raft" parent="lake" instance=ExtResource("61")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0, 0, -68.0)
+[node name="raft_label" type="Label3D" parent="lake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0, -0.3, -65.0)
+billboard = 1
+font_size = 64
+text = "raft"
+[node name="pier" parent="lake" instance=ExtResource("62")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0, 0, -68.0)
+[node name="pier_label" type="Label3D" parent="lake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0, -0.3, -65.0)
+billboard = 1
+font_size = 64
+text = "pier"
+[node name="island_base" parent="lake" instance=ExtResource("63")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0, 0, -68.0)
+[node name="island_base_label" type="Label3D" parent="lake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0, -0.3, -65.0)
+billboard = 1
+font_size = 64
+text = "island_base"
+[node name="island_rock" parent="lake" instance=ExtResource("64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.0, 0, -68.0)
+[node name="island_rock_label" type="Label3D" parent="lake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.0, -0.3, -65.0)
+billboard = 1
+font_size = 64
+text = "island_rock"
+[node name="palm_tree" parent="lake" instance=ExtResource("65")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.0, 0, -68.0)
+[node name="palm_tree_label" type="Label3D" parent="lake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.0, -0.3, -65.0)
+billboard = 1
+font_size = 64
+text = "palm_tree"
+[node name="outdoor_bed" parent="lake" instance=ExtResource("66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.0, 0, -68.0)
+[node name="outdoor_bed_label" type="Label3D" parent="lake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.0, -0.3, -65.0)
+billboard = 1
+font_size = 64
+text = "outdoor_bed"
+[node name="statue_pedestal" parent="lake" instance=ExtResource("67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.0, 0, -68.0)
+[node name="statue_pedestal_label" type="Label3D" parent="lake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.0, -0.3, -65.0)
+billboard = 1
+font_size = 64
+text = "statue_pedestal"
+[node name="kneeling_figure" parent="lake" instance=ExtResource("68")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.0, 0, -68.0)
+[node name="kneeling_figure_label" type="Label3D" parent="lake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.0, -0.3, -65.0)
+billboard = 1
+font_size = 64
+text = "kneeling_figure"
+[node name="knife" parent="lake" instance=ExtResource("69")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.0, 0, -68.0)
+[node name="knife_label" type="Label3D" parent="lake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.0, -0.3, -65.0)
+billboard = 1
+font_size = 64
+text = "knife"
+[node name="gold_pile" parent="lake" instance=ExtResource("70")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.0, 0, -68.0)
+[node name="gold_pile_label" type="Label3D" parent="lake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.0, -0.3, -65.0)
+billboard = 1
+font_size = 64
+text = "gold_pile"
+[node name="childhood_house" parent="lake" instance=ExtResource("71")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0, 0, -85.0)
+[node name="childhood_house_label" type="Label3D" parent="lake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0, -0.3, -82.0)
+billboard = 1
+font_size = 64
+text = "childhood_house"
+[node name="fence_wooden" parent="lake" instance=ExtResource("72")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0, 0, -85.0)
+[node name="fence_wooden_label" type="Label3D" parent="lake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0, -0.3, -82.0)
+billboard = 1
+font_size = 64
+text = "fence_wooden"
+[node name="throne" parent="lake" instance=ExtResource("73")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0, 0, -85.0)
+[node name="throne_label" type="Label3D" parent="lake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0, -0.3, -82.0)
+billboard = 1
+font_size = 64
+text = "throne"
+[node name="dead_tree" parent="lake" instance=ExtResource("74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.0, 0, -85.0)
+[node name="dead_tree_label" type="Label3D" parent="lake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.0, -0.3, -82.0)
+billboard = 1
+font_size = 64
+text = "dead_tree"
+[node name="birch_tree" parent="lake" instance=ExtResource("75")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.0, 0, -85.0)
+[node name="birch_tree_label" type="Label3D" parent="lake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.0, -0.3, -82.0)
+billboard = 1
+font_size = 64
+text = "birch_tree"
+[node name="greek_temple" parent="lake" instance=ExtResource("76")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.0, 0, -85.0)
+[node name="greek_temple_label" type="Label3D" parent="lake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.0, -0.3, -82.0)
+billboard = 1
+font_size = 64
+text = "greek_temple"
+[node name="library_tower" parent="lake" instance=ExtResource("77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.0, 0, -85.0)
+[node name="library_tower_label" type="Label3D" parent="lake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.0, -0.3, -82.0)
+billboard = 1
+font_size = 64
+text = "library_tower"
+[node name="elder_scholar" parent="lake" instance=ExtResource("78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.0, 0, -85.0)
+[node name="elder_scholar_label" type="Label3D" parent="lake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.0, -0.3, -82.0)
+billboard = 1
+font_size = 64
+text = "elder_scholar"
+[node name="lonely_chair" parent="lake" instance=ExtResource("79")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.0, 0, -85.0)
+[node name="lonely_chair_label" type="Label3D" parent="lake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.0, -0.3, -82.0)
+billboard = 1
+font_size = 64
+text = "lonely_chair"
+[node name="garland" parent="lake" instance=ExtResource("80")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.0, 0, -85.0)
+[node name="garland_label" type="Label3D" parent="lake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.0, -0.3, -82.0)
+billboard = 1
+font_size = 64
+text = "garland"
+[node name="radiant_figure" parent="lake" instance=ExtResource("81")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0, 0, -102.0)
+[node name="radiant_figure_label" type="Label3D" parent="lake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0, -0.3, -99.0)
+billboard = 1
+font_size = 64
+text = "radiant_figure"
+[node name="kneeling_worshipper" parent="lake" instance=ExtResource("82")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0, 0, -102.0)
+[node name="kneeling_worshipper_label" type="Label3D" parent="lake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0, -0.3, -99.0)
+billboard = 1
+font_size = 64
+text = "kneeling_worshipper"
+[node name="playground_tower" parent="lake" instance=ExtResource("83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0, 0, -102.0)
+[node name="playground_tower_label" type="Label3D" parent="lake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0, -0.3, -99.0)
+billboard = 1
+font_size = 64
+text = "playground_tower"
+[node name="ball" parent="lake" instance=ExtResource("84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.0, 0, -102.0)
+[node name="ball_label" type="Label3D" parent="lake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.0, -0.3, -99.0)
+billboard = 1
+font_size = 64
+text = "ball"
+[node name="flower_arch" parent="lake" instance=ExtResource("85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.0, 0, -102.0)
+[node name="flower_arch_label" type="Label3D" parent="lake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.0, -0.3, -99.0)
+billboard = 1
+font_size = 64
+text = "flower_arch"
+[node name="rage_dummy" parent="lake" instance=ExtResource("86")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.0, 0, -102.0)
+[node name="rage_dummy_label" type="Label3D" parent="lake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.0, -0.3, -99.0)
+billboard = 1
+font_size = 64
+text = "rage_dummy"
+[node name="envy_window" parent="lake" instance=ExtResource("87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.0, 0, -102.0)
+[node name="envy_window_label" type="Label3D" parent="lake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.0, -0.3, -99.0)
+billboard = 1
+font_size = 64
+text = "envy_window"
+[node name="checkpoint_gate" parent="lake" instance=ExtResource("88")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.0, 0, -102.0)
+[node name="checkpoint_gate_label" type="Label3D" parent="lake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.0, -0.3, -99.0)
+billboard = 1
+font_size = 64
+text = "checkpoint_gate"

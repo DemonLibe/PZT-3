@@ -32,3 +32,7 @@ func interact(member: ExpeditionMember) -> void:
 
 func get_temptation(member: ExpeditionMember) -> float:
 	return 0.3 + member.panic * 0.6 if member == target else 0.0
+
+
+func get_prompt() -> String:
+	return "Пойти с ним"

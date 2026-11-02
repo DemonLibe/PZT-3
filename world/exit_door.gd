@@ -34,3 +34,7 @@ func interact(member: ExpeditionMember) -> void:
 		if level:
 			Encyclopedia.mark_completed(level.title)
 	GameState.end_expedition(result, survivors, left_behind)
+
+
+func get_prompt() -> String:
+	return "Выйти через КПП"

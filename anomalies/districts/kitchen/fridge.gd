@@ -16,3 +16,7 @@ func interact(member: ExpeditionMember) -> void:
 
 func get_temptation(member: ExpeditionMember) -> float:
 	return 0.0 if member.has_status(&"ate_kitchen_meat") else member.drowsiness * 0.8
+
+
+func get_prompt() -> String:
+	return "Открыть холодильник"

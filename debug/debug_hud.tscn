@@ -11,6 +11,7 @@ content_margin_bottom = 6.0
 
 [node name="DebugHUD" type="CanvasLayer"]
 layer = 50
+visible = false
 script = ExtResource("1_hud")
 
 [node name="Panel" type="PanelContainer" parent="."]

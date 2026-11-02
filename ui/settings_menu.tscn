@@ -1,7 +1,11 @@
 [gd_scene format=3]
 
 [ext_resource type="Script" path="res://ui/settings_menu.gd" id="1_r"]
-[ext_resource type="PackedScene" path="res://ui/settings_panel.tscn" id="2_r"]
+[ext_resource type="Shader" path="res://ui/grain.gdshader" id="2_r"]
+[ext_resource type="PackedScene" path="res://ui/settings_panel.tscn" id="3_r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1"]
+shader = ExtResource("2_r")
 
 [node name="SettingsMenu" type="Control"]
 script = ExtResource("1_r")
@@ -13,7 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Background" type="ColorRect" parent="."]
-color = Color(0.035, 0.035, 0.04, 1.0)
+color = Color(0.03, 0.032, 0.036, 1.0)
 mouse_filter = 2
 layout_mode = 1
 anchors_preset = 15
@@ -21,6 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+material = SubResource("ShaderMaterial_1")
 
 [node name="Center" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -30,21 +35,25 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Box" type="VBoxContainer" parent="Center"]
+[node name="Card" type="PanelContainer" parent="Center"]
 layout_mode = 2
-theme_override_constants/separation = 14
 
-[node name="Title" type="Label" parent="Center/Box"]
+[node name="Box" type="VBoxContainer" parent="Center/Card"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="Center/Card/Box"]
 layout_mode = 2
 text = "Настройки"
-horizontal_alignment = 1
-theme_override_colors/font_color = Color(0.78, 0.75, 0.68, 1.0)
+horizontal_alignment = 0
+theme_override_colors/font_color = Color(0.87, 0.85, 0.79, 1.0)
 theme_override_font_sizes/font_size = 28
 
-[node name="SettingsPanel" parent="Center/Box" instance=ExtResource("2_r")]
+[node name="SettingsPanel" parent="Center/Card/Box" instance=ExtResource("3_r")]
 
-[node name="BackButton" type="Button" parent="Center/Box"]
+[node name="BackButton" type="Button" parent="Center/Card/Box"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Назад"
-theme_override_font_sizes/font_size = 17
+alignment = 0
+theme_override_font_sizes/font_size = 19

@@ -10,6 +10,7 @@ func _ready() -> void:
 	visible = false
 	%ResumeButton.pressed.connect(close)
 	%AbortButton.pressed.connect(_abort)
+	%SettingsToggle.pressed.connect(func() -> void: $Center/Card/Box/SettingsPanel.visible = not $Center/Card/Box/SettingsPanel.visible)
 
 
 func _process(_delta: float) -> void:

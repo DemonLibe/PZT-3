@@ -14,6 +14,8 @@ const DONE_SOUND: AudioStream = preload("res://audio/sfx/count_tick.wav")
 @export var color_waiting: Color = Color(1.0, 0.25, 0.15)
 @export var color_done: Color = Color(0.3, 1.0, 0.4)
 
+## Номер по порядку маршрута (1 — первая). Раньше предыдущей записать нельзя.
+var order: int = 0
 var is_done: bool = false
 ## Прогресс записи 0–1 и кто записывает — для HUD (приходят от хоста).
 var progress: float = 0.0
@@ -40,8 +42,22 @@ func _process(delta: float) -> void:
 func interact(member: ExpeditionMember) -> void:
 	if not NetAuthority.is_authority() or is_done or _recorder != null:
 		return
+	var next: SurveyPoint = SurveyPoint.next_point(get_tree())
+	if next != self:
+		member.event_received.emit(&"survey_out_of_order")
+		return
 	_recorder = member
 	_set_progress.rpc(0.0, member.get_path())
+
+
+## Следующая незаписанная фиксация (null — все записаны).
+static func next_point(tree: SceneTree) -> SurveyPoint:
+	var best: SurveyPoint = null
+	for node in tree.get_nodes_in_group(&"survey_point"):
+		var point: SurveyPoint = node
+		if not point.is_done and (best == null or point.order < best.order):
+			best = point
+	return best
 
 
 func _physics_process(delta: float) -> void:
@@ -91,3 +107,7 @@ func _apply_color(color: Color) -> void:
 	var material: StandardMaterial3D = indicator.material_override as StandardMaterial3D if indicator else null
 	if material:
 		material.albedo_color = color
+
+
+func get_prompt() -> String:
+	return "Записать фиксацию" if not is_done else "Фиксация записана"
